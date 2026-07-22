@@ -7,27 +7,51 @@
 
   <div class="honors-scroll" style="max-width: var(--max-width); margin: 0 auto; padding: 0 var(--spacing-md);">
     <div class="honor-card reveal">
-      <img src="{{ 'iso9001.jpg' | asset_url }}" alt="ISO 9001">
+      {% if section.settings.cert_image_1 != blank %}
+        <img src="{{ section.settings.cert_image_1 | img_url: '400x' }}" alt="ISO 9001">
+      {% else %}
+        <img src="{{ 'iso9001.jpg' | asset_url }}" alt="ISO 9001">
+      {% endif %}
       <h4>ISO 9001<br>Quality Management</h4>
     </div>
     <div class="honor-card reveal reveal-delay-1">
-      <img src="{{ 'env_cert_1.jpg' | asset_url }}" alt="Environmental Management">
+      {% if section.settings.cert_image_2 != blank %}
+        <img src="{{ section.settings.cert_image_2 | img_url: '400x' }}" alt="Environmental Management">
+      {% else %}
+        <img src="{{ 'env_cert_1.jpg' | asset_url }}" alt="Environmental Management">
+      {% endif %}
       <h4>ISO 14001<br>Environmental</h4>
     </div>
     <div class="honor-card reveal reveal-delay-2">
-      <img src="{{ 'dm_cert_1.jpg' | asset_url }}" alt="Enterprise Credit">
+      {% if section.settings.cert_image_3 != blank %}
+        <img src="{{ section.settings.cert_image_3 | img_url: '400x' }}" alt="Enterprise Credit">
+      {% else %}
+        <img src="{{ 'dm_cert_1.jpg' | asset_url }}" alt="Enterprise Credit">
+      {% endif %}
       <h4>AAA Enterprise<br>Credit Rating</h4>
     </div>
     <div class="honor-card reveal reveal-delay-3">
-      <img src="{{ 'dm_cert_2.jpg' | asset_url }}" alt="Integrity">
+      {% if section.settings.cert_image_4 != blank %}
+        <img src="{{ section.settings.cert_image_4 | img_url: '400x' }}" alt="Integrity">
+      {% else %}
+        <img src="{{ 'dm_cert_2.jpg' | asset_url }}" alt="Integrity">
+      {% endif %}
       <h4>Integrity<br>Demonstration Unit</h4>
     </div>
     <div class="honor-card reveal reveal-delay-4">
-      <img src="{{ 'dm_cert_3.jpg' | asset_url }}" alt="Quality Service">
+      {% if section.settings.cert_image_5 != blank %}
+        <img src="{{ section.settings.cert_image_5 | img_url: '400x' }}" alt="Quality Service">
+      {% else %}
+        <img src="{{ 'dm_cert_3.jpg' | asset_url }}" alt="Quality Service">
+      {% endif %}
       <h4>Quality Service<br>Integrity Enterprise</h4>
     </div>
     <div class="honor-card reveal">
-      <img src="{{ 'dm_cert_4.jpg' | asset_url }}" alt="Contract">
+      {% if section.settings.cert_image_6 != blank %}
+        <img src="{{ section.settings.cert_image_6 | img_url: '400x' }}" alt="Contract">
+      {% else %}
+        <img src="{{ 'dm_cert_4.jpg' | asset_url }}" alt="Contract">
+      {% endif %}
       <h4>Contract-Honoring<br>&amp; Promise-Keeping</h4>
     </div>
   </div>
@@ -40,7 +64,38 @@
 {% schema %}
 {
   "name": "Honors Grid",
-  "settings": [],
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "cert_image_1",
+      "label": "Certificate 1 — ISO 9001"
+    },
+    {
+      "type": "image_picker",
+      "id": "cert_image_2",
+      "label": "Certificate 2 — ISO 14001"
+    },
+    {
+      "type": "image_picker",
+      "id": "cert_image_3",
+      "label": "Certificate 3 — AAA Enterprise Credit"
+    },
+    {
+      "type": "image_picker",
+      "id": "cert_image_4",
+      "label": "Certificate 4 — Integrity Unit"
+    },
+    {
+      "type": "image_picker",
+      "id": "cert_image_5",
+      "label": "Certificate 5 — Quality Service"
+    },
+    {
+      "type": "image_picker",
+      "id": "cert_image_6",
+      "label": "Certificate 6 — Contract-Honoring"
+    }
+  ],
   "presets": [{ "name": "Honors Grid" }]
 }
 {% endschema %}

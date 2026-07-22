@@ -8,7 +8,11 @@
   <div class="products-grid">
     <div class="product-card reveal reveal-delay-1">
       <div class="product-card-image">
-        <img src="{{ 'hero.jpeg' | asset_url }}" alt="Premium Quartz Porcelain" class="placeholder-img">
+        {% if section.settings.product_image_1 != blank %}
+          <img src="{{ section.settings.product_image_1 | img_url: '800x' }}" alt="Premium Quartz Porcelain" class="placeholder-img">
+        {% else %}
+          <img src="{{ 'hero.jpeg' | asset_url }}" alt="Premium Quartz Porcelain" class="placeholder-img">
+        {% endif %}
       </div>
       <p class="product-meta">01 &mdash; Flagship</p>
       <h3>Premium Quartz Porcelain</h3>
@@ -17,7 +21,11 @@
 
     <div class="product-card reveal reveal-delay-2">
       <div class="product-card-image">
-        <img src="{{ 'facade.webp' | asset_url }}" alt="Dry-Hang Cladding" class="placeholder-img">
+        {% if section.settings.product_image_2 != blank %}
+          <img src="{{ section.settings.product_image_2 | img_url: '800x' }}" alt="Dry-Hang Cladding" class="placeholder-img">
+        {% else %}
+          <img src="{{ 'facade.webp' | asset_url }}" alt="Dry-Hang Cladding" class="placeholder-img">
+        {% endif %}
       </div>
       <p class="product-meta">02 &mdash; Architectural</p>
       <h3>Dry-Hang Cladding System</h3>
@@ -26,7 +34,11 @@
 
     <div class="product-card reveal reveal-delay-3">
       <div class="product-card-image">
-        <img src="{{ 'hero.jpeg' | asset_url }}" alt="Heavy-Duty Landscape" class="placeholder-img">
+        {% if section.settings.product_image_3 != blank %}
+          <img src="{{ section.settings.product_image_3 | img_url: '800x' }}" alt="Heavy-Duty Landscape" class="placeholder-img">
+        {% else %}
+          <img src="{{ 'hero.jpeg' | asset_url }}" alt="Heavy-Duty Landscape" class="placeholder-img">
+        {% endif %}
       </div>
       <p class="product-meta">03 &mdash; Heavy-Duty</p>
       <h3>Landscape Pavers</h3>
@@ -38,7 +50,23 @@
 {% schema %}
 {
   "name": "Product Showcase",
-  "settings": [],
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "product_image_1",
+      "label": "Product Image — Quartz Porcelain"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image_2",
+      "label": "Product Image — Dry-Hang Cladding"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image_3",
+      "label": "Product Image — Landscape Pavers"
+    }
+  ],
   "presets": [{ "name": "Product Showcase" }]
 }
 {% endschema %}

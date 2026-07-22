@@ -1,7 +1,11 @@
 <!-- Hero Banner — Full-bleed, typographic, architectural -->
 <section class="hero-section" data-section-type="hero-banner">
   <div class="hero-bg">
-    <img src="{{ 'hero.jpeg' | asset_url }}" alt="Kun Bloom Architectural Stone">
+    {% if section.settings.hero_image != blank %}
+      <img src="{{ section.settings.hero_image | img_url: 'master' }}" alt="Kun Bloom Architectural Stone">
+    {% else %}
+      <img src="{{ 'hero.jpeg' | asset_url }}" alt="Kun Bloom Architectural Stone">
+    {% endif %}
   </div>
   <div class="hero-content">
     <p class="eyebrow reveal">Est. 2010 &mdash; Chongqing, China</p>
@@ -13,7 +17,13 @@
 {% schema %}
 {
   "name": "Hero Banner",
-  "settings": [],
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Background Image"
+    }
+  ],
   "presets": [{ "name": "Hero Banner" }]
 }
 {% endschema %}

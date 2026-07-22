@@ -2,7 +2,11 @@
 <header class="site-header" role="banner">
   <div class="header-inner">
     <a href="/" class="header-logo">
-      <img src="{{ 'new-logo.png' | asset_url }}" alt="{{ settings.brand_name }}">
+      {% if section.settings.logo_image != blank %}
+        <img src="{{ section.settings.logo_image | img_url: '400x' }}" alt="{{ settings.brand_name }}">
+      {% else %}
+        <img src="{{ 'new-logo.png' | asset_url }}" alt="{{ settings.brand_name }}">
+      {% endif %}
     </a>
 
     <nav class="nav-links" role="navigation">
@@ -32,7 +36,13 @@
 {% schema %}
 {
   "name": "Header",
-  "settings": [],
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo_image",
+      "label": "Logo Image"
+    }
+  ],
   "presets": [{ "name": "Header" }]
 }
 {% endschema %}
