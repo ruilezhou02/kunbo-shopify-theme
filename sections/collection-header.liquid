@@ -1,49 +1,31 @@
-<!-- Collection Header Section -->
-<section style="padding-top:120px;padding-bottom:60px;background:var(--bg-light);">
-  <div class="container">
-    <div class="reveal">
-      <h1 style="font-family:var(--font-heading);font-size:clamp(28px, 5vw, 48px);font-weight:700;margin-bottom:16px;">
-        {% if collection.title != blank %}{{ collection.title }}{% else %}产品中心{% endif %}
-      </h1>
-      {% if collection.description != blank %}
-        <p style="font-size:18px;color:var(--text-muted);max-width:640px;">{{ collection.description }}</p>
-      {% endif %}
-    </div>
+<!-- Collection Header -->
+<section class="collection-header-section">
+  <div class="container-narrow">
+    <p class="eyebrow">Products</p>
+    <h1 class="display-lg">{% if collection.title != blank %}{{ collection.title }}{% else %}All Products{% endif %}</h1>
+    {% if collection.description != blank %}
+      <p class="body-lg" style="margin-top: 16px;">{{ collection.description }}</p>
+    {% endif %}
   </div>
 </section>
 
-<section class="section bg-white">
-  <div class="container">
-    {% if collection.products.size > 0 %}
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;">
-        {% for product in collection.products %}
-          <div class="product-card reveal">
-            <a href="{{ product.url }}">
-              <div class="product-card-image">
-                {% if product.featured_image %}
-                  <img src="{{ product.featured_image | img_url: '800x' }}" alt="{{ product.title }}">
-                {% else %}
-                  <div style="width:100%;height:100%;background:var(--bg-light);display:flex;align-items:center;justify-content:center;color:var(--text-muted);">No Image</div>
-                {% endif %}
-                <div class="product-card-overlay"><span>查看详情</span></div>
-              </div>
-            </a>
-            <h3>{{ product.title }}</h3>
-            <p>{{ product.description | strip_html | truncate: 80 }}</p>
-            {% if product.price > 0 %}
-              <p style="font-family:var(--font-heading);font-size:16px;font-weight:600;color:var(--primary);margin-top:8px;">
-                {{ product.price | money }}
-              </p>
-            {% endif %}
-          </div>
-        {% endfor %}
-      </div>
+<section>
+  <div class="collection-grid">
+    {% for product in collection.products %}
+      <a href="{{ product.url }}" class="collection-item">
+        <div class="collection-item-image">
+          {% if product.featured_image %}
+            <img src="{{ product.featured_image | img_url: '600x' }}" alt="{{ product.title }}">
+          {% else %}
+            <div style="width:100%;height:100%;background:var(--surface);"></div>
+          {% endif %}
+        </div>
+        <h3>{{ product.title }}</h3>
+        <p>{{ product.price | money }}</p>
+      </a>
     {% else %}
-      <div class="reveal" style="text-align:center;padding:80px 0;color:var(--text-muted);">
-        <div style="font-size:48px;margin-bottom:16px;">📦</div>
-        <p>产品即将上线，敬请期待。</p>
-      </div>
-    {% endif %}
+      <p style="grid-column: 1/-1; text-align:center; color: var(--text-muted); padding: 80px 0;">No products yet. Check back soon.</p>
+    {% endfor %}
   </div>
 </section>
 
@@ -51,6 +33,6 @@
 {
   "name": "Collection Header",
   "settings": [],
-  "presets": [{ "name": "Collection Header", "category": "Kun Bloom" }]
+  "presets": [{ "name": "Collection Header" }]
 }
 {% endschema %}

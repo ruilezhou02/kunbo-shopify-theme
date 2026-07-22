@@ -1,31 +1,43 @@
-<!-- Stats Grid Section -->
-<section class="section bg-white" style="border-bottom:1px solid var(--border-light);">
-  <div class="container">
-    <div class="stats-grid">
-      <div class="stat-item reveal">
-        <div class="stat-number">15+</div>
-        <div class="stat-label">行业经验 / 年</div>
-      </div>
-      <div class="stat-item reveal">
-        <div class="stat-number">2+</div>
-        <div class="stat-label">核心专利 / 项</div>
-      </div>
-      <div class="stat-item reveal">
-        <div class="stat-number">20+</div>
-        <div class="stat-label">工艺面层 / 种</div>
-      </div>
-      <div class="stat-item reveal">
-        <div class="stat-number">1000+</div>
-        <div class="stat-label">服务项目 / 个</div>
-      </div>
+<!-- About Split — Image + Text, editorial layout -->
+<section data-section-type="about-split">
+  <div class="about-split">
+    <div class="about-split-image">
+      <img src="{{ 'facade.webp' | asset_url }}" alt="Kun Bloom Facility">
+    </div>
+    <div class="about-split-content">
+      <p class="eyebrow reveal">The Studio</p>
+      <h2 class="display-md reveal reveal-delay-1">Material intelligence, shaped by discipline.</h2>
+      <p class="reveal reveal-delay-2">Founded in 2010 with a singular obsession: to elevate architectural ceramics beyond commodity. Our R&amp;D team holds 14 national patents. Our products are installed in over 1,000 projects across China, Southeast Asia, and the Middle East.</p>
+      <p class="reveal reveal-delay-3">We work with architects, not against their vision. Every surface we produce is a collaboration between material science and spatial intent.</p>
+      <a href="/pages/about" class="link-underline reveal reveal-delay-4">Learn About Us</a>
+    </div>
+  </div>
+
+  <!-- Stats Strip -->
+  <div class="stats-strip">
+    <div class="stat-item reveal">
+      <div class="stat-number">15+</div>
+      <div class="stat-label">Years of Craft</div>
+    </div>
+    <div class="stat-item reveal reveal-delay-1">
+      <div class="stat-number">14</div>
+      <div class="stat-label">National Patents</div>
+    </div>
+    <div class="stat-item reveal reveal-delay-2">
+      <div class="stat-number">1,000+</div>
+      <div class="stat-label">Projects Completed</div>
+    </div>
+    <div class="stat-item reveal reveal-delay-3">
+      <div class="stat-number">ISO</div>
+      <div class="stat-label">Certified Quality</div>
     </div>
   </div>
 </section>
 
 {% schema %}
 {
-  "name": "Stats Grid",
+  "name": "About Split + Stats",
   "settings": [],
-  "presets": [{ "name": "Stats Grid", "category": "Kun Bloom" }]
+  "presets": [{ "name": "About Split + Stats" }]
 }
 {% endschema %}

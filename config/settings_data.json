@@ -2,39 +2,31 @@
   "current": {
     "logo": "",
     "brand_name": "Kun Bloom",
-    "brand_name_cn": "坤博建材",
-    "brand_slogan": "专注高品质石英砖，定义建筑美学",
-    "brand_description": "深耕建筑材料领域15余年，坤博建材（Kun Bloom）凭借深厚行业积淀、硬核技术研发与卓越产品品质，成为石英砖行业内兼具口碑与实力的标杆品牌。",
-    "color_primary": "#334155",
-    "color_accent": "#D4AF37",
-    "color_bg_light": "#F1F5F9",
-    "color_text": "#1E293B",
-    "color_text_muted": "#64748B",
-    "font_heading": "montserrat_n4",
-    "font_body": "open_sans_n4",
-    "contact_address": "中国重庆市",
-    "contact_phone": "023-67646148",
+    "brand_description": "Architectural stone surfaces. Precision-engineered in Chongqing, China.",
+    "color_primary": "#1A1A1A",
+    "color_accent": "#B8935A",
+    "color_bg": "#FAFAF7",
+    "color_text": "#1A1A1A",
+    "font_heading": "playfair_display_n4",
+    "font_body": "inter_n4",
     "contact_email": "suli@kunbloom.com",
-    "social_wechat_qr": ""
+    "contact_phone": "023-67646148",
+    "contact_address": "Chongqing, China"
   },
   "presets": {
     "Default": {
       "logo": "",
       "brand_name": "Kun Bloom",
-      "brand_name_cn": "坤博建材",
-      "brand_slogan": "专注高品质石英砖，定义建筑美学",
-      "brand_description": "深耕建筑材料领域15余年，坤博建材（Kun Bloom）凭借深厚行业积淀、硬核技术研发与卓越产品品质，成为石英砖行业内兼具口碑与实力的标杆品牌。",
-      "color_primary": "#334155",
-      "color_accent": "#D4AF37",
-      "color_bg_light": "#F1F5F9",
-      "color_text": "#1E293B",
-      "color_text_muted": "#64748B",
-      "font_heading": "montserrat_n4",
-      "font_body": "open_sans_n4",
-      "contact_address": "中国重庆市",
-      "contact_phone": "023-67646148",
+      "brand_description": "Architectural stone surfaces. Precision-engineered in Chongqing, China.",
+      "color_primary": "#1A1A1A",
+      "color_accent": "#B8935A",
+      "color_bg": "#FAFAF7",
+      "color_text": "#1A1A1A",
+      "font_heading": "playfair_display_n4",
+      "font_body": "inter_n4",
       "contact_email": "suli@kunbloom.com",
-      "social_wechat_qr": ""
+      "contact_phone": "023-67646148",
+      "contact_address": "Chongqing, China"
     }
   }
 }

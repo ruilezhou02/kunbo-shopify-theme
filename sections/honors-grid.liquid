@@ -1,40 +1,39 @@
-<!-- Honors Section -->
-<section class="section bg-primary" style="color:white;position:relative;overflow:hidden;">
-  <!-- Subtle pattern overlay -->
-  <div style="position:absolute;inset:0;opacity:0.03;background:radial-gradient(circle at 20% 50%, white 1px, transparent 1px);background-size:40px 40px;"></div>
-  
-  <div class="container" style="position:relative;z-index:1;">
-    <div class="reveal" style="text-align:center;margin-bottom:64px;">
-      <p class="section-label" style="color:rgba(212,175,55,0.8);">荣誉资质</p>
-      <h2 class="section-title" style="color:white;">行业权威认可，品质见证实力</h2>
-    </div>
+<!-- Honors Strip — Scrolling certification showcase -->
+<section class="honors-strip" data-section-type="honors-grid">
+  <div class="container-wide">
+    <p class="eyebrow reveal" style="text-align:center;">Credentials</p>
+    <h2 class="display-md reveal reveal-delay-1" style="text-align:center; margin-bottom: var(--spacing-lg);">Certified at every level.</h2>
+  </div>
 
-    <div class="honors-grid">
-      <div class="honor-card reveal">
-        <div class="honor-icon" style="color:var(--accent);">🏆</div>
-        <div class="honor-year">2024</div>
-        <div class="honor-title">年度最佳景观材料奖</div>
-        <div class="honor-award">第十九届金盘奖</div>
-      </div>
-      <div class="honor-card reveal">
-        <div class="honor-icon" style="color:var(--accent);">🏅</div>
-        <div class="honor-year">2023</div>
-        <div class="honor-title">材料商二十强</div>
-        <div class="honor-award">中国房地产供应商竞争力</div>
-      </div>
-      <div class="honor-card reveal">
-        <div class="honor-icon" style="color:var(--accent);">⭐</div>
-        <div class="honor-year">2021</div>
-        <div class="honor-title">材料商第5名</div>
-        <div class="honor-award">中国房企产品力排行榜</div>
-      </div>
-      <div class="honor-card reveal">
-        <div class="honor-icon" style="color:var(--accent);">🥇</div>
-        <div class="honor-year">2019</div>
-        <div class="honor-title">年度最佳外墙材料奖</div>
-        <div class="honor-award">第十四届金盘奖</div>
-      </div>
+  <div class="honors-scroll" style="max-width: var(--max-width); margin: 0 auto; padding: 0 var(--spacing-md);">
+    <div class="honor-card reveal">
+      <img src="{{ 'iso9001.jpg' | asset_url }}" alt="ISO 9001">
+      <h4>ISO 9001<br>Quality Management</h4>
     </div>
+    <div class="honor-card reveal reveal-delay-1">
+      <img src="{{ 'env_cert_1.jpg' | asset_url }}" alt="Environmental Management">
+      <h4>ISO 14001<br>Environmental</h4>
+    </div>
+    <div class="honor-card reveal reveal-delay-2">
+      <img src="{{ 'dm_cert_1.jpg' | asset_url }}" alt="Enterprise Credit">
+      <h4>AAA Enterprise<br>Credit Rating</h4>
+    </div>
+    <div class="honor-card reveal reveal-delay-3">
+      <img src="{{ 'dm_cert_2.jpg' | asset_url }}" alt="Integrity">
+      <h4>Integrity<br>Demonstration Unit</h4>
+    </div>
+    <div class="honor-card reveal reveal-delay-4">
+      <img src="{{ 'dm_cert_3.jpg' | asset_url }}" alt="Quality Service">
+      <h4>Quality Service<br>Integrity Enterprise</h4>
+    </div>
+    <div class="honor-card reveal">
+      <img src="{{ 'dm_cert_4.jpg' | asset_url }}" alt="Contract">
+      <h4>Contract-Honoring<br>&amp; Promise-Keeping</h4>
+    </div>
+  </div>
+
+  <div style="text-align:center; margin-top: var(--spacing-md);">
+    <a href="/pages/honors" class="link-underline reveal">View All Credentials</a>
   </div>
 </section>
 
@@ -42,6 +41,6 @@
 {
   "name": "Honors Grid",
   "settings": [],
-  "presets": [{ "name": "Honors Grid", "category": "Kun Bloom" }]
+  "presets": [{ "name": "Honors Grid" }]
 }
 {% endschema %}

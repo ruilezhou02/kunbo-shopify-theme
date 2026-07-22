@@ -1,87 +1,16 @@
-<!-- About Preview Section -->
-{% assign about_image = section.settings.image %}
-
-<section class="section bg-light">
-  <div class="container">
-    <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
-      
-      <!-- Image -->
-      <div style="position:relative;">
-        <div class="img-zoom" style="aspect-ratio:4/5;background:var(--white);overflow:hidden;">
-          {% if about_image != blank %}
-            <img src="{{ about_image | img_url: '1200x' }}" alt="About Kun Bloom" style="width:100%;height:100%;object-fit:cover;">
-          {% else %}
-            <img src="{{ 'facade.webp' | asset_url }}" alt="Kun Bloom 工厂" style="width:100%;height:100%;object-fit:cover;">
-          {% endif %}
-        </div>
-        <div style="position:absolute;bottom:-32px;right:-32px;width:200px;background:var(--white);padding:28px;box-shadow:var(--shadow-lg);border:1px solid var(--border-light);display:none;" class="show-lg">
-          <div style="font-family:var(--font-heading);font-size:40px;font-weight:700;color:var(--primary);margin-bottom:8px;">2010</div>
-          <div style="font-size:13px;color:var(--text-muted);">成立于中国重庆<br>深耕行业十余载</div>
-        </div>
-      </div>
-
-      <!-- Content -->
-      <div>
-        <p class="section-label">关于我们</p>
-        <h2 class="section-title">科技驱动品质，<br>匠心铸就经典</h2>
-        <p class="section-desc" style="margin-bottom:32px;">
-          {{ section.settings.description | default: "深耕建筑材料领域15余年，坤博建材（Kun Bloom）凭借深厚行业积淀、硬核技术研发与卓越产品品质，成为石英砖行业内兼具口碑与实力的标杆品牌。我们核心聚焦高潜力消费与项目场景，精准对接品质化需求市场。" }}
-        </p>
-
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px;">
-          <div style="display:flex;gap:12px;">
-            <div style="width:48px;height:48px;background:rgba(var(--primary-rgb),0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <div>
-              <h4 style="font-family:var(--font-heading);font-size:15px;font-weight:600;margin-bottom:4px;">权威认证</h4>
-              <p style="font-size:13px;color:var(--text-muted);">通过3C认证及多项国家标准检测</p>
-            </div>
-          </div>
-          <div style="display:flex;gap:12px;">
-            <div style="width:48px;height:48px;background:rgba(var(--primary-rgb),0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
-            </div>
-            <div>
-              <h4 style="font-family:var(--font-heading);font-size:15px;font-weight:600;margin-bottom:4px;">全链条服务</h4>
-              <p style="font-size:13px;color:var(--text-muted);">从设计研发到落地交付的一站式方案</p>
-            </div>
-          </div>
-        </div>
-
-        <a href="/pages/about" style="font-family:var(--font-heading);font-size:14px;font-weight:600;color:var(--accent);display:inline-flex;align-items:center;gap:8px;transition:gap 0.3s ease;" onmouseenter="this.style.gap='14px'" onmouseleave="this.style.gap='8px'">
-          了解更多关于坤博
-          <span style="font-size:18px;">→</span>
-        </a>
-      </div>
-
-    </div>
+<!-- Brand Statement -->
+<section class="statement-section" data-section-type="brand-statement">
+  <div class="container-narrow">
+    <p class="eyebrow reveal">Our Philosophy</p>
+    <h2 class="display-md reveal reveal-delay-1">We don't manufacture tiles. We compose surfaces that define space.</h2>
+    <p class="body-lg reveal reveal-delay-2">Every slab of Kun Bloom quartz porcelain carries 15 years of material science, tested across thousands of architectural projects. Understated. Engineered. Built to outlast trends.</p>
   </div>
 </section>
 
-<style>
-.show-lg { display: flex; flex-direction: column; justify-content: center; }
-@media (max-width: 768px) {
-  .show-lg { display: none; }
-  section .reveal > div:first-child { margin-bottom: 40px; }
-}
-</style>
-
 {% schema %}
 {
-  "name": "About Preview",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "About Image"
-    },
-    {
-      "type": "textarea",
-      "id": "description",
-      "label": "Description"
-    }
-  ],
-  "presets": [{ "name": "About Preview", "category": "Kun Bloom" }]
+  "name": "Brand Statement",
+  "settings": [],
+  "presets": [{ "name": "Brand Statement" }]
 }
 {% endschema %}

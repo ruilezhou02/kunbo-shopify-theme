@@ -1,24 +1,16 @@
-<!-- Kun Bloom — Header Section -->
+<!-- Kun Bloom — Header -->
 <header class="site-header" role="banner">
   <div class="header-inner">
     <a href="/" class="header-logo">
-      {% if settings.logo != blank %}
-        <img src="{{ settings.logo | img_url: '200x' }}"
-             alt="{{ settings.brand_name }}"
-             style="height:36px;width:auto;">
-      {% else %}
-        <img src="{{ 'new-logo.png' | asset_url }}"
-             alt="{{ settings.brand_name }}"
-             style="height:36px;width:auto;">
-      {% endif %}
+      <img src="{{ 'new-logo.png' | asset_url }}" alt="{{ settings.brand_name }}">
     </a>
 
     <nav class="nav-links" role="navigation">
-      <a href="/" {% if template.name == 'index' %}class="active"{% endif %}>首页</a>
-      <a href="/pages/about" {% if template.name == 'page' and page.handle == 'about' %}class="active"{% endif %}>关于我们</a>
-      <a href="/collections/all" {% if template.name == 'collection' %}class="active"{% endif %}>产品中心</a>
-      <a href="/pages/honors" {% if template.name == 'page' and page.handle == 'honors' %}class="active"{% endif %}>荣誉资质</a>
-      <a href="/pages/contact" {% if template.name == 'page' and page.handle == 'contact' %}class="active"{% endif %}>联系我们</a>
+      <a href="/" {% if template.name == 'index' %}class="active"{% endif %}>Home</a>
+      <a href="/pages/about" {% if template.name == 'page' and page.handle == 'about' %}class="active"{% endif %}>About</a>
+      <a href="/collections/all" {% if template.name == 'collection' %}class="active"{% endif %}>Products</a>
+      <a href="/pages/honors" {% if template.name == 'page' and page.handle == 'honors' %}class="active"{% endif %}>Credentials</a>
+      <a href="/pages/contact" {% if template.name == 'page' and page.handle == 'contact' %}class="active"{% endif %}>Contact</a>
     </nav>
 
     <button class="mobile-menu-btn" aria-label="Toggle menu">
@@ -30,11 +22,11 @@
 </header>
 
 <div class="mobile-nav">
-  <a href="/">首页</a>
-  <a href="/pages/about">关于我们</a>
-  <a href="/collections/all">产品中心</a>
-  <a href="/pages/honors">荣誉资质</a>
-  <a href="/pages/contact">联系我们</a>
+  <a href="/">Home</a>
+  <a href="/pages/about">About</a>
+  <a href="/collections/all">Products</a>
+  <a href="/pages/honors">Credentials</a>
+  <a href="/pages/contact">Contact</a>
 </div>
 
 {% schema %}

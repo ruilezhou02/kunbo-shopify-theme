@@ -1,97 +1,37 @@
-<!-- About Page Content Section -->
-<section style="padding-top:120px;padding-bottom:60px;background:var(--bg-light);">
-  <div class="container">
-    <div class="reveal">
-      <h1 style="font-family:var(--font-heading);font-size:clamp(28px, 5vw, 48px);font-weight:700;margin-bottom:16px;">关于我们</h1>
-      <p style="font-size:18px;color:var(--text-muted);max-width:640px;">深耕建筑材料领域15余年，致力于为全球客户提供高品质的石英砖与建筑外立面解决方案。</p>
-    </div>
+<!-- About Page -->
+<section class="page-hero">
+  <div class="container-narrow">
+    <p class="eyebrow">About</p>
+    <h1 class="display-lg">Material intelligence,<br>shaped by discipline.</h1>
+    <p class="body-lg">Founded in 2010 with a singular mission: to make architectural ceramics that architects actually want to specify.</p>
   </div>
 </section>
 
-<section class="section bg-white">
-  <div class="container">
-    <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:80px;">
+<section class="page-section">
+  <div class="container-narrow">
+    <p class="eyebrow">The Origin</p>
+    <p class="body-lg" style="margin-bottom: 28px;">Kun Bloom was born in Chongqing&rsquo;s industrial heartland &mdash; a city where mountains meet rivers and architecture must contend with extremes. That environment shaped our thinking: materials should not just survive conditions, they should transcend them.</p>
+    <p class="body-lg" style="margin-bottom: 28px;">Over 15 years, we have grown from a regional tile manufacturer into a nationally recognized brand serving architects, developers, and design studios across China, Southeast Asia, and the Middle East. Our R&amp;D center holds 14 national utility model and invention patents covering raw material formulation, kiln temperature control, and surface finishing processes.</p>
+    <p class="body-lg">We are ISO 9001 certified, ISO 14001 compliant, and recognized as an AAA-rated enterprise by China&rsquo;s national credit system.</p>
+  </div>
+</section>
 
-      <!-- Text -->
+<section class="page-section">
+  <div class="container-narrow">
+    <p class="eyebrow">Core Values</p>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 40px;">
       <div>
-        <h3 style="font-family:var(--font-heading);font-size:24px;font-weight:700;margin-bottom:24px;">公司简介</h3>
-        
-        <div style="color:var(--text-muted);line-height:2;font-size:15px;">
-          <p style="margin-bottom:20px;">重庆坤博建筑材料有限公司（Kun Bloom），创始人拥有15余年行业经验，公司自2010年成立以来深耕建材领域，凭借深厚行业积淀、硬核技术研发与卓越产品品质，已成长为石英砖行业内兼具口碑与实力的具有竞争力的品牌，核心聚焦高潜力消费与项目场景，精准对接品质化需求市场。</p>
-          
-          <p style="margin-bottom:20px;">公司高度重视研发投入，组建专业设计与研发团队，建立严格的工艺管控与实时监测体系，工艺水准对标行业先进水平，目前已拥有多项实用新型专利，专利号：2022221017708、2022230576778，产品严格遵循 GB 6566-2010、GB/T4100-2015 等国家标准要求。</p>
-          
-          <p>合作生产基地坐落于中国佛山、泉州等产区，拥有完备产业链与高效物流优势，专注提供高品质墙材、地材石英砖产品。</p>
-        </div>
+        <h3 style="font-family: var(--font-display); font-size: 22px; font-weight: 500; margin-bottom: 12px;">Precision</h3>
+        <p class="body-sm">&plusmn;0.5mm dimensional tolerance across batches. Every tile is measured, every surface is inspected. Nothing leaves the kiln without passing.</p>
       </div>
-
-      <!-- Images -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start;">
-        {% if section.settings.about_image_1 != blank %}
-          <img src="{{ section.settings.about_image_1 | img_url: '600x' }}" alt="Factory" style="width:100%;height:280px;object-fit:cover;">
-        {% else %}
-          <div style="width:100%;height:280px;background:var(--bg-light);display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:12px;">Image 1</div>
-        {% endif %}
-        {% if section.settings.about_image_2 != blank %}
-          <img src="{{ section.settings.about_image_2 | img_url: '600x' }}" alt="Office" style="width:100%;height:280px;object-fit:cover;margin-top:48px;">
-        {% else %}
-          <div style="width:100%;height:280px;background:var(--bg-light);display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:12px;margin-top:48px;">Image 2</div>
-        {% endif %}
+      <div>
+        <h3 style="font-family: var(--font-display); font-size: 22px; font-weight: 500; margin-bottom: 12px;">Durability</h3>
+        <p class="body-sm">45,000N breaking strength. &lt;0.1% water absorption. Frost-proof to -30&deg;C. We engineer for decades, not seasons.</p>
       </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- Values Section -->
-<section class="section bg-white" style="border-top:1px solid var(--border-light);">
-  <div class="container">
-    <div class="reveal" style="text-align:center;margin-bottom:60px;">
-      <p class="section-label">核心价值</p>
-      <h2 style="font-family:var(--font-heading);font-size:clamp(24px, 4vw, 36px);font-weight:700;">品质为本，创新为魂</h2>
-    </div>
-
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px;">
-      <div class="reveal" style="text-align:center;padding:40px 24px;">
-        <div style="width:64px;height:64px;background:rgba(var(--primary-rgb),0.08);margin:0 auto 24px;display:flex;align-items:center;justify-content:center;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.5"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
-        </div>
-        <h4 style="font-family:var(--font-heading);font-size:18px;font-weight:600;margin-bottom:12px;">严苛品控</h4>
-        <p style="font-size:14px;color:var(--text-muted);line-height:1.8;">严格遵循 GB 6566-2010、GB/T4100-2015 等国家标准，建立全流程质量监控体系。</p>
-      </div>
-      <div class="reveal" style="text-align:center;padding:40px 24px;">
-        <div style="width:64px;height:64px;background:rgba(var(--primary-rgb),0.08);margin:0 auto 24px;display:flex;align-items:center;justify-content:center;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-        </div>
-        <h4 style="font-family:var(--font-heading);font-size:18px;font-weight:600;margin-bottom:12px;">高效交付</h4>
-        <p style="font-size:14px;color:var(--text-muted);line-height:1.8;">依托佛山、泉州等核心产区完备产业链与高效物流网络，确保准时高质量交付。</p>
-      </div>
-      <div class="reveal" style="text-align:center;padding:40px 24px;">
-        <div style="width:64px;height:64px;background:rgba(var(--primary-rgb),0.08);margin:0 auto 24px;display:flex;align-items:center;justify-content:center;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.5"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-        </div>
-        <h4 style="font-family:var(--font-heading);font-size:18px;font-weight:600;margin-bottom:12px;">持续创新</h4>
-        <p style="font-size:14px;color:var(--text-muted);line-height:1.8;">拥有多项实用新型专利，持续研发投入，工艺水准对标行业先进水平。</p>
+      <div>
+        <h3 style="font-family: var(--font-display); font-size: 22px; font-weight: 500; margin-bottom: 12px;">Collaboration</h3>
+        <p class="body-sm">We don&rsquo;t sell tile. We solve architectural problems. Every project begins with understanding the space, the climate, and the vision.</p>
       </div>
     </div>
   </div>
 </section>
-
-{% schema %}
-{
-  "name": "About Content",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "about_image_1",
-      "label": "About Image 1"
-    },
-    {
-      "type": "image_picker",
-      "id": "about_image_2",
-      "label": "About Image 2"
-    }
-  ],
-  "presets": [{ "name": "About Content", "category": "Kun Bloom" }]
-}
-{% endschema %}

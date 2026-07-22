@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="{{ settings.color_primary }}">
+  <meta name="theme-color" content="#FAFAF7">
   <link rel="canonical" href="{{ canonical_url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
   <title>
     {% if template.name == 'index' %}
-      {{ settings.brand_name }} | {{ settings.brand_slogan }}
+      {{ settings.brand_name }} — Architectural Stone Surfaces
     {% else %}
-      {{ page_title }} | {{ settings.brand_name }}
+      {{ page_title }} — {{ settings.brand_name }}
     {% endif %}
   </title>
 
@@ -25,18 +25,18 @@
   {{ content_for_header }}
 
   {{ 'theme.css' | asset_url | stylesheet_tag }}
-  {{ 'theme.js' | asset_url | script_tag }}
 </head>
 
-<body class="template-{{ template.name }} font-body text-text bg-white antialiased selection:bg-primary selection:text-white">
-  
+<body class="template-{{ template.name }}">
+
   {% section 'header' %}
 
-  <main role="main" class="min-h-screen">
+  <main role="main">
     {{ content_for_layout }}
   </main>
 
   {% section 'footer' %}
 
+  {{ 'theme.js' | asset_url | script_tag }}
 </body>
 </html>

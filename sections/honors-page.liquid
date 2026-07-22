@@ -1,98 +1,24 @@
-<!-- Honors Page Section -->
-<section style="padding-top:120px;padding-bottom:60px;background:var(--bg-light);">
-  <div class="container">
-    <div class="reveal">
-      <h1 style="font-family:var(--font-heading);font-size:clamp(28px, 5vw, 48px);font-weight:700;margin-bottom:16px;">荣誉资质</h1>
-      <p style="font-size:18px;color:var(--text-muted);max-width:640px;">坤博建材凭借卓越产品品质与专业服务，荣获多项行业权威认证与奖项。</p>
-    </div>
+<!-- Honors & Credentials Page -->
+<section class="page-hero">
+  <div class="container-narrow">
+    <p class="eyebrow">Credentials</p>
+    <h1 class="display-lg">Certified at every level.</h1>
+    <p class="body-lg">Industry recognition, national certifications, and independent quality audits &mdash; all publicly verifiable.</p>
   </div>
 </section>
 
-<!-- Awards -->
-<section class="section bg-primary" style="color:white;position:relative;overflow:hidden;">
-  <div style="position:absolute;inset:0;opacity:0.03;background:radial-gradient(circle at 20% 50%, white 1px, transparent 1px);background-size:40px 40px;"></div>
-  
-  <div class="container" style="position:relative;z-index:1;">
-    <div class="reveal" style="text-align:center;margin-bottom:48px;">
-      <p class="section-label" style="color:rgba(212,175,55,0.8);">行业奖项</p>
-      <h2 style="font-family:var(--font-heading);font-size:clamp(24px, 4vw, 36px);font-weight:700;color:var(--white);">以荣誉见证品牌力量</h2>
-    </div>
+<section class="page-section">
+  <div class="container-wide">
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 24px;">
+      {% assign cert_images = "iso9001.jpg,env_cert_1.jpg,dm_cert_1.jpg,dm_cert_2.jpg,dm_cert_3.jpg,dm_cert_4.jpg,dm_cert_5.jpg,dm_cert_6.jpg,dm_cert_7.jpg,dm_cert_8.jpg,dm_cert_9.jpg,dm_cert_10.jpg,dm_cert_11.jpg,dm_cert_12.jpg,dm_cert_13.jpg" | split: ',' %}
+      {% assign cert_names = "ISO 9001 Quality Management,ISO 14001 Environmental Management,AAA Enterprise Credit Rating,Integrity Demonstration Unit,Quality Service Integrity,Contract-Honoring Enterprise,Credit Rating Certificate,Quality-Focused Enterprise,Service-Focused Enterprise,Integrity Entrepreneur,Integrity Manager,Trustworthy Enterprise,Industry Standard Contributor,China Green Product,P.R.C. Enterprise Certificate" | split: ',' %}
 
-    <div class="honors-grid" style="margin-bottom:80px;">
-      <div class="honor-card reveal">
-        <div class="honor-icon" style="color:var(--accent);">🏆</div>
-        <div class="honor-year">2024</div>
-        <div class="honor-title">年度最佳景观材料奖</div>
-        <div class="honor-award">第十九届金盘奖</div>
-      </div>
-      <div class="honor-card reveal">
-        <div class="honor-icon" style="color:var(--accent);">🏅</div>
-        <div class="honor-year">2023</div>
-        <div class="honor-title">材料商二十强</div>
-        <div class="honor-award">中国房地产供应商竞争力</div>
-      </div>
-      <div class="honor-card reveal">
-        <div class="honor-icon" style="color:var(--accent);">⭐</div>
-        <div class="honor-year">2021</div>
-        <div class="honor-title">材料商第5名</div>
-        <div class="honor-award">中国房企产品力排行榜</div>
-      </div>
-      <div class="honor-card reveal">
-        <div class="honor-icon" style="color:var(--accent);">🥇</div>
-        <div class="honor-year">2019</div>
-        <div class="honor-title">年度最佳外墙材料奖</div>
-        <div class="honor-award">第十四届金盘奖</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Certificates -->
-<section class="section bg-white">
-  <div class="container">
-    <div class="reveal" style="text-align:center;margin-bottom:48px;">
-      <p class="section-label">资质认证</p>
-      <h2 style="font-family:var(--font-heading);font-size:clamp(24px, 4vw, 36px);font-weight:700;">权威认证，品质保障</h2>
-      <p style="font-size:15px;color:var(--text-muted);margin-top:12px;">坤博建材通过多项国家级检测与认证，以硬核实力赢得行业信赖</p>
-    </div>
-
-    <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fill, minmax(200px, 1fr));gap:16px;">
-      {% assign cert_count = 15 %}
-      {% for i in (1..cert_count) %}
-        {% assign idx = i %}
-        {% if i <= 13 %}
-          {% assign cert_file = 'dm_cert_' | append: i | append: '.jpg' %}
-        {% elsif i == 14 %}
-          {% assign cert_file = 'env_cert_1.jpg' %}
-        {% else %}
-          {% assign cert_file = 'iso9001.jpg' %}
-        {% endif %}
-        <div class="reveal cert-thumb" style="cursor:pointer;border:1px solid var(--border-light);overflow:hidden;aspect-ratio:3/4;background:var(--bg-light);transition:all 0.3s ease;">
-          <img src="{{ cert_file | asset_url }}" 
-               alt="资质证书 {{ i }}" 
-               style="width:100%;height:100%;object-fit:contain;padding:12px;transition:transform 0.3s ease;"
-               loading="lazy">
+      {% for cert_img in cert_images %}
+        <div style="padding: 28px 20px; border: 1px solid var(--border); text-align: center; transition: all 0.3s ease; background: var(--white);">
+          <img src="{{ cert_img | strip | asset_url }}" alt="{{ cert_names[forloop.index0] }}" style="width: 100%; height: 160px; object-fit: contain; margin-bottom: 16px; opacity: 0.85;">
+          <h4 style="font-family: var(--font-body); font-size: 12px; font-weight: 500; line-height: 1.5; color: var(--text);">{{ cert_names[forloop.index0] }}</h4>
         </div>
       {% endfor %}
     </div>
   </div>
 </section>
-
-<style>
-.cert-thumb:hover {
-  border-color: var(--accent);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-  transform: translateY(-2px);
-}
-.cert-thumb:hover img {
-  transform: scale(1.05);
-}
-</style>
-
-{% schema %}
-{
-  "name": "Honors Page",
-  "settings": [],
-  "presets": [{ "name": "Honors Page", "category": "Kun Bloom" }]
-}
-{% endschema %}
