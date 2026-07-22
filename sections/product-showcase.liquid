@@ -1,0 +1,106 @@
+<!-- Product Showcase Section -->
+<section class="section bg-white">
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;flex-wrap:wrap;gap:16px;">
+      <div class="reveal">
+        <p class="section-label">核心产品</p>
+        <h2 class="section-title">全场景建筑材料解决方案</h2>
+      </div>
+      <a href="/collections/all" class="btn" style="background:transparent;border:1px solid var(--border);color:var(--text);padding:12px 32px;font-size:13px;font-family:var(--font-heading);font-weight:500;letter-spacing:1px;text-transform:uppercase;">
+        查看全部产品
+      </a>
+    </div>
+
+    <div class="product-grid">
+      <!-- Product 1: 高端石英砖 -->
+      <div class="product-card reveal">
+        <a href="/collections/all">
+          <div class="product-card-image">
+            {% assign prod1 = section.settings.product1_image %}
+            {% if prod1 != blank %}
+              <img src="{{ prod1 | img_url: '800x' }}" alt="高端石英砖">
+            {% else %}
+              <div style="width:100%;height:100%;background:var(--bg-light);display:flex;align-items:center;justify-content:center;color:var(--text-muted);">Quartz Tile</div>
+            {% endif %}
+            <div class="product-card-overlay"><span>查看详情</span></div>
+          </div>
+        </a>
+        <h3>高端石英砖</h3>
+        <p>采用先进工艺制造，具备高硬度、低吸水率、防滑耐磨等特性，适用于室内外墙地面。</p>
+        <div class="product-features">
+          <span>✓ 防滑抗污</span>
+          <span>✓ 高强度</span>
+          <span>✓ 纹理自然</span>
+        </div>
+      </div>
+
+      <!-- Product 2: 幕墙干挂板 -->
+      <div class="product-card reveal">
+        <a href="/collections/all">
+          <div class="product-card-image">
+            {% assign prod2 = section.settings.product2_image %}
+            {% if prod2 != blank %}
+              <img src="{{ prod2 | img_url: '800x' }}" alt="幕墙干挂板">
+            {% else %}
+              <div style="width:100%;height:100%;background:var(--bg-light);display:flex;align-items:center;justify-content:center;color:var(--text-muted);">Facade Panel</div>
+            {% endif %}
+            <div class="product-card-overlay"><span>查看详情</span></div>
+          </div>
+        </a>
+        <h3>幕墙干挂板</h3>
+        <p>专为建筑外立面设计，通过严格的四性检测，确保安全性与耐久性。</p>
+        <div class="product-features">
+          <span>✓ 安全耐用</span>
+          <span>✓ 抗风压</span>
+          <span>✓ 安装便捷</span>
+        </div>
+      </div>
+
+      <!-- Product 3: 景观厚砖 -->
+      <div class="product-card reveal">
+        <a href="/collections/all">
+          <div class="product-card-image">
+            {% assign prod3 = section.settings.product3_image %}
+            {% if prod3 != blank %}
+              <img src="{{ prod3 | img_url: '800x' }}" alt="景观厚砖">
+            {% else %}
+              <div style="width:100%;height:100%;background:var(--bg-light);display:flex;align-items:center;justify-content:center;color:var(--text-muted);">Landscape Tile</div>
+            {% endif %}
+            <div class="product-card-overlay"><span>查看详情</span></div>
+          </div>
+        </a>
+        <h3>景观厚砖</h3>
+        <p>专为户外园林景观打造，20mm/30mm加厚设计，承重力强，耐候性优异。</p>
+        <div class="product-features">
+          <span>✓ 高承重</span>
+          <span>✓ 耐候性强</span>
+          <span>✓ 防滑安全</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product Showcase",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "product1_image",
+      "label": "Product 1 Image (高端石英砖)"
+    },
+    {
+      "type": "image_picker",
+      "id": "product2_image",
+      "label": "Product 2 Image (幕墙干挂板)"
+    },
+    {
+      "type": "image_picker",
+      "id": "product3_image",
+      "label": "Product 3 Image (景观厚砖)"
+    }
+  ],
+  "presets": [{ "name": "Product Showcase", "category": "Kun Bloom" }]
+}
+{% endschema %}

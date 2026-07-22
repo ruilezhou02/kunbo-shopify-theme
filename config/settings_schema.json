@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Brand",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo",
+        "info": "Recommended: white logo on transparent background"
+      },
+      {
+        "type": "text",
+        "id": "brand_name",
+        "label": "Brand Name",
+        "default": "Kun Bloom"
+      },
+      {
+        "type": "text",
+        "id": "brand_name_cn",
+        "label": "品牌中文名",
+        "default": "坤博建材"
+      },
+      {
+        "type": "textarea",
+        "id": "brand_slogan",
+        "label": "Slogan",
+        "default": "专注高品质石英砖，定义建筑美学"
+      },
+      {
+        "type": "textarea",
+        "id": "brand_description",
+        "label": "Brand Description",
+        "default": "深耕建筑材料领域15余年，坤博建材（Kun Bloom）凭借深厚行业积淀、硬核技术研发与卓越产品品质，成为石英砖行业内兼具口碑与实力的标杆品牌。"
+      }
+    ]
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_primary",
+        "label": "Primary (Slate Grey)",
+        "default": "#334155"
+      },
+      {
+        "type": "color",
+        "id": "color_accent",
+        "label": "Accent (Warm Gold)",
+        "default": "#D4AF37"
+      },
+      {
+        "type": "color",
+        "id": "color_bg_light",
+        "label": "Light Background (Concrete Grey)",
+        "default": "#F1F5F9"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Text Color",
+        "default": "#1E293B"
+      },
+      {
+        "type": "color",
+        "id": "color_text_muted",
+        "label": "Muted Text",
+        "default": "#64748B"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "font_heading",
+        "label": "Heading Font",
+        "default": "montserrat_n4"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_body",
+        "label": "Body Font",
+        "default": "open_sans_n4"
+      }
+    ]
+  },
+  {
+    "name": "Contact",
+    "settings": [
+      {
+        "type": "text",
+        "id": "contact_address",
+        "label": "Address",
+        "default": "中国重庆市"
+      },
+      {
+        "type": "text",
+        "id": "contact_phone",
+        "label": "Phone",
+        "default": "023-67646148"
+      },
+      {
+        "type": "text",
+        "id": "contact_email",
+        "label": "Email",
+        "default": "suli@kunbloom.com"
+      }
+    ]
+  },
+  {
+    "name": "Social",
+    "settings": [
+      {
+        "type": "text",
+        "id": "social_wechat_qr",
+        "label": "WeChat QR Code Image URL"
+      }
+    ]
+  }
+]

@@ -1,0 +1,22 @@
+<!-- Default Page Section -->
+<section style="padding-top:120px;padding-bottom:60px;background:var(--bg-light);">
+  <div class="container">
+    <h1 style="font-family:var(--font-heading);font-size:clamp(28px, 5vw, 48px);font-weight:700;">{{ page.title }}</h1>
+  </div>
+</section>
+
+<section class="section bg-white">
+  <div class="container">
+    <div style="max-width:720px;color:var(--text-muted);line-height:2;font-size:15px;">
+      {{ page.content }}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Default Page",
+  "settings": [],
+  "presets": [{ "name": "Default Page", "category": "Kun Bloom" }]
+}
+{% endschema %}

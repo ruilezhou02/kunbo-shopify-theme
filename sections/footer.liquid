@@ -1,0 +1,53 @@
+<!-- Kun Bloom — Footer Section -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3 class="font-heading">{{ settings.brand_name }}</h3>
+        <p>{{ settings.brand_slogan }}</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>快速导航</h4>
+        <ul>
+          <li><a href="/">首页</a></li>
+          <li><a href="/pages/about">关于我们</a></li>
+          <li><a href="/collections/all">产品中心</a></li>
+          <li><a href="/pages/honors">荣誉资质</a></li>
+          <li><a href="/pages/contact">联系我们</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>联系方式</h4>
+        <ul>
+          <li><span>{{ settings.contact_address }}</span></li>
+          <li><span>{{ settings.contact_phone }}</span></li>
+          <li><span>{{ settings.contact_email }}</span></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>关注我们</h4>
+        <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;">扫码关注官方微信公众号，获取最新产品资讯。</p>
+        {% if settings.social_wechat_qr != blank %}
+          <img src="{{ settings.social_wechat_qr }}" alt="WeChat QR" style="width:100px;height:100px;border:1px solid var(--border);">
+        {% else %}
+          <div style="width:100px;height:100px;background:var(--white);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--text-muted);">二维码</div>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {{ 'now' | date: '%Y' }} {{ settings.brand_name_cn }}. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [],
+  "presets": [{ "name": "Footer" }]
+}
+{% endschema %}
