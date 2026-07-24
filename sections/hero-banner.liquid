@@ -1,29 +1,57 @@
-<!-- Hero Banner — Cinematic, full-bleed, parallax -->
-<section class="hero-section" data-section-type="hero-banner">
+<!-- Hero Banner — Block-based, cinematic full-screen -->
+<section class="hero-section" role="banner" aria-label="Welcome">
   <div class="hero-bg" data-parallax>
     {% if section.settings.hero_image != blank %}
-      <img src="{{ section.settings.hero_image | img_url: 'master' }}" alt="Kun Bloom Architectural Stone">
+      <img src="{{ section.settings.hero_image | img_url: 'master' }}" alt="{{ section.settings.hero_image.alt | escape }}">
     {% else %}
       <img src="{{ 'hero.jpeg' | asset_url }}" alt="Kun Bloom Architectural Stone">
     {% endif %}
   </div>
   <div class="hero-overlay"></div>
+
   <div class="hero-content">
-    <h1 class="display-xl reveal reveal-delay-1">
-      {{ section.settings.heading_line1 | default: "Premium" }}<br>
-      {{ section.settings.heading_line2 | default: "Quartz Tiles." }}<br>
-      {{ section.settings.heading_line3 | default: "Extraordinary Architectural Aesthetics." }}
-    </h1>
-    <p class="reveal reveal-delay-2">{{ section.settings.subtitle | default: "Over 15 years of expertise in building materials — specializing in high-quality quartz tiles and architectural facade solutions." }}</p>
-    <div class="hero-actions reveal reveal-delay-3">
-      <a href="{{ section.settings.btn1_link | default: "/collections" }}" class="hero-btn hero-btn-primary">{{ section.settings.btn1_text | default: "Explore Products" }}</a>
-      <a href="{{ section.settings.btn2_link | default: "/pages/contact" }}" class="hero-btn hero-btn-outline">{{ section.settings.btn2_text | default: "Contact Us" }}</a>
-    </div>
+    {%- if section.blocks.size > 0 -%}
+      {%- for block in section.blocks -%}
+        {%- assign delay = forloop.index | minus: 1 -%}
+        {%- case block.type -%}
+          {%- when 'heading' -%}
+            <h1 class="display-xl reveal reveal-delay-{{ delay }}" {{ block.shopify_attributes }}>
+              {{ block.settings.text | newline_to_br }}
+            </h1>
+          {%- when 'text' -%}
+            <p class="reveal reveal-delay-{{ delay }}" {{ block.shopify_attributes }}>
+              {{ block.settings.text }}
+            </p>
+          {%- when 'button' -%}
+            {%- if forloop.index == 1 -%}
+              <div class="hero-actions reveal reveal-delay-{{ delay }}" {{ block.shopify_attributes }}>
+            {%- endif -%}
+            <a href="{{ block.settings.link }}" class="hero-btn {% if block.settings.style == 'primary' %}hero-btn-primary{% else %}hero-btn-outline{% endif %}">
+              {{ block.settings.label }}
+            </a>
+        {%- endcase -%}
+      {%- endfor -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'button' and forloop.last -%}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    {%- else -%}
+      <h1 class="display-xl reveal reveal-delay-1">Premium<br>Quartz Tiles.<br>Extraordinary Architectural Aesthetics.</h1>
+      <p class="reveal reveal-delay-2">Over 15 years of expertise in building materials — specializing in high-quality quartz tiles and architectural facade solutions.</p>
+      <div class="hero-actions reveal reveal-delay-3">
+        <a href="/collections" class="hero-btn hero-btn-primary">Explore Products</a>
+        <a href="/pages/contact" class="hero-btn hero-btn-outline">Contact Us</a>
+      </div>
+    {%- endif -%}
   </div>
+
+  {% if section.settings.show_scroll_indicator %}
   <div class="hero-scroll-indicator">
     <div class="hero-scroll-line"></div>
-    <span>{{ section.settings.scroll_text | default: "Scroll" }}</span>
+    <span>{{ section.settings.scroll_text }}</span>
   </div>
+  {% endif %}
 </section>
 
 {% schema %}
@@ -33,63 +61,85 @@
     {
       "type": "image_picker",
       "id": "hero_image",
-      "label": "Background Image"
+      "label": "Hero Background Image"
     },
     {
-      "type": "text",
-      "id": "heading_line1",
-      "label": "Heading — Line 1",
-      "default": "Premium"
-    },
-    {
-      "type": "text",
-      "id": "heading_line2",
-      "label": "Heading — Line 2",
-      "default": "Quartz Tiles."
-    },
-    {
-      "type": "text",
-      "id": "heading_line3",
-      "label": "Heading — Line 3",
-      "default": "Extraordinary Architectural Aesthetics."
-    },
-    {
-      "type": "textarea",
-      "id": "subtitle",
-      "label": "Subtitle",
-      "default": "Over 15 years of expertise in building materials — specializing in high-quality quartz tiles and architectural facade solutions."
-    },
-    {
-      "type": "text",
-      "id": "btn1_text",
-      "label": "Button 1 — Text",
-      "default": "Explore Products"
-    },
-    {
-      "type": "url",
-      "id": "btn1_link",
-      "label": "Button 1 — Link",
-      "default": "/collections"
-    },
-    {
-      "type": "text",
-      "id": "btn2_text",
-      "label": "Button 2 — Text",
-      "default": "Contact Us"
-    },
-    {
-      "type": "url",
-      "id": "btn2_link",
-      "label": "Button 2 — Link",
-      "default": "/pages/contact"
+      "type": "checkbox",
+      "id": "show_scroll_indicator",
+      "label": "Show scroll indicator",
+      "default": true
     },
     {
       "type": "text",
       "id": "scroll_text",
-      "label": "Scroll Indicator Text",
+      "label": "Scroll indicator text",
       "default": "Scroll"
     }
   ],
-  "presets": [{ "name": "Hero Banner" }]
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "Heading",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Heading",
+          "default": "Premium Quartz Tiles.\nExtraordinary Architectural Aesthetics."
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Subtitle",
+          "default": "Over 15 years of expertise in building materials — specializing in high-quality quartz tiles and architectural facade solutions."
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Button label",
+          "default": "Explore Products"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Button link",
+          "default": "/collections"
+        },
+        {
+          "type": "select",
+          "id": "style",
+          "label": "Style",
+          "options": [
+            { "value": "primary", "label": "Primary" },
+            { "value": "outline", "label": "Outline" }
+          ],
+          "default": "primary"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Banner",
+      "blocks": [
+        { "type": "heading" },
+        { "type": "text" },
+        { "type": "button" },
+        { "type": "button", "settings": { "label": "Contact Us", "link": "/pages/contact", "style": "outline" } }
+      ]
+    }
+  ]
 }
 {% endschema %}

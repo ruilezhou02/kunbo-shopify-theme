@@ -30,14 +30,7 @@
         "type": "hero-banner",
         "settings": {
           "hero_image": "shopify://shop_images/391784865319_.pic_hd.png",
-          "heading_line1": "Premium",
-          "heading_line2": "Quartz Tiles.",
-          "heading_line3": "Extraordinary Architectural Aesthetics.",
-          "subtitle": "Over 15 years of expertise in building materials — specializing in high-quality quartz tiles and architectural facade solutions.",
-          "btn1_text": "Explore Products",
-          "btn1_link": "/collections",
-          "btn2_text": "Contact Us",
-          "btn2_link": "/pages/contact",
+          "show_scroll_indicator": true,
           "scroll_text": "Scroll"
         }
       },
@@ -53,8 +46,8 @@
         "type": "product-showcase",
         "settings": {
           "eyebrow": "Core Materials",
-          "heading_line1": "Three surfaces.",
-          "heading_line2": "Infinite possibility.",
+          "heading_line1": "Our Collections",
+          "heading_line2": "With infinite possibility.",
           "view_all_text": "View All Products",
           "view_all_link": "shopify://collections/all",
           "product_image_1": "shopify://shop_images/311784878396_.pic_hd.png",
