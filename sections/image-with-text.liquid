@@ -1,0 +1,113 @@
+<!-- Image with Text — Block-based -->
+<section class="image-with-text" data-section-type="image-with-text">
+  <div class="image-with-text__grid image-with-text__grid--{{ section.settings.layout }}">
+    <div class="image-with-text__media reveal-img">
+      {%- if section.settings.image != blank -%}
+        <img src="{{ section.settings.image | img_url: '1200x' }}"
+             alt="{{ section.settings.image.alt | escape }}"
+             loading="lazy"
+             width="1200"
+             height="{% if section.settings.image.height %}{{ section.settings.image.height | divided_by: section.settings.image.width | times: 1200 | round }}{% else %}900{% endif %}">
+      {%- else -%}
+        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+      {%- endif -%}
+    </div>
+
+    <div class="image-with-text__content">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'heading' -%}
+            <h2 class="display-md reveal reveal-delay-1" {{ block.shopify_attributes }}>
+              {{ block.settings.text }}
+            </h2>
+          {%- when 'text' -%}
+            <div class="body-lg reveal reveal-delay-2" {{ block.shopify_attributes }}>
+              {{ block.settings.text }}
+            </div>
+          {%- when 'button' -%}
+            <a href="{{ block.settings.link }}"
+               class="hero-btn hero-btn-primary reveal reveal-delay-3"
+               {{ block.shopify_attributes }}>
+              {{ block.settings.label }}
+            </a>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Image with Text",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "options": [
+        { "value": "left", "label": "Image left" },
+        { "value": "right", "label": "Image right" }
+      ],
+      "default": "left"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "Heading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Heading",
+          "default": "Talk about your brand"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Share information about your brand with your customers.</p>"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Button label",
+          "default": "Button label"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Button link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with Text",
+      "blocks": [
+        { "type": "heading" },
+        { "type": "text" },
+        { "type": "button" }
+      ]
+    }
+  ]
+}
+{% endschema %}

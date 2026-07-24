@@ -1,0 +1,123 @@
+<!-- Featured Collection — Block-based -->
+<section class="featured-collection" data-section-type="featured-collection">
+  <div class="section-container">
+    {%- if section.settings.title != blank -%}
+      <h2 class="display-md featured-collection__title reveal">{{ section.settings.title }}</h2>
+    {%- endif -%}
+
+    {%- liquid
+      assign collection = collections[section.settings.collection]
+      assign products_to_show = section.settings.products_to_show
+    -%}
+
+    {%- if collection != blank -%}
+      <div class="featured-collection__grid">
+        {%- for product in collection.products limit: products_to_show -%}
+          <a href="{{ product.url }}" class="product-card reveal reveal-delay-{{ forloop.index | modulo: 3 | plus: 1 }}">
+            <div class="product-card__media">
+              {%- if product.featured_image -%}
+                <img src="{{ product.featured_image | img_url: '600x' }}"
+                     alt="{{ product.featured_image.alt | escape }}"
+                     loading="lazy"
+                     width="600"
+                     height="750">
+              {%- else -%}
+                {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+              {%- endif -%}
+
+              {%- if product.compare_at_price > product.price -%}
+                <span class="product-card__badge">Sale</span>
+              {%- endif -%}
+            </div>
+            <div class="product-card__info">
+              <h3>{{ product.title }}</h3>
+              <div class="product-card__price">
+                {%- if product.compare_at_price > product.price -%}
+                  <span class="product-card__price--sale">{{ product.price | money }}</span>
+                  <s>{{ product.compare_at_price | money }}</s>
+                {%- else -%}
+                  <span>{{ product.price | money }}</span>
+                {%- endif -%}
+              </div>
+            </div>
+          </a>
+        {%- else -%}
+          {%- for i in (1..products_to_show) -%}
+            <div class="product-card reveal reveal-delay-{{ forloop.index | modulo: 3 | plus: 1 }}">
+              <div class="product-card__media">
+                {{ 'product-' | append: i | placeholder_svg_tag: 'placeholder-svg' }}
+              </div>
+              <div class="product-card__info">
+                <h3>Example Product {{ i }}</h3>
+                <div class="product-card__price">
+                  <span>{{ 1999 | money }}</span>
+                </div>
+              </div>
+            </div>
+          {%- endfor -%}
+        {%- endfor -%}
+      </div>
+
+      {%- if section.settings.show_view_all and collection.url != blank -%}
+        <div class="featured-collection__footer reveal">
+          <a href="{{ collection.url }}" class="link-underline">View all &rarr;</a>
+        </div>
+      {%- endif -%}
+    {%- else -%}
+      <div class="featured-collection__grid">
+        {%- for i in (1..products_to_show) -%}
+          <div class="product-card reveal reveal-delay-{{ forloop.index | modulo: 3 | plus: 1 }}">
+            <div class="product-card__media">
+              {{ 'product-' | append: i | placeholder_svg_tag: 'placeholder-svg' }}
+            </div>
+            <div class="product-card__info">
+              <h3>Example Product {{ i }}</h3>
+              <div class="product-card__price">
+                <span>{{ 1999 | money }}</span>
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured Collection",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Featured Collection"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "label": "Products to show",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_all",
+      "label": "Show 'View all' link",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Collection"
+    }
+  ]
+}
+{% endschema %}
