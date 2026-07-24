@@ -648,44 +648,32 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height
 }
 
 /* ============================================================
-   ABOUT US — Block-based section, below stats
+   ABOUT US — Hardcoded block inside stats-grid
    ============================================================ */
-.about-us-section {
+.about-us-block {
   padding: var(--spacing-2xl) 0;
   background: var(--bg);
   border-bottom: 1px solid var(--border);
 }
-.about-us-section .eyebrow {
+.about-us-block .eyebrow {
   margin-bottom: 12px;
 }
-.about-us-section .display-md {
+.about-us-block .display-md {
   margin-bottom: 28px;
   max-width: 700px;
 }
-.about-us-text {
+.about-us-desc p {
   font-size: 15px;
   line-height: 1.8;
   color: var(--text-soft);
-  margin-bottom: 20px;
-  max-width: 720px;
-}
-.about-us-text:last-of-type {
-  margin-bottom: 0;
-}
-.about-us-richtext {
-  font-size: 15px;
-  line-height: 1.8;
-  color: var(--text-soft);
-  max-width: 720px;
-}
-.about-us-richtext p {
   margin-bottom: 16px;
+  max-width: 720px;
 }
-.about-us-richtext p:last-child {
+.about-us-desc p:last-child {
   margin-bottom: 0;
 }
 @media (max-width: 768px) {
-  .about-us-section {
+  .about-us-block {
     padding: var(--spacing-xl) 0;
   }
 }

@@ -68,10 +68,6 @@
         "type": "stats-grid",
         "settings": {}
       },
-      "about-us": {
-        "type": "about-us",
-        "settings": {}
-      },
       "honors-grid": {
         "type": "honors-grid",
         "settings": {}
