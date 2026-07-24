@@ -1,124 +1,41 @@
-<!-- Footer — Block-based -->
+<!-- Footer — Clean, minimal -->
 <footer class="site-footer" role="contentinfo">
   <div class="footer-grid">
-    {%- if section.blocks.size > 0 -%}
-      {%- for block in section.blocks -%}
-        {%- case block.type -%}
-          {%- when 'brand' -%}
-            <div class="footer-brand" {{ block.shopify_attributes }}>
-              <h3>{{ block.settings.heading }}</h3>
-              {% if block.settings.text != blank %}
-                <p>{{ block.settings.text }}</p>
-              {% endif %}
-            </div>
+    <div class="footer-brand">
+      <h3>Kun Bloom</h3>
+      <p>Architectural stone surfaces. Precision-engineered in Chongqing, China. Shipped worldwide.</p>
+    </div>
 
-          {%- when 'menu' -%}
-            <div class="footer-col" {{ block.shopify_attributes }}>
-              <h4>{{ block.settings.heading }}</h4>
-              {%- if block.settings.menu != blank -%}
-                <ul>
-                  {%- for link in linklists[block.settings.menu].links -%}
-                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-                  {%- endfor -%}
-                </ul>
-              {%- else -%}
-                <ul>
-                  <li><a href="/pages/about">About</a></li>
-                  <li><a href="/collections/all">Products</a></li>
-                  <li><a href="/pages/honors">Credentials</a></li>
-                  <li><a href="/pages/contact">Contact</a></li>
-                </ul>
-              {%- endif -%}
-            </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/pages/about">About</a></li>
+        <li><a href="/collections/all">Products</a></li>
+        <li><a href="/pages/honors">Credentials</a></li>
+        <li><a href="/pages/contact">Contact</a></li>
+      </ul>
+    </div>
 
-          {%- when 'text' -%}
-            <div class="footer-col" {{ block.shopify_attributes }}>
-              <h4>{{ block.settings.heading }}</h4>
-              <div class="footer-text">{{ block.settings.text | newline_to_br }}</div>
-            </div>
-        {%- endcase -%}
-      {%- endfor -%}
-    {%- else -%}
-      <div class="footer-brand">
-        <h3>Kun Bloom</h3>
-        <p>Architectural stone surfaces. Precision-engineered in Chongqing, China. Shipped worldwide.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Navigate</h4>
-        <ul>
-          <li><a href="/pages/about">About</a></li>
-          <li><a href="/collections/all">Products</a></li>
-          <li><a href="/pages/honors">Credentials</a></li>
-          <li><a href="/pages/contact">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <div class="footer-text">Chongqing, China<br>023-67646148<br>suli@kunbloom.com</div>
-      </div>
-    {%- endif -%}
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li>Chongqing, China</li>
+        <li>023-67646148</li>
+        <li>suli@kunbloom.com</li>
+      </ul>
+    </div>
   </div>
 
   <div class="footer-bottom">
-    &copy; {{ 'now' | date: '%Y' }} {{ settings.brand_name | default: 'Kun Bloom' }}. All rights reserved.
-    {% if section.settings.show_policy_links %}
-      <div class="footer-policies">
-        {%- for policy in shop.policies -%}
-          <a href="{{ policy.url }}">{{ policy.title }}</a>
-          {% unless forloop.last %}<span>&nbsp;|&nbsp;</span>{% endunless %}
-        {%- endfor -%}
-      </div>
-    {% endif %}
+    &copy; {{ 'now' | date: '%Y' }} Kun Bloom. All rights reserved.
   </div>
 </footer>
 
 {% schema %}
 {
   "name": "Footer",
-  "settings": [
-    {
-      "type": "checkbox",
-      "id": "show_policy_links",
-      "label": "Show policy links",
-      "default": true
-    }
-  ],
-  "blocks": [
-    {
-      "type": "brand",
-      "name": "Brand Info",
-      "limit": 1,
-      "settings": [
-        { "type": "text", "id": "heading", "label": "Brand name", "default": "Kun Bloom" },
-        { "type": "textarea", "id": "text", "label": "Brand description", "default": "Architectural stone surfaces. Precision-engineered in Chongqing, China. Shipped worldwide." }
-      ]
-    },
-    {
-      "type": "menu",
-      "name": "Menu",
-      "settings": [
-        { "type": "text", "id": "heading", "label": "Heading", "default": "Navigate" },
-        { "type": "link_list", "id": "menu", "label": "Menu" }
-      ]
-    },
-    {
-      "type": "text",
-      "name": "Text",
-      "settings": [
-        { "type": "text", "id": "heading", "label": "Heading", "default": "Contact" },
-        { "type": "textarea", "id": "text", "label": "Text", "default": "Chongqing, China\n023-67646148\nsuli@kunbloom.com" }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Footer",
-      "blocks": [
-        { "type": "brand" },
-        { "type": "menu", "settings": { "heading": "Navigate" } },
-        { "type": "text", "settings": { "heading": "Contact", "text": "Chongqing, China\n023-67646148\nsuli@kunbloom.com" } }
-      ]
-    }
-  ]
+  "settings": [],
+  "presets": [{ "name": "Footer" }]
 }
 {% endschema %}

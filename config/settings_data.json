@@ -28,27 +28,16 @@
       },
       "hero-banner": {
         "type": "hero-banner",
-        "blocks": {
-          "heading_tt6nN7": {
-            "type": "heading",
-            "settings": {
-              "text": "Premium \nQuartz Tiles.\nExtraordinary Architectural Aesthetics."
-            }
-          },
-          "text_zifPyq": {
-            "type": "text",
-            "settings": {
-              "text": "Over 15 years of expertise in building materials — specializing in high-quality quartz tiles and architectural facade solutions."
-            }
-          }
-        },
-        "block_order": [
-          "heading_tt6nN7",
-          "text_zifPyq"
-        ],
         "settings": {
           "hero_image": "shopify://shop_images/391784865319_.pic_hd.png",
-          "show_scroll_indicator": true,
+          "heading_line1": "Premium",
+          "heading_line2": "Quartz Tiles.",
+          "heading_line3": "Extraordinary Architectural Aesthetics.",
+          "subtitle": "Over 15 years of expertise in building materials — specializing in high-quality quartz tiles and architectural facade solutions.",
+          "btn1_text": "Explore Products",
+          "btn1_link": "/collections",
+          "btn2_text": "Contact Us",
+          "btn2_link": "/pages/contact",
           "scroll_text": "Scroll"
         }
       },
@@ -62,48 +51,24 @@
       },
       "product-showcase": {
         "type": "product-showcase",
-        "blocks": {
-          "product_card_9R7LU6": {
-            "type": "product_card",
-            "settings": {
-              "image": "shopify://shop_images/311784878396_.pic_hd.png",
-              "meta": "Flagship",
-              "title": "Premium Quartz Porcelain",
-              "description": "High-density, low-porosity tiles engineered for facades, plazas, and high-traffic landscapes.",
-              "link": ""
-            }
-          },
-          "product_card_y9qfYR": {
-            "type": "product_card",
-            "settings": {
-              "image": "shopify://shop_images/WPS_Photo_1.png",
-              "meta": "Flagship",
-              "title": "Premium Quartz Porcelain",
-              "description": "High-density, low-porosity tiles engineered for facades, plazas, and high-traffic landscapes.",
-              "link": ""
-            }
-          },
-          "product_card_hV3gXT": {
-            "type": "product_card",
-            "settings": {
-              "image": "shopify://shop_images/WechatIMG29_1.jpg",
-              "meta": "Flagship",
-              "title": "Premium Quartz Porcelain",
-              "description": "High-density, low-porosity tiles engineered for facades, plazas, and high-traffic landscapes.",
-              "link": ""
-            }
-          }
-        },
-        "block_order": [
-          "product_card_9R7LU6",
-          "product_card_y9qfYR",
-          "product_card_hV3gXT"
-        ],
         "settings": {
           "eyebrow": "Core Materials",
-          "heading": "Three surfaces. Infinite possibility.",
+          "heading_line1": "Three surfaces.",
+          "heading_line2": "Infinite possibility.",
           "view_all_text": "View All Products",
-          "view_all_link": "shopify://collections/all"
+          "view_all_link": "shopify://collections/all",
+          "product_image_1": "shopify://shop_images/311784878396_.pic_hd.png",
+          "product_1_meta": "Flagship",
+          "product_1_title": "Premium Quartz Porcelain",
+          "product_1_desc": "High-density, low-porosity tiles engineered for facades, plazas, and high-traffic landscapes. Frost-proof and UV-stable.",
+          "product_image_2": "shopify://shop_images/WPS_Photo_1.png",
+          "product_2_meta": "Architectural",
+          "product_2_title": "Dry-Hang Cladding System",
+          "product_2_desc": "Mechanical fixed facade panels. Lightweight, ventilated, earthquake-resistant. Specified for commercial towers and civic buildings.",
+          "product_image_3": "shopify://shop_images/WechatIMG29_1.jpg",
+          "product_3_meta": "Heavy-Duty",
+          "product_3_title": "Landscape Pavers",
+          "product_3_desc": "20–30mm thick. 45,000N breaking strength. Designed for vehicular loading, pool decks, and municipal plazas."
         }
       },
       "stats-grid": {
@@ -120,29 +85,7 @@
       },
       "footer": {
         "type": "footer",
-        "blocks": {
-          "text_jNcPDn": {
-            "type": "text",
-            "settings": {
-              "heading": "Contact",
-              "text": "Chongqing, China\n023-67646148\nsuli@kunbloom.com"
-            }
-          },
-          "brand_3RwFcb": {
-            "type": "brand",
-            "settings": {
-              "heading": "Kun Bloom",
-              "text": "Architectural stone surfaces. Precision-engineered in Chongqing, China. Shipped worldwide."
-            }
-          }
-        },
-        "block_order": [
-          "text_jNcPDn",
-          "brand_3RwFcb"
-        ],
-        "settings": {
-          "show_policy_links": true
-        }
+        "settings": {}
       }
     },
     "content_for_index": []
