@@ -1,12 +1,12 @@
-<!-- Honors Strip — Scrolling certification showcase -->
+<!-- Honors — Auto-scrolling certification showcase -->
 <section class="honors-strip" data-section-type="honors-grid">
   <div class="container-wide">
     <p class="eyebrow reveal" style="text-align:center;">Credentials</p>
-    <h2 class="display-md reveal reveal-delay-1" style="text-align:center; margin-bottom: var(--spacing-lg);">Certified at every level.</h2>
+    <h2 class="display-md reveal reveal-delay-1" style="text-align:center;">Certified at every level.</h2>
   </div>
 
-  <div class="honors-scroll" style="max-width: var(--max-width); margin: 0 auto; padding: 0 var(--spacing-md);">
-    <div class="honor-card reveal">
+  <div class="honors-track">
+    <div class="honor-card">
       {% if section.settings.cert_image_1 != blank %}
         <img src="{{ section.settings.cert_image_1 | img_url: '400x' }}" alt="ISO 9001">
       {% else %}
@@ -14,7 +14,7 @@
       {% endif %}
       <h4>ISO 9001<br>Quality Management</h4>
     </div>
-    <div class="honor-card reveal reveal-delay-1">
+    <div class="honor-card">
       {% if section.settings.cert_image_2 != blank %}
         <img src="{{ section.settings.cert_image_2 | img_url: '400x' }}" alt="Environmental Management">
       {% else %}
@@ -22,7 +22,7 @@
       {% endif %}
       <h4>ISO 14001<br>Environmental</h4>
     </div>
-    <div class="honor-card reveal reveal-delay-2">
+    <div class="honor-card">
       {% if section.settings.cert_image_3 != blank %}
         <img src="{{ section.settings.cert_image_3 | img_url: '400x' }}" alt="Enterprise Credit">
       {% else %}
@@ -30,7 +30,7 @@
       {% endif %}
       <h4>AAA Enterprise<br>Credit Rating</h4>
     </div>
-    <div class="honor-card reveal reveal-delay-3">
+    <div class="honor-card">
       {% if section.settings.cert_image_4 != blank %}
         <img src="{{ section.settings.cert_image_4 | img_url: '400x' }}" alt="Integrity">
       {% else %}
@@ -38,7 +38,7 @@
       {% endif %}
       <h4>Integrity<br>Demonstration Unit</h4>
     </div>
-    <div class="honor-card reveal reveal-delay-4">
+    <div class="honor-card">
       {% if section.settings.cert_image_5 != blank %}
         <img src="{{ section.settings.cert_image_5 | img_url: '400x' }}" alt="Quality Service">
       {% else %}
@@ -46,7 +46,7 @@
       {% endif %}
       <h4>Quality Service<br>Integrity Enterprise</h4>
     </div>
-    <div class="honor-card reveal">
+    <div class="honor-card">
       {% if section.settings.cert_image_6 != blank %}
         <img src="{{ section.settings.cert_image_6 | img_url: '400x' }}" alt="Contract">
       {% else %}
@@ -56,7 +56,7 @@
     </div>
   </div>
 
-  <div style="text-align:center; margin-top: var(--spacing-md);">
+  <div style="text-align:center; margin-top: var(--spacing-lg);">
     <a href="/pages/honors" class="link-underline reveal">View All Credentials</a>
   </div>
 </section>
