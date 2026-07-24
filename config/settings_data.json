@@ -28,8 +28,28 @@
       },
       "hero-banner": {
         "type": "hero-banner",
+        "blocks": {
+          "heading_tt6nN7": {
+            "type": "heading",
+            "settings": {
+              "text": "Premium \nQuartz Tiles.\nExtraordinary Architectural Aesthetics."
+            }
+          },
+          "text_zifPyq": {
+            "type": "text",
+            "settings": {
+              "text": "Over 15 years of expertise in building materials — specializing in high-quality quartz tiles and architectural facade solutions."
+            }
+          }
+        },
+        "block_order": [
+          "heading_tt6nN7",
+          "text_zifPyq"
+        ],
         "settings": {
-          "hero_image": "shopify://shop_images/391784865319_.pic_hd.png"
+          "hero_image": "shopify://shop_images/391784865319_.pic_hd.png",
+          "show_scroll_indicator": true,
+          "scroll_text": "Scroll"
         }
       },
       "about-preview": {
@@ -44,22 +64,9 @@
         "type": "product-showcase",
         "settings": {
           "eyebrow": "Core Materials",
-          "heading_line1": "Three surfaces.",
-          "heading_line2": "Infinite possibility.",
+          "heading": "Three surfaces. Infinite possibility.",
           "view_all_text": "View All Products",
-          "view_all_link": "shopify://collections/all",
-          "product_image_1": "shopify://shop_images/WechatIMG29_1.jpg",
-          "product_1_meta": "Flagship",
-          "product_1_title": "Premium Quartz Porcelain",
-          "product_1_desc": "High-density, low-porosity tiles engineered for facades, plazas, and high-traffic landscapes. Frost-proof and UV-stable.",
-          "product_image_2": "shopify://shop_images/WPS_Photo_1.png",
-          "product_2_meta": "Architectural",
-          "product_2_title": "Dry-Hang Cladding System",
-          "product_2_desc": "Mechanical fixed facade panels. Lightweight, ventilated, earthquake-resistant. Specified for commercial towers and civic buildings.",
-          "product_image_3": "shopify://shop_images/WPS_Photo_2.png",
-          "product_3_meta": "Heavy-Duty",
-          "product_3_title": "Landscape Pavers",
-          "product_3_desc": "20–30mm thick. 45,000N breaking strength. Designed for vehicular loading, pool decks, and municipal plazas."
+          "view_all_link": "shopify://collections/all"
         }
       },
       "stats-grid": {
@@ -76,7 +83,9 @@
       },
       "footer": {
         "type": "footer",
-        "settings": {}
+        "settings": {
+          "show_policy_links": true
+        }
       }
     },
     "content_for_index": []
