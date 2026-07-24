@@ -62,6 +62,40 @@
       },
       "product-showcase": {
         "type": "product-showcase",
+        "blocks": {
+          "product_card_LDiMBV": {
+            "type": "product_card",
+            "settings": {
+              "meta": "Flagship",
+              "title": "Premium Quartz Porcelain",
+              "description": "High-density, low-porosity tiles engineered for facades, plazas, and high-traffic landscapes.",
+              "link": ""
+            }
+          },
+          "product_card_rhprac": {
+            "type": "product_card",
+            "settings": {
+              "meta": "Flagship",
+              "title": "Premium Quartz Porcelain",
+              "description": "High-density, low-porosity tiles engineered for facades, plazas, and high-traffic landscapes.",
+              "link": ""
+            }
+          },
+          "product_card_zNQzTm": {
+            "type": "product_card",
+            "settings": {
+              "meta": "Flagship",
+              "title": "Premium Quartz Porcelain",
+              "description": "High-density, low-porosity tiles engineered for facades, plazas, and high-traffic landscapes.",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "product_card_LDiMBV",
+          "product_card_rhprac",
+          "product_card_zNQzTm"
+        ],
         "settings": {
           "eyebrow": "Core Materials",
           "heading": "Three surfaces. Infinite possibility.",
@@ -83,6 +117,26 @@
       },
       "footer": {
         "type": "footer",
+        "blocks": {
+          "text_jNcPDn": {
+            "type": "text",
+            "settings": {
+              "heading": "Contact",
+              "text": "Chongqing, China\n023-67646148\nsuli@kunbloom.com"
+            }
+          },
+          "brand_3RwFcb": {
+            "type": "brand",
+            "settings": {
+              "heading": "Kun Bloom",
+              "text": "Architectural stone surfaces. Precision-engineered in Chongqing, China. Shipped worldwide."
+            }
+          }
+        },
+        "block_order": [
+          "text_jNcPDn",
+          "brand_3RwFcb"
+        ],
         "settings": {
           "show_policy_links": true
         }
