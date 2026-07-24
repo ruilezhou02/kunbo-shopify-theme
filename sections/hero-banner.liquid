@@ -8,15 +8,15 @@
     {% endif %}
   </div>
   <div class="hero-content">
-    <h1 class="display-xl reveal reveal-delay-1">Premium Tiles.<br>Quartz Extraordinary Architectural Aesthetics.</h1>
-    <p class="reveal reveal-delay-2">Over 15 years of expertise in building materials — specializing in high-quality quartz tiles and architectural facade solutions.</p>
+    <h1 class="display-xl reveal reveal-delay-1">{{ section.settings.heading_line1 }}<br>{{ section.settings.heading_line2 }}</h1>
+    <p class="reveal reveal-delay-2">{{ section.settings.subtitle }}</p>
     <div class="hero-actions reveal reveal-delay-3">
-      <a href="/collections" class="hero-btn hero-btn-primary">Explore Products</a>
-      <a href="/pages/contact" class="hero-btn hero-btn-outline">Contact Us</a>
+      <a href="{{ section.settings.btn1_link }}" class="hero-btn hero-btn-primary">{{ section.settings.btn1_text }}</a>
+      <a href="{{ section.settings.btn2_link }}" class="hero-btn hero-btn-outline">{{ section.settings.btn2_text }}</a>
     </div>
   </div>
   <div class="hero-scroll-indicator">
-    <span>Scroll</span>
+    <span>{{ section.settings.scroll_text }}</span>
     <div class="hero-scroll-line"></div>
   </div>
 </section>
@@ -28,7 +28,55 @@
     {
       "type": "image_picker",
       "id": "hero_image",
-      "label": "Hero Background Image"
+      "label": "Background Image"
+    },
+    {
+      "type": "text",
+      "id": "heading_line1",
+      "label": "Heading — Line 1",
+      "default": "Premium Tiles."
+    },
+    {
+      "type": "text",
+      "id": "heading_line2",
+      "label": "Heading — Line 2",
+      "default": "Quartz Extraordinary Architectural Aesthetics."
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Over 15 years of expertise in building materials — specializing in high-quality quartz tiles and architectural facade solutions."
+    },
+    {
+      "type": "text",
+      "id": "btn1_text",
+      "label": "Button 1 — Text",
+      "default": "Explore Products"
+    },
+    {
+      "type": "url",
+      "id": "btn1_link",
+      "label": "Button 1 — Link",
+      "default": "/collections"
+    },
+    {
+      "type": "text",
+      "id": "btn2_text",
+      "label": "Button 2 — Text",
+      "default": "Contact Us"
+    },
+    {
+      "type": "url",
+      "id": "btn2_link",
+      "label": "Button 2 — Link",
+      "default": "/pages/contact"
+    },
+    {
+      "type": "text",
+      "id": "scroll_text",
+      "label": "Scroll Indicator Text",
+      "default": "Scroll"
     }
   ],
   "presets": [{ "name": "Hero Banner" }]

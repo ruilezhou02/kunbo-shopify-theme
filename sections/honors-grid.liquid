@@ -1,8 +1,8 @@
 <!-- Honors — Auto-scrolling certification showcase -->
 <section class="honors-strip" data-section-type="honors-grid">
   <div class="container-wide">
-    <p class="eyebrow reveal" style="text-align:center;">Credentials</p>
-    <h2 class="display-md reveal reveal-delay-1" style="text-align:center;">Certified at every level.</h2>
+    <p class="eyebrow reveal" style="text-align:center;">{{ section.settings.eyebrow }}</p>
+    <h2 class="display-md reveal reveal-delay-1" style="text-align:center;">{{ section.settings.heading }}</h2>
   </div>
 
   <div class="honors-track">
@@ -12,52 +12,52 @@
       {% else %}
         <img src="{{ 'iso9001.jpg' | asset_url }}" alt="ISO 9001">
       {% endif %}
-      <h4>ISO 9001<br>Quality Management</h4>
+      <h4>{{ section.settings.cert_1_title | newline_to_br }}</h4>
     </div>
     <div class="honor-card">
       {% if section.settings.cert_image_2 != blank %}
-        <img src="{{ section.settings.cert_image_2 | img_url: '400x' }}" alt="Environmental Management">
+        <img src="{{ section.settings.cert_image_2 | img_url: '400x' }}" alt="{{ section.settings.cert_2_title | escape }}">
       {% else %}
         <img src="{{ 'env_cert_1.jpg' | asset_url }}" alt="Environmental Management">
       {% endif %}
-      <h4>ISO 14001<br>Environmental</h4>
+      <h4>{{ section.settings.cert_2_title | newline_to_br }}</h4>
     </div>
     <div class="honor-card">
       {% if section.settings.cert_image_3 != blank %}
-        <img src="{{ section.settings.cert_image_3 | img_url: '400x' }}" alt="Enterprise Credit">
+        <img src="{{ section.settings.cert_image_3 | img_url: '400x' }}" alt="{{ section.settings.cert_3_title | escape }}">
       {% else %}
         <img src="{{ 'dm_cert_1.jpg' | asset_url }}" alt="Enterprise Credit">
       {% endif %}
-      <h4>AAA Enterprise<br>Credit Rating</h4>
+      <h4>{{ section.settings.cert_3_title | newline_to_br }}</h4>
     </div>
     <div class="honor-card">
       {% if section.settings.cert_image_4 != blank %}
-        <img src="{{ section.settings.cert_image_4 | img_url: '400x' }}" alt="Integrity">
+        <img src="{{ section.settings.cert_image_4 | img_url: '400x' }}" alt="{{ section.settings.cert_4_title | escape }}">
       {% else %}
         <img src="{{ 'dm_cert_2.jpg' | asset_url }}" alt="Integrity">
       {% endif %}
-      <h4>Integrity<br>Demonstration Unit</h4>
+      <h4>{{ section.settings.cert_4_title | newline_to_br }}</h4>
     </div>
     <div class="honor-card">
       {% if section.settings.cert_image_5 != blank %}
-        <img src="{{ section.settings.cert_image_5 | img_url: '400x' }}" alt="Quality Service">
+        <img src="{{ section.settings.cert_image_5 | img_url: '400x' }}" alt="{{ section.settings.cert_5_title | escape }}">
       {% else %}
         <img src="{{ 'dm_cert_3.jpg' | asset_url }}" alt="Quality Service">
       {% endif %}
-      <h4>Quality Service<br>Integrity Enterprise</h4>
+      <h4>{{ section.settings.cert_5_title | newline_to_br }}</h4>
     </div>
     <div class="honor-card">
       {% if section.settings.cert_image_6 != blank %}
-        <img src="{{ section.settings.cert_image_6 | img_url: '400x' }}" alt="Contract">
+        <img src="{{ section.settings.cert_image_6 | img_url: '400x' }}" alt="{{ section.settings.cert_6_title | escape }}">
       {% else %}
         <img src="{{ 'dm_cert_4.jpg' | asset_url }}" alt="Contract">
       {% endif %}
-      <h4>Contract-Honoring<br>&amp; Promise-Keeping</h4>
+      <h4>{{ section.settings.cert_6_title | newline_to_br }}</h4>
     </div>
   </div>
 
   <div style="text-align:center; margin-top: var(--spacing-lg);">
-    <a href="/pages/honors" class="link-underline reveal">View All Credentials</a>
+    <a href="{{ section.settings.view_all_link }}" class="link-underline reveal">{{ section.settings.view_all_text }}</a>
   </div>
 </section>
 
@@ -66,34 +66,102 @@
   "name": "Honors Grid",
   "settings": [
     {
+      "type": "header",
+      "content": "Section Header"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Credentials"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Certified at every level."
+    },
+    {
+      "type": "text",
+      "id": "view_all_text",
+      "label": "View All — Text",
+      "default": "View All Credentials"
+    },
+    {
+      "type": "url",
+      "id": "view_all_link",
+      "label": "View All — Link",
+      "default": "/pages/honors"
+    },
+    {
+      "type": "header",
+      "content": "Certificate Cards"
+    },
+    {
       "type": "image_picker",
       "id": "cert_image_1",
-      "label": "Certificate 1 — ISO 9001"
+      "label": "Cert 1 — Image"
+    },
+    {
+      "type": "textarea",
+      "id": "cert_1_title",
+      "label": "Cert 1 — Title (line 1\nline 2)",
+      "default": "ISO 9001\nQuality Management"
     },
     {
       "type": "image_picker",
       "id": "cert_image_2",
-      "label": "Certificate 2 — ISO 14001"
+      "label": "Cert 2 — Image"
+    },
+    {
+      "type": "textarea",
+      "id": "cert_2_title",
+      "label": "Cert 2 — Title (line 1\nline 2)",
+      "default": "ISO 14001\nEnvironmental"
     },
     {
       "type": "image_picker",
       "id": "cert_image_3",
-      "label": "Certificate 3 — AAA Enterprise Credit"
+      "label": "Cert 3 — Image"
+    },
+    {
+      "type": "textarea",
+      "id": "cert_3_title",
+      "label": "Cert 3 — Title (line 1\nline 2)",
+      "default": "AAA Enterprise\nCredit Rating"
     },
     {
       "type": "image_picker",
       "id": "cert_image_4",
-      "label": "Certificate 4 — Integrity Unit"
+      "label": "Cert 4 — Image"
+    },
+    {
+      "type": "textarea",
+      "id": "cert_4_title",
+      "label": "Cert 4 — Title (line 1\nline 2)",
+      "default": "Integrity\nDemonstration Unit"
     },
     {
       "type": "image_picker",
       "id": "cert_image_5",
-      "label": "Certificate 5 — Quality Service"
+      "label": "Cert 5 — Image"
+    },
+    {
+      "type": "textarea",
+      "id": "cert_5_title",
+      "label": "Cert 5 — Title (line 1\nline 2)",
+      "default": "Quality Service\nIntegrity Enterprise"
     },
     {
       "type": "image_picker",
       "id": "cert_image_6",
-      "label": "Certificate 6 — Contract-Honoring"
+      "label": "Cert 6 — Image"
+    },
+    {
+      "type": "textarea",
+      "id": "cert_6_title",
+      "label": "Cert 6 — Title (line 1\nline 2)",
+      "default": "Contract-Honoring\n& Promise-Keeping"
     }
   ],
   "presets": [{ "name": "Honors Grid" }]

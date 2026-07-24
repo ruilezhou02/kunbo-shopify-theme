@@ -2,10 +2,10 @@
 <section class="products-section" data-section-type="product-showcase">
   <div class="products-section-header">
     <div>
-      <p class="eyebrow reveal">Core Materials</p>
-      <h2 class="display-md reveal reveal-delay-1">Three surfaces.<br>Infinite possibility.</h2>
+      <p class="eyebrow reveal">{{ section.settings.eyebrow }}</p>
+      <h2 class="display-md reveal reveal-delay-1">{{ section.settings.heading_line1 }}<br>{{ section.settings.heading_line2 }}</h2>
     </div>
-    <a href="/collections/all" class="view-all reveal reveal-delay-2">View All Products &rarr;</a>
+    <a href="{{ section.settings.view_all_link }}" class="view-all reveal reveal-delay-2">{{ section.settings.view_all_text }} &rarr;</a>
   </div>
 
   <div class="products-grid">
@@ -18,9 +18,9 @@
           <img src="{{ 'hero.jpeg' | asset_url }}" alt="Premium Quartz Porcelain" class="placeholder-img">
         {% endif %}
       </div>
-      <p class="product-meta">Flagship</p>
-      <h3>Premium Quartz Porcelain</h3>
-      <p>High-density, low-porosity tiles engineered for facades, plazas, and high-traffic landscapes. Frost-proof and UV-stable.</p>
+      <p class="product-meta">{{ section.settings.product_1_meta }}</p>
+      <h3>{{ section.settings.product_1_title }}</h3>
+      <p>{{ section.settings.product_1_desc }}</p>
     </article>
 
     <article class="product-card reveal reveal-delay-2">
@@ -32,9 +32,9 @@
           <img src="{{ 'facade.webp' | asset_url }}" alt="Dry-Hang Cladding" class="placeholder-img">
         {% endif %}
       </div>
-      <p class="product-meta">Architectural</p>
-      <h3>Dry-Hang Cladding System</h3>
-      <p>Mechanical fixed facade panels. Lightweight, ventilated, earthquake-resistant. Specified for commercial towers and civic buildings.</p>
+      <p class="product-meta">{{ section.settings.product_2_meta }}</p>
+      <h3>{{ section.settings.product_2_title }}</h3>
+      <p>{{ section.settings.product_2_desc }}</p>
     </article>
 
     <article class="product-card reveal reveal-delay-3">
@@ -46,9 +46,9 @@
           <img src="{{ 'hero.jpeg' | asset_url }}" alt="Heavy-Duty Landscape" class="placeholder-img">
         {% endif %}
       </div>
-      <p class="product-meta">Heavy-Duty</p>
-      <h3>Landscape Pavers</h3>
-      <p>20–30mm thick. 45,000N breaking strength. Designed for vehicular loading, pool decks, and municipal plazas.</p>
+      <p class="product-meta">{{ section.settings.product_3_meta }}</p>
+      <h3>{{ section.settings.product_3_title }}</h3>
+      <p>{{ section.settings.product_3_desc }}</p>
     </article>
   </div>
 </section>
@@ -58,19 +58,119 @@
   "name": "Product Showcase",
   "settings": [
     {
+      "type": "header",
+      "content": "Section Header"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Core Materials"
+    },
+    {
+      "type": "text",
+      "id": "heading_line1",
+      "label": "Heading — Line 1",
+      "default": "Three surfaces."
+    },
+    {
+      "type": "text",
+      "id": "heading_line2",
+      "label": "Heading — Line 2",
+      "default": "Infinite possibility."
+    },
+    {
+      "type": "text",
+      "id": "view_all_text",
+      "label": "View All — Text",
+      "default": "View All Products"
+    },
+    {
+      "type": "url",
+      "id": "view_all_link",
+      "label": "View All — Link",
+      "default": "/collections/all"
+    },
+    {
+      "type": "header",
+      "content": "Product 1"
+    },
+    {
       "type": "image_picker",
       "id": "product_image_1",
-      "label": "Product Image — Quartz Porcelain"
+      "label": "Product 1 — Image"
+    },
+    {
+      "type": "text",
+      "id": "product_1_meta",
+      "label": "Product 1 — Meta Tag (e.g. Flagship)",
+      "default": "Flagship"
+    },
+    {
+      "type": "text",
+      "id": "product_1_title",
+      "label": "Product 1 — Title",
+      "default": "Premium Quartz Porcelain"
+    },
+    {
+      "type": "textarea",
+      "id": "product_1_desc",
+      "label": "Product 1 — Description",
+      "default": "High-density, low-porosity tiles engineered for facades, plazas, and high-traffic landscapes. Frost-proof and UV-stable."
+    },
+    {
+      "type": "header",
+      "content": "Product 2"
     },
     {
       "type": "image_picker",
       "id": "product_image_2",
-      "label": "Product Image — Dry-Hang Cladding"
+      "label": "Product 2 — Image"
+    },
+    {
+      "type": "text",
+      "id": "product_2_meta",
+      "label": "Product 2 — Meta Tag (e.g. Architectural)",
+      "default": "Architectural"
+    },
+    {
+      "type": "text",
+      "id": "product_2_title",
+      "label": "Product 2 — Title",
+      "default": "Dry-Hang Cladding System"
+    },
+    {
+      "type": "textarea",
+      "id": "product_2_desc",
+      "label": "Product 2 — Description",
+      "default": "Mechanical fixed facade panels. Lightweight, ventilated, earthquake-resistant. Specified for commercial towers and civic buildings."
+    },
+    {
+      "type": "header",
+      "content": "Product 3"
     },
     {
       "type": "image_picker",
       "id": "product_image_3",
-      "label": "Product Image — Landscape Pavers"
+      "label": "Product 3 — Image"
+    },
+    {
+      "type": "text",
+      "id": "product_3_meta",
+      "label": "Product 3 — Meta Tag (e.g. Heavy-Duty)",
+      "default": "Heavy-Duty"
+    },
+    {
+      "type": "text",
+      "id": "product_3_title",
+      "label": "Product 3 — Title",
+      "default": "Landscape Pavers"
+    },
+    {
+      "type": "textarea",
+      "id": "product_3_desc",
+      "label": "Product 3 — Description",
+      "default": "20–30mm thick. 45,000N breaking strength. Designed for vehicular loading, pool decks, and municipal plazas."
     }
   ],
   "presets": [{ "name": "Product Showcase" }]

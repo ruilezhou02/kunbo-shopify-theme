@@ -2,34 +2,38 @@
 <section data-section-type="about-split">
   <div class="about-split">
     <div class="about-split-image">
-      <img src="{{ 'facade.webp' | asset_url }}" alt="Kun Bloom Facility">
+      {% if section.settings.about_image != blank %}
+        <img src="{{ section.settings.about_image | img_url: '1200x' }}" alt="{{ section.settings.about_image.alt }}">
+      {% else %}
+        <img src="{{ 'facade.webp' | asset_url }}" alt="Kun Bloom Facility">
+      {% endif %}
     </div>
     <div class="about-split-content">
-      <p class="eyebrow reveal">The Studio</p>
-      <h2 class="display-md reveal reveal-delay-1">Material intelligence,<br>shaped by discipline.</h2>
-      <p class="reveal reveal-delay-2">Founded in 2010 with a singular obsession: to elevate architectural ceramics beyond commodity. Our R&amp;D team holds 14 national patents. Our products are installed in over 1,000 projects across China, Southeast Asia, and the Middle East.</p>
-      <p class="reveal reveal-delay-3">We work with architects, not against their vision. Every surface we produce is a collaboration between material science and spatial intent.</p>
-      <a href="/pages/about" class="link-underline reveal reveal-delay-4">Learn About Us</a>
+      <p class="eyebrow reveal">{{ section.settings.eyebrow }}</p>
+      <h2 class="display-md reveal reveal-delay-1">{{ section.settings.heading }}</h2>
+      <p class="reveal reveal-delay-2">{{ section.settings.paragraph_1 }}</p>
+      <p class="reveal reveal-delay-3">{{ section.settings.paragraph_2 }}</p>
+      <a href="{{ section.settings.link_url }}" class="link-underline reveal reveal-delay-4">{{ section.settings.link_text }}</a>
     </div>
   </div>
 
   <!-- Stats Strip with count-up -->
   <div class="stats-strip">
     <div class="stat-item reveal">
-      <div class="stat-number" data-target="15"><span class="stat-suffix">+</span></div>
-      <div class="stat-label">Years of Craft</div>
+      <div class="stat-number" data-target="{{ section.settings.stat_1_number }}">{{ section.settings.stat_1_number }}{% if section.settings.stat_1_suffix != blank %}<span class="stat-suffix">{{ section.settings.stat_1_suffix }}</span>{% endif %}</div>
+      <div class="stat-label">{{ section.settings.stat_1_label }}</div>
     </div>
     <div class="stat-item reveal reveal-delay-1">
-      <div class="stat-number" data-target="14"></div>
-      <div class="stat-label">National Patents</div>
+      <div class="stat-number" data-target="{{ section.settings.stat_2_number }}">{{ section.settings.stat_2_number }}{% if section.settings.stat_2_suffix != blank %}<span class="stat-suffix">{{ section.settings.stat_2_suffix }}</span>{% endif %}</div>
+      <div class="stat-label">{{ section.settings.stat_2_label }}</div>
     </div>
     <div class="stat-item reveal reveal-delay-2">
-      <div class="stat-number" data-target="1000"><span class="stat-suffix">+</span></div>
-      <div class="stat-label">Projects Completed</div>
+      <div class="stat-number" data-target="{{ section.settings.stat_3_number }}">{{ section.settings.stat_3_number }}{% if section.settings.stat_3_suffix != blank %}<span class="stat-suffix">{{ section.settings.stat_3_suffix }}</span>{% endif %}</div>
+      <div class="stat-label">{{ section.settings.stat_3_label }}</div>
     </div>
     <div class="stat-item reveal reveal-delay-3">
-      <div class="stat-number" data-target="iso">ISO</div>
-      <div class="stat-label">Certified Quality</div>
+      <div class="stat-number" data-target="{{ section.settings.stat_4_number }}">{{ section.settings.stat_4_number }}{% if section.settings.stat_4_suffix != blank %}<span class="stat-suffix">{{ section.settings.stat_4_suffix }}</span>{% endif %}</div>
+      <div class="stat-label">{{ section.settings.stat_4_label }}</div>
     </div>
   </div>
 </section>
@@ -37,7 +41,129 @@
 {% schema %}
 {
   "name": "About Split + Stats",
-  "settings": [],
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "about_image",
+      "label": "About Image"
+    },
+    {
+      "type": "header",
+      "content": "Text Content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The Studio"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Material intelligence,\nshaped by discipline."
+    },
+    {
+      "type": "textarea",
+      "id": "paragraph_1",
+      "label": "Paragraph 1",
+      "default": "Founded in 2010 with a singular obsession: to elevate architectural ceramics beyond commodity. Our R&D team holds 14 national patents. Our products are installed in over 1,000 projects across China, Southeast Asia, and the Middle East."
+    },
+    {
+      "type": "textarea",
+      "id": "paragraph_2",
+      "label": "Paragraph 2",
+      "default": "We work with architects, not against their vision. Every surface we produce is a collaboration between material science and spatial intent."
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link Text",
+      "default": "Learn About Us"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link URL",
+      "default": "/pages/about"
+    },
+    {
+      "type": "header",
+      "content": "Stats"
+    },
+    {
+      "type": "text",
+      "id": "stat_1_number",
+      "label": "Stat 1 — Number",
+      "default": "15"
+    },
+    {
+      "type": "text",
+      "id": "stat_1_suffix",
+      "label": "Stat 1 — Suffix (e.g. +)",
+      "default": "+"
+    },
+    {
+      "type": "text",
+      "id": "stat_1_label",
+      "label": "Stat 1 — Label",
+      "default": "Years of Craft"
+    },
+    {
+      "type": "text",
+      "id": "stat_2_number",
+      "label": "Stat 2 — Number",
+      "default": "14"
+    },
+    {
+      "type": "text",
+      "id": "stat_2_suffix",
+      "label": "Stat 2 — Suffix (e.g. +)",
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "stat_2_label",
+      "label": "Stat 2 — Label",
+      "default": "National Patents"
+    },
+    {
+      "type": "text",
+      "id": "stat_3_number",
+      "label": "Stat 3 — Number",
+      "default": "1000"
+    },
+    {
+      "type": "text",
+      "id": "stat_3_suffix",
+      "label": "Stat 3 — Suffix (e.g. +)",
+      "default": "+"
+    },
+    {
+      "type": "text",
+      "id": "stat_3_label",
+      "label": "Stat 3 — Label",
+      "default": "Projects Completed"
+    },
+    {
+      "type": "text",
+      "id": "stat_4_number",
+      "label": "Stat 4 — Number",
+      "default": "ISO"
+    },
+    {
+      "type": "text",
+      "id": "stat_4_suffix",
+      "label": "Stat 4 — Suffix (e.g. +)",
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "stat_4_label",
+      "label": "Stat 4 — Label",
+      "default": "Certified Quality"
+    }
+  ],
   "presets": [{ "name": "About Split + Stats" }]
 }
 {% endschema %}
