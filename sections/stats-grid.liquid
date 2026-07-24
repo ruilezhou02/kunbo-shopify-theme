@@ -32,21 +32,6 @@
       <div class="stat-label">{{ section.settings.stat4_label }}</div>
     </div>
   </div>
-
-  <!-- About Us — Company Profile -->
-  <div class="about-us-profile">
-    <div class="container-narrow">
-      <p class="eyebrow reveal">{{ section.settings.about_eyebrow | default: "About Us" }}</p>
-      <div class="about-us-grid">
-        <div class="about-us-col reveal reveal-delay-1">
-          <p class="body-lg" style="margin-top: 0;">{{ section.settings.about_intro | default: "With over 15 years of expertise in building materials, we are dedicated to providing global clients with high-quality quartz tiles and architectural façade solutions." }}</p>
-        </div>
-        <div class="about-us-col reveal reveal-delay-2">
-          {{ section.settings.about_body | default: "<p>Chongqing Kun Bloom Building Materials Co., Ltd. was founded in 2010 by an industry veteran with deep domain experience. Backed by rigorous R&amp;D, precise process control, and craftsmanship benchmarked against industry-leading standards, Kun Bloom has grown into a competitive brand recognized for both reputation and strength within the quartz tile industry.</p><p>Kun Bloom holds multiple utility model patents (Nos. 2022221017708 and 2022230576778), and all products strictly comply with national standards GB 6566-2010 and GB/T 4100-2015. Our partner production bases, located in China's Foshan and Quanzhou regions, benefit from a complete industrial chain and efficient logistics network — all focused on delivering high-quality wall and floor quartz tile products.</p>" }}
-        </div>
-      </div>
-    </div>
-  </div>
 </section>
 
 {% schema %}
@@ -170,28 +155,6 @@
       "id": "stat4_label",
       "label": "Label",
       "default": "Certified Quality"
-    },
-    {
-      "type": "header",
-      "content": "About Us — Company Profile"
-    },
-    {
-      "type": "text",
-      "id": "about_eyebrow",
-      "label": "About Eyebrow",
-      "default": "About Us"
-    },
-    {
-      "type": "textarea",
-      "id": "about_intro",
-      "label": "About Intro (left column)",
-      "default": "With over 15 years of expertise in building materials, we are dedicated to providing global clients with high-quality quartz tiles and architectural façade solutions."
-    },
-    {
-      "type": "richtext",
-      "id": "about_body",
-      "label": "About Body (right column)",
-      "default": "<p>Chongqing Kun Bloom Building Materials Co., Ltd. was founded in 2010 by an industry veteran with deep domain experience. Backed by rigorous R&D, precise process control, and craftsmanship benchmarked against industry-leading standards, Kun Bloom has grown into a competitive brand recognized for both reputation and strength within the quartz tile industry.</p><p>Kun Bloom holds multiple utility model patents (Nos. 2022221017708 and 2022230576778), and all products strictly comply with national standards GB 6566-2010 and GB/T 4100-2015. Our partner production bases, located in China's Foshan and Quanzhou regions, benefit from a complete industrial chain and efficient logistics network — all focused on delivering high-quality wall and floor quartz tile products.</p>"
     }
   ],
   "presets": [{ "name": "About Split + Stats" }]

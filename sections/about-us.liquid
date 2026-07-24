@@ -1,0 +1,105 @@
+<!-- About Us — Block-based, editable company profile -->
+<section class="about-us-section" data-section-type="about-us">
+  <div class="container-narrow">
+    {%- if section.blocks.size > 0 -%}
+      {%- for block in section.blocks -%}
+        {%- assign delay = forloop.index | minus: 1 -%}
+        {%- case block.type -%}
+          {%- when 'eyebrow' -%}
+            <p class="eyebrow reveal reveal-delay-{{ delay }}" {{ block.shopify_attributes }}>
+              {{ block.settings.text }}
+            </p>
+          {%- when 'heading' -%}
+            <h2 class="display-md reveal reveal-delay-{{ delay }}" {{ block.shopify_attributes }}>
+              {{ block.settings.text }}
+            </h2>
+          {%- when 'text' -%}
+            <div class="about-us-text reveal reveal-delay-{{ delay }}" {{ block.shopify_attributes }}>
+              {{ block.settings.text | newline_to_br }}
+            </div>
+          {%- when 'richtext' -%}
+            <div class="about-us-richtext reveal reveal-delay-{{ delay }}" {{ block.shopify_attributes }}>
+              {{ block.settings.text }}
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    {%- else -%}
+      <!-- Fallback: shows if no blocks added yet -->
+      <p class="eyebrow reveal">About Us</p>
+      <h2 class="display-md reveal reveal-delay-1">With over 15 years of expertise, dedicated to architectural excellence.</h2>
+      <div class="about-us-text reveal reveal-delay-2">
+        Chongqing Kun Bloom Building Materials Co., Ltd. was founded in 2010 by an industry veteran with over 15 years of experience. Since its establishment, the company has focused deeply on the building materials sector. Backed by strong R&D capabilities and outstanding product quality, Kun Bloom has grown into a competitive brand recognized for both reputation and strength within the quartz tile industry.
+      </div>
+      <div class="about-us-text reveal reveal-delay-3">
+        Kun Bloom holds multiple utility model patents (Nos. 2022221017708 and 2022230576778), and all products strictly comply with national standards GB 6566-2010 and GB/T 4100-2015. Our partner production bases, located in China's Foshan and Quanzhou regions, benefit from a complete industrial chain and efficient logistics network — all focused on delivering high-quality wall and floor quartz tile products.
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "About Us",
+  "blocks": [
+    {
+      "type": "eyebrow",
+      "name": "Eyebrow",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Eyebrow",
+          "default": "About Us"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "name": "Heading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Heading",
+          "default": "With over 15 years of expertise, dedicated to architectural excellence."
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Chongqing Kun Bloom Building Materials Co., Ltd. was founded in 2010 by an industry veteran with over 15 years of experience. Since its establishment, the company has focused deeply on the building materials sector. Backed by strong R&D capabilities and outstanding product quality, Kun Bloom has grown into a competitive brand recognized for both reputation and strength within the quartz tile industry."
+        }
+      ]
+    },
+    {
+      "type": "richtext",
+      "name": "Rich Text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Rich Text",
+          "default": "<p>Kun Bloom holds multiple utility model patents (Nos. 2022221017708 and 2022230576778), and all products strictly comply with national standards GB 6566-2010 and GB/T 4100-2015. Our partner production bases, located in China's Foshan and Quanzhou regions, benefit from a complete industrial chain and efficient logistics network — all focused on delivering high-quality wall and floor quartz tile products.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Us",
+      "blocks": [
+        { "type": "eyebrow" },
+        { "type": "heading" },
+        { "type": "text" },
+        { "type": "richtext" }
+      ]
+    }
+  ]
+}
+{% endschema %}
