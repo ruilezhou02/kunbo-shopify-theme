@@ -63,7 +63,7 @@
       "product-showcase": {
         "type": "product-showcase",
         "blocks": {
-          "product_card_LDiMBV": {
+          "product_card_9R7LU6": {
             "type": "product_card",
             "settings": {
               "meta": "Flagship",
@@ -72,18 +72,20 @@
               "link": ""
             }
           },
-          "product_card_rhprac": {
+          "product_card_y9qfYR": {
             "type": "product_card",
             "settings": {
+              "image": "shopify://shop_images/WPS_Photo_1.png",
               "meta": "Flagship",
               "title": "Premium Quartz Porcelain",
               "description": "High-density, low-porosity tiles engineered for facades, plazas, and high-traffic landscapes.",
               "link": ""
             }
           },
-          "product_card_zNQzTm": {
+          "product_card_hV3gXT": {
             "type": "product_card",
             "settings": {
+              "image": "shopify://shop_images/WechatIMG29_1.jpg",
               "meta": "Flagship",
               "title": "Premium Quartz Porcelain",
               "description": "High-density, low-porosity tiles engineered for facades, plazas, and high-traffic landscapes.",
@@ -92,9 +94,9 @@
           }
         },
         "block_order": [
-          "product_card_LDiMBV",
-          "product_card_rhprac",
-          "product_card_zNQzTm"
+          "product_card_9R7LU6",
+          "product_card_y9qfYR",
+          "product_card_hV3gXT"
         ],
         "settings": {
           "eyebrow": "Core Materials",
