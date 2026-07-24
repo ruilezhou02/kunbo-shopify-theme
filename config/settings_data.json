@@ -28,18 +28,38 @@
       },
       "hero-banner": {
         "type": "hero-banner",
-        "settings": {}
+        "settings": {
+          "hero_image": "shopify://shop_images/391784865319_.pic_hd.png"
+        }
       },
       "about-preview": {
         "type": "about-preview",
-        "settings": {}
+        "settings": {
+          "eyebrow": "Our Philosophy",
+          "heading": "We don't manufacture tiles.\nWe compose surfaces that define space.",
+          "body_text": "Every slab of Kun Bloom quartz porcelain carries 15 years of material science, tested across thousands of architectural projects. Understated. Engineered. Built to outlast trends."
+        }
       },
       "product-showcase": {
         "type": "product-showcase",
         "settings": {
+          "eyebrow": "Core Materials",
+          "heading_line1": "Three surfaces.",
+          "heading_line2": "Infinite possibility.",
+          "view_all_text": "View All Products",
+          "view_all_link": "shopify://collections/all",
           "product_image_1": "shopify://shop_images/WechatIMG29_1.jpg",
+          "product_1_meta": "Flagship",
+          "product_1_title": "Premium Quartz Porcelain",
+          "product_1_desc": "High-density, low-porosity tiles engineered for facades, plazas, and high-traffic landscapes. Frost-proof and UV-stable.",
           "product_image_2": "shopify://shop_images/WPS_Photo_1.png",
-          "product_image_3": "shopify://shop_images/WPS_Photo_2.png"
+          "product_2_meta": "Architectural",
+          "product_2_title": "Dry-Hang Cladding System",
+          "product_2_desc": "Mechanical fixed facade panels. Lightweight, ventilated, earthquake-resistant. Specified for commercial towers and civic buildings.",
+          "product_image_3": "shopify://shop_images/WPS_Photo_2.png",
+          "product_3_meta": "Heavy-Duty",
+          "product_3_title": "Landscape Pavers",
+          "product_3_desc": "20–30mm thick. 45,000N breaking strength. Designed for vehicular loading, pool decks, and municipal plazas."
         }
       },
       "stats-grid": {

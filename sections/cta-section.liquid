@@ -1,46 +1,15 @@
 <!-- CTA — Dark, atmospheric, cinematic -->
 <section class="cta-section" data-section-type="cta-section">
-  <p class="eyebrow reveal">{{ section.settings.eyebrow }}</p>
-  <h2 class="display-lg reveal reveal-delay-1">{{ section.settings.heading }}</h2>
-  <p class="reveal reveal-delay-2">{{ section.settings.body_text }}</p>
-  <a href="{{ section.settings.btn_link }}" class="cta-link reveal reveal-delay-3">{{ section.settings.btn_text }}</a>
+  <p class="eyebrow reveal">Collaborate</p>
+  <h2 class="display-lg reveal reveal-delay-1">Begin a conversation<br>about your next project.</h2>
+  <p class="reveal reveal-delay-2">We work directly with architects, developers, and design studios. Share your vision. We'll find the surface.</p>
+  <a href="/pages/contact" class="cta-link reveal reveal-delay-3">Get in Touch</a>
 </section>
 
 {% schema %}
 {
   "name": "CTA Section",
-  "settings": [
-    {
-      "type": "text",
-      "id": "eyebrow",
-      "label": "Eyebrow",
-      "default": "Collaborate"
-    },
-    {
-      "type": "textarea",
-      "id": "heading",
-      "label": "Heading",
-      "default": "Begin a conversation\nabout your next project."
-    },
-    {
-      "type": "textarea",
-      "id": "body_text",
-      "label": "Body Text",
-      "default": "We work directly with architects, developers, and design studios. Share your vision. We'll find the surface."
-    },
-    {
-      "type": "text",
-      "id": "btn_text",
-      "label": "Button Text",
-      "default": "Get in Touch"
-    },
-    {
-      "type": "url",
-      "id": "btn_link",
-      "label": "Button Link",
-      "default": "/pages/contact"
-    }
-  ],
+  "settings": [],
   "presets": [{ "name": "CTA Section" }]
 }
 {% endschema %}
