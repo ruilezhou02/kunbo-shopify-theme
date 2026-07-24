@@ -648,6 +648,39 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height
 }
 
 /* ============================================================
+   ABOUT US PROFILE — Below Stats
+   ============================================================ */
+.about-us-profile {
+  padding: var(--spacing-2xl) 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+.about-us-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 60px;
+  margin-top: 36px;
+}
+@media (max-width: 768px) {
+  .about-us-grid { grid-template-columns: 1fr; gap: 28px; }
+  .about-us-profile { padding: var(--spacing-xl) 0; }
+}
+.about-us-col p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--text-soft);
+  margin-bottom: 18px;
+}
+.about-us-col p:last-child { margin-bottom: 0; }
+.about-us-col .body-lg {
+  font-family: var(--font-display);
+  font-size: 21px;
+  line-height: 1.45;
+  color: var(--text);
+  font-weight: 400;
+}
+
+/* ============================================================
    HONORS — Auto-scroll carousel, refined
    ============================================================ */
 .honors-strip, .honors-section {
