@@ -1,41 +1,62 @@
 <!-- Footer — Block-based -->
 <footer class="site-footer" role="contentinfo">
   <div class="footer-grid">
-    {%- for block in section.blocks -%}
-      {%- case block.type -%}
-        {%- when 'brand' -%}
-          <div class="footer-brand" {{ block.shopify_attributes }}>
-            <h3>{{ block.settings.heading }}</h3>
-            {% if block.settings.text != blank %}
-              <p>{{ block.settings.text }}</p>
-            {% endif %}
-          </div>
+    {%- if section.blocks.size > 0 -%}
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'brand' -%}
+            <div class="footer-brand" {{ block.shopify_attributes }}>
+              <h3>{{ block.settings.heading }}</h3>
+              {% if block.settings.text != blank %}
+                <p>{{ block.settings.text }}</p>
+              {% endif %}
+            </div>
 
-        {%- when 'menu' -%}
-          <div class="footer-col" {{ block.shopify_attributes }}>
-            <h4>{{ block.settings.heading }}</h4>
-            {%- if block.settings.menu != blank -%}
-              <ul>
-                {%- for link in linklists[block.settings.menu].links -%}
-                  <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-                {%- endfor -%}
-              </ul>
-            {%- else -%}
-              <ul>
-                {%- for i in (1..5) -%}
-                  <li><a href="#">Link {{ i }}</a></li>
-                {%- endfor -%}
-              </ul>
-            {%- endif -%}
-          </div>
+          {%- when 'menu' -%}
+            <div class="footer-col" {{ block.shopify_attributes }}>
+              <h4>{{ block.settings.heading }}</h4>
+              {%- if block.settings.menu != blank -%}
+                <ul>
+                  {%- for link in linklists[block.settings.menu].links -%}
+                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                  {%- endfor -%}
+                </ul>
+              {%- else -%}
+                <ul>
+                  <li><a href="/pages/about">About</a></li>
+                  <li><a href="/collections/all">Products</a></li>
+                  <li><a href="/pages/honors">Credentials</a></li>
+                  <li><a href="/pages/contact">Contact</a></li>
+                </ul>
+              {%- endif -%}
+            </div>
 
-        {%- when 'text' -%}
-          <div class="footer-col" {{ block.shopify_attributes }}>
-            <h4>{{ block.settings.heading }}</h4>
-            <div class="footer-text">{{ block.settings.text | newline_to_br }}</div>
-          </div>
-      {%- endcase -%}
-    {%- endfor -%}
+          {%- when 'text' -%}
+            <div class="footer-col" {{ block.shopify_attributes }}>
+              <h4>{{ block.settings.heading }}</h4>
+              <div class="footer-text">{{ block.settings.text | newline_to_br }}</div>
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    {%- else -%}
+      <div class="footer-brand">
+        <h3>Kun Bloom</h3>
+        <p>Architectural stone surfaces. Precision-engineered in Chongqing, China. Shipped worldwide.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="/pages/about">About</a></li>
+          <li><a href="/collections/all">Products</a></li>
+          <li><a href="/pages/honors">Credentials</a></li>
+          <li><a href="/pages/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-text">Chongqing, China<br>023-67646148<br>suli@kunbloom.com</div>
+      </div>
+    {%- endif -%}
   </div>
 
   <div class="footer-bottom">

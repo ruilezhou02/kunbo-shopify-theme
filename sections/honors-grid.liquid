@@ -10,22 +10,36 @@
 
     <div class="honors-track-wrapper">
       <div class="honors-track">
-        {%- for block in section.blocks -%}
-          <div class="honor-card" {{ block.shopify_attributes }}>
-            {%- if block.settings.image != blank -%}
-              <img src="{{ block.settings.image | img_url: '400x' }}" alt="{{ block.settings.title | escape }}" loading="lazy">
-            {%- endif -%}
-            <h4>{{ block.settings.title | newline_to_br }}</h4>
-          </div>
-        {%- endfor -%}
-        {%- for block in section.blocks -%}
-          <div class="honor-card" aria-hidden="true">
-            {%- if block.settings.image != blank -%}
-              <img src="{{ block.settings.image | img_url: '400x' }}" alt="" loading="lazy">
-            {%- endif -%}
-            <h4>{{ block.settings.title | newline_to_br }}</h4>
-          </div>
-        {%- endfor -%}
+        {%- if section.blocks.size > 0 -%}
+          {%- for block in section.blocks -%}
+            <div class="honor-card" {{ block.shopify_attributes }}>
+              {%- if block.settings.image != blank -%}
+                <img src="{{ block.settings.image | img_url: '400x' }}" alt="{{ block.settings.title | escape }}" loading="lazy">
+              {%- endif -%}
+              <h4>{{ block.settings.title | newline_to_br }}</h4>
+            </div>
+          {%- endfor -%}
+          {%- for block in section.blocks -%}
+            <div class="honor-card" aria-hidden="true">
+              {%- if block.settings.image != blank -%}
+                <img src="{{ block.settings.image | img_url: '400x' }}" alt="" loading="lazy">
+              {%- endif -%}
+              <h4>{{ block.settings.title | newline_to_br }}</h4>
+            </div>
+          {%- endfor -%}
+        {%- else -%}
+          {%- assign certs = "ISO 9001\nQuality Management|ISO 14001\nEnvironmental|AAA Enterprise\nCredit Rating|Integrity\nDemonstration Unit|Quality Service\nIntegrity Enterprise|Contract-Honoring\n& Promise-Keeping" | split: "|" -%}
+          {%- for cert in certs -%}
+            <div class="honor-card">
+              <h4>{{ cert | newline_to_br }}</h4>
+            </div>
+          {%- endfor -%}
+          {%- for cert in certs -%}
+            <div class="honor-card" aria-hidden="true">
+              <h4>{{ cert | newline_to_br }}</h4>
+            </div>
+          {%- endfor -%}
+        {%- endif -%}
       </div>
     </div>
 

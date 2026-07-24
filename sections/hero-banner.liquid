@@ -10,31 +10,40 @@
   <div class="hero-overlay"></div>
 
   <div class="hero-content">
-    {%- for block in section.blocks -%}
-      {%- assign delay = forloop.index | minus: 1 -%}
-      {%- case block.type -%}
-        {%- when 'heading' -%}
-          <h1 class="display-xl reveal reveal-delay-{{ delay }}" {{ block.shopify_attributes }}>
-            {{ block.settings.text | newline_to_br }}
-          </h1>
-        {%- when 'text' -%}
-          <p class="reveal reveal-delay-{{ delay }}" {{ block.shopify_attributes }}>
-            {{ block.settings.text }}
-          </p>
-        {%- when 'button' -%}
-          {%- if forloop.index == 1 -%}
-            <div class="hero-actions reveal reveal-delay-{{ delay }}" {{ block.shopify_attributes }}>
-          {%- endif -%}
-          <a href="{{ block.settings.link }}" class="hero-btn {% if block.settings.style == 'primary' %}hero-btn-primary{% else %}hero-btn-outline{% endif %}">
-            {{ block.settings.label }}
-          </a>
-      {%- endcase -%}
-    {%- endfor -%}
-    {%- for block in section.blocks -%}
-      {%- if block.type == 'button' and forloop.last -%}
-        </div>
-      {%- endif -%}
-    {%- endfor -%}
+    {%- if section.blocks.size > 0 -%}
+      {%- for block in section.blocks -%}
+        {%- assign delay = forloop.index | minus: 1 -%}
+        {%- case block.type -%}
+          {%- when 'heading' -%}
+            <h1 class="display-xl reveal reveal-delay-{{ delay }}" {{ block.shopify_attributes }}>
+              {{ block.settings.text | newline_to_br }}
+            </h1>
+          {%- when 'text' -%}
+            <p class="reveal reveal-delay-{{ delay }}" {{ block.shopify_attributes }}>
+              {{ block.settings.text }}
+            </p>
+          {%- when 'button' -%}
+            {%- if forloop.index == 1 -%}
+              <div class="hero-actions reveal reveal-delay-{{ delay }}" {{ block.shopify_attributes }}>
+            {%- endif -%}
+            <a href="{{ block.settings.link }}" class="hero-btn {% if block.settings.style == 'primary' %}hero-btn-primary{% else %}hero-btn-outline{% endif %}">
+              {{ block.settings.label }}
+            </a>
+        {%- endcase -%}
+      {%- endfor -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'button' and forloop.last -%}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    {%- else -%}
+      <h1 class="display-xl reveal reveal-delay-1">Premium<br>Quartz Tiles.<br>Extraordinary Architectural Aesthetics.</h1>
+      <p class="reveal reveal-delay-2">Over 15 years of expertise in building materials — specializing in high-quality quartz tiles and architectural facade solutions.</p>
+      <div class="hero-actions reveal reveal-delay-3">
+        <a href="/collections" class="hero-btn hero-btn-primary">Explore Products</a>
+        <a href="/pages/contact" class="hero-btn hero-btn-outline">Contact Us</a>
+      </div>
+    {%- endif -%}
   </div>
 
   {% if section.settings.show_scroll_indicator %}
