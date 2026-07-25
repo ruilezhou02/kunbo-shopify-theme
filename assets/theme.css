@@ -1280,6 +1280,79 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height
 }
 
 /* ============================================================
+   ABOUT PAGE — Reference layout
+   ============================================================ */
+.about-hero {
+  text-align: left;
+  padding: 160px 0 var(--spacing-xl);
+}
+.about-hero .display-lg {
+  margin-bottom: 24px;
+}
+.about-hero .body-lg {
+  max-width: 720px;
+  margin: 0;
+}
+.company-profile .eyebrow {
+  margin-bottom: 40px;
+}
+.company-profile-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.company-profile-text p {
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--text-soft);
+  margin-bottom: 24px;
+}
+.company-profile-text p:last-child {
+  margin-bottom: 0;
+}
+.company-profile-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.company-profile-image {
+  margin: 0;
+  overflow: hidden;
+  background: var(--surface);
+}
+.company-profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s var(--ease-out-expo);
+}
+.company-profile-image:first-child {
+  aspect-ratio: 3/4;
+}
+.company-profile-image:last-child {
+  aspect-ratio: 1/1;
+}
+.company-profile-images:hover .company-profile-image img {
+  transform: scale(1.04);
+}
+@media (max-width: 900px) {
+  .company-profile-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .company-profile-images {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .company-profile-images {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
    COLLECTION — Products listing
    ============================================================ */
 .collection-header-section {

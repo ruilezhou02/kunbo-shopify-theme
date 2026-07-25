@@ -1,37 +1,115 @@
-<!-- About Page -->
-<section class="page-hero">
-  <div class="container-narrow">
-    <p class="eyebrow">About</p>
-    <h1 class="display-lg">Material intelligence,<br>shaped by discipline.</h1>
-    <p class="body-lg">Founded in 2010 with a singular mission: to make architectural ceramics that architects actually want to specify.</p>
+<!-- About Page — Reference layout: title + intro, Company Profile with two images -->
+<section class="page-hero about-hero">
+  <div class="container-wide">
+    <h1 class="display-lg">{{ section.settings.title }}</h1>
+    <p class="body-lg">{{ section.settings.intro }}</p>
   </div>
 </section>
 
-<section class="page-section">
-  <div class="container-narrow">
-    <p class="eyebrow">The Origin</p>
-    <p class="body-lg" style="margin-bottom: 28px;">Kun Bloom was born in Chongqing&rsquo;s industrial heartland &mdash; a city where mountains meet rivers and architecture must contend with extremes. That environment shaped our thinking: materials should not just survive conditions, they should transcend them.</p>
-    <p class="body-lg" style="margin-bottom: 28px;">Over 15 years, we have grown from a regional tile manufacturer into a nationally recognized brand serving architects, developers, and design studios across China, Southeast Asia, and the Middle East. Our R&amp;D center holds 14 national utility model and invention patents covering raw material formulation, kiln temperature control, and surface finishing processes.</p>
-    <p class="body-lg">We are ISO 9001 certified, ISO 14001 compliant, and recognized as an AAA-rated enterprise by China&rsquo;s national credit system.</p>
-  </div>
-</section>
-
-<section class="page-section">
-  <div class="container-narrow">
-    <p class="eyebrow">Core Values</p>
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 40px;">
-      <div>
-        <h3 style="font-family: var(--font-display); font-size: 22px; font-weight: 500; margin-bottom: 12px;">Precision</h3>
-        <p class="body-sm">&plusmn;0.5mm dimensional tolerance across batches. Every tile is measured, every surface is inspected. Nothing leaves the kiln without passing.</p>
+<section class="page-section company-profile">
+  <div class="container-wide">
+    <p class="eyebrow">{{ section.settings.profile_eyebrow }}</p>
+    <div class="company-profile-grid">
+      <div class="company-profile-text">
+        <p>{{ section.settings.paragraph_1 }}</p>
+        <p>{{ section.settings.paragraph_2 }}</p>
+        <p>{{ section.settings.paragraph_3 }}</p>
       </div>
-      <div>
-        <h3 style="font-family: var(--font-display); font-size: 22px; font-weight: 500; margin-bottom: 12px;">Durability</h3>
-        <p class="body-sm">45,000N breaking strength. &lt;0.1% water absorption. Frost-proof to -30&deg;C. We engineer for decades, not seasons.</p>
-      </div>
-      <div>
-        <h3 style="font-family: var(--font-display); font-size: 22px; font-weight: 500; margin-bottom: 12px;">Collaboration</h3>
-        <p class="body-sm">We don&rsquo;t sell tile. We solve architectural problems. Every project begins with understanding the space, the climate, and the vision.</p>
+      <div class="company-profile-images">
+        <figure class="company-profile-image">
+          {% if section.settings.image_1 != blank %}
+            <img src="{{ section.settings.image_1 | img_url: '800x' }}" alt="{{ section.settings.image_1_alt }}" loading="lazy">
+          {% else %}
+            <img src="{{ 'hero.jpeg' | asset_url }}" alt="Kun Bloom Building" loading="lazy">
+          {% endif %}
+        </figure>
+        <figure class="company-profile-image">
+          {% if section.settings.image_2 != blank %}
+            <img src="{{ section.settings.image_2 | img_url: '800x' }}" alt="{{ section.settings.image_2_alt }}" loading="lazy">
+          {% else %}
+            <img src="{{ 'facade.webp' | asset_url }}" alt="Kun Bloom Project" loading="lazy">
+          {% endif %}
+        </figure>
       </div>
     </div>
   </div>
 </section>
+
+{% schema %}
+{
+  "name": "About Content",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Hero"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "About Us"
+    },
+    {
+      "type": "textarea",
+      "id": "intro",
+      "label": "Intro",
+      "default": "With over 15 years of expertise in building materials, we are dedicated to providing global clients with high-quality quartz tiles and building façade solutions."
+    },
+    {
+      "type": "header",
+      "content": "Company Profile"
+    },
+    {
+      "type": "text",
+      "id": "profile_eyebrow",
+      "label": "Profile Eyebrow",
+      "default": "Company Profile"
+    },
+    {
+      "type": "textarea",
+      "id": "paragraph_1",
+      "label": "Paragraph 1",
+      "default": "Chongqing Kun Bloom Building Materials Co., Ltd. (\"Kun Bloom\") was founded by an industry veteran with over 15 years of experience. Since its establishment in 2010, the company has focused deeply on the building materials sector. Backed by deep industry expertise, strong R&D capabilities, and outstanding product quality, Kun Bloom has grown into a competitive brand recognized for both reputation and strength within the quartz tile industry, focusing on high-potential consumer and project markets while precisely meeting quality-driven demand."
+    },
+    {
+      "type": "textarea",
+      "id": "paragraph_2",
+      "label": "Paragraph 2",
+      "default": "The company places strong emphasis on R&D investment, having built a professional design and R&D team and established rigorous process control and real-time monitoring systems, with craftsmanship standards benchmarked against industry-leading levels. Kun Bloom currently holds multiple utility model patents (Patent Nos. 2022221017708 and 2022230576778), and its products strictly comply with national standards including GB 6566-2010 and GB/T 4100-2015."
+    },
+    {
+      "type": "textarea",
+      "id": "paragraph_3",
+      "label": "Paragraph 3",
+      "default": "Our partner production bases are located in China's Foshan and Quanzhou regions, benefiting from a complete industrial chain and efficient logistics network, with a focus on delivering high-quality wall and floor quartz tile products."
+    },
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image 1"
+    },
+    {
+      "type": "text",
+      "id": "image_1_alt",
+      "label": "Image 1 Alt Text",
+      "default": "Kun Bloom Building"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Image 2"
+    },
+    {
+      "type": "text",
+      "id": "image_2_alt",
+      "label": "Image 2 Alt Text",
+      "default": "Kun Bloom Project"
+    }
+  ],
+  "presets": [{ "name": "About Content" }]
+}
+{% endschema %}
