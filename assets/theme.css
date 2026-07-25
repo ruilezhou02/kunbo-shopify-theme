@@ -1379,6 +1379,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height
 }
 .honors-hero .eyebrow {
   text-align: left;
+  margin-left: 0;
+  margin-right: 0;
 }
 .honors-hero .display-lg {
   margin-bottom: 24px;
