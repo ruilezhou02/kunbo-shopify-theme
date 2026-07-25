@@ -1,0 +1,155 @@
+<!-- Projects Page — Matching kunbloom.com/projects layout, Shopify theme typography -->
+<section class="page-hero projects-page-hero" data-section-type="projects-page">
+  <div class="container-narrow">
+    <p class="eyebrow">{{ section.settings.eyebrow }}</p>
+    <h1 class="display-lg">{{ section.settings.heading }}</h1>
+    <p class="body-lg">{{ section.settings.intro }}</p>
+  </div>
+</section>
+
+<section class="projects-page-grid" data-section-type="projects-page">
+  <div class="projects-page-container">
+    {% for block in section.blocks %}
+      <article class="project-page-card reveal" {{ block.shopify_attributes }}>
+        <div class="project-page-image">
+          {% if block.settings.image != blank %}
+            <img src="{{ block.settings.image | img_url: '800x' }}" alt="{{ block.settings.title }}" loading="lazy">
+          {% else %}
+            <img src="{{ 'facade.webp' | asset_url }}" alt="{{ block.settings.title }}" loading="lazy">
+          {% endif %}
+          <span class="project-year-badge">{{ block.settings.year }}</span>
+          <a href="{{ block.settings.link }}" class="project-view-btn">
+            {{ section.settings.view_details_text }}
+          </a>
+        </div>
+        <div class="project-page-info">
+          <h3>{{ block.settings.title }}</h3>
+          <p class="project-page-location">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6 0C2.96 0 .5 2.46.5 5.5c0 3.13 4.88 7.89 5.09 8.09.24.24.63.24.87 0C6.67 13.39 11.5 8.63 11.5 5.5 11.5 2.46 9.04 0 6 0z" fill="currentColor"/>
+            </svg>
+            {{ block.settings.location }}
+          </p>
+          <p class="project-page-products">
+            <span>{{ section.settings.products_label }}</span>
+            {{ block.settings.products }}
+          </p>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Projects Page Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Projects"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Project Showcase"
+    },
+    {
+      "type": "textarea",
+      "id": "intro",
+      "label": "Intro Text",
+      "default": "Kun Bloom's founder has been rooted in the building materials industry for over 20 years, and the company has served more than 1,000 high-quality engineering projects. From commercial complexes to high-end residential developments, from municipal infrastructure to landscape paving, our products have won the trust of clients with outstanding quality, witnessing every remarkable moment of urban construction."
+    },
+    {
+      "type": "text",
+      "id": "view_details_text",
+      "label": "Button Text",
+      "default": "View Details"
+    },
+    {
+      "type": "text",
+      "id": "products_label",
+      "label": "Products Label",
+      "default": "Case Products |"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "project",
+      "name": "Project",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Project Image"
+        },
+        {
+          "type": "text",
+          "id": "year",
+          "label": "Year",
+          "default": "2025"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Project Link"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Project Name",
+          "default": "Longfor Beicheng Paradise Walk, Chongqing"
+        },
+        {
+          "type": "text",
+          "id": "location",
+          "label": "Location",
+          "default": "Beicheng Paradise Walk, Guanyinqiao, Liangjiang New Area, Chongqing"
+        },
+        {
+          "type": "text",
+          "id": "products",
+          "label": "Products Used",
+          "default": "Floor: Pure-Body Silver Gray, Digital Marble"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Projects Page Grid",
+      "blocks": [
+        {
+          "type": "project",
+          "settings": {
+            "year": "2025",
+            "title": "Longfor Beicheng Paradise Walk, Chongqing",
+            "location": "Beicheng Paradise Walk, Guanyinqiao, Liangjiang New Area, Chongqing",
+            "products": "Floor: Pure-Body Silver Gray, Digital Marble"
+          }
+        },
+        {
+          "type": "project",
+          "settings": {
+            "year": "2025",
+            "title": "Vanke Pushi Yunzhou, Wenzhou",
+            "location": "Intersection of Dongyang Road and Jinshi Road, Ouhai District, Wenzhou, Zhejiang",
+            "products": "French Sandstone, Sandstone, Limestone"
+          }
+        },
+        {
+          "type": "project",
+          "settings": {
+            "year": "2025",
+            "title": "Xinyi Xinzhi Qian, Chengdu",
+            "location": "Shufang Community, Dong'an Street, Longquanyi District, Chengdu, Sichuan",
+            "products": "Wall: Hermes Gray; Floor: New Zealand Gray Light, Medium Gray, Dark Gray, Fuding Black, Night Snow, Spray White"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
