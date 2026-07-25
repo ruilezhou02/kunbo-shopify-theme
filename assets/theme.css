@@ -796,61 +796,85 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height
 
 
 /* ============================================================
-   HONORS — Auto-scroll carousel, refined
+   HONORS — Static grid, architectural
    ============================================================ */
 .honors-strip, .honors-section {
   padding: var(--spacing-2xl) 0;
   text-align: center;
-  overflow: hidden;
 }
 .honors-strip .display-md, .honors-section .section-container .display-md {
   margin-bottom: var(--spacing-lg);
 }
 .honors-track {
-  display: flex;
-  gap: 20px;
-  width: max-content;
-  animation: honorsScroll 40s linear infinite;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
 }
-.honors-track:hover {
-  animation-play-state: paused;
-}
-@keyframes honorsScroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-.honor-card {
-  flex: 0 0 auto;
-  width: 220px;
-  padding: 36px 28px;
+.honors-track .honor-card {
   background: var(--white);
   border: 1px solid var(--border);
+  padding: 40px 24px 32px;
   transition: all 0.5s var(--ease-out-expo);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
 }
-.honor-card:hover {
+.honors-track .honor-card:hover {
   border-color: var(--accent);
-  transform: translateY(-6px);
-  box-shadow: 0 16px 48px rgba(0,0,0,0.06);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.05);
 }
-.honor-card img {
-  width: 80px;
-  height: 56px;
+.honors-track .honor-card img {
+  width: 100%;
+  max-width: 160px;
+  aspect-ratio: 4/3;
   object-fit: contain;
-  margin: 0 auto 20px;
-  opacity: 0.6;
+  opacity: 0.7;
   transition: opacity 0.4s;
 }
-.honor-card:hover img {
+.honors-track .honor-card:hover img {
   opacity: 1;
 }
-.honor-card h4 {
+.honors-track .honor-card h4 {
   font-family: var(--font-body);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   color: var(--text);
-  line-height: 1.5;
+  line-height: 1.6;
+}
+.honors-strip-footer {
+  text-align: center;
+  margin-top: var(--spacing-lg);
+}
+.honors-strip-footer .link-underline {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  border-bottom: 1px solid var(--text-soft);
+  padding-bottom: 4px;
+  transition: all 0.3s;
+}
+.honors-strip-footer .link-underline:hover {
+  color: var(--text);
+  border-color: var(--text);
+}
+@media (max-width: 1200px) {
+  .honors-track { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 900px) {
+  .honors-track { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 600px) {
+  .honors-track { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ============================================================
@@ -1371,19 +1395,19 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height
   grid-template-columns: repeat(4, 1fr);
   gap: 40px 32px;
 }
-.honor-card {
+.honors-grid .honor-card {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-.honor-card-image {
+.honors-grid .honor-card-image {
   position: relative;
   aspect-ratio: 3/4;
   overflow: hidden;
   background: var(--surface);
   border: 1px solid var(--border);
 }
-.honor-card-image img {
+.honors-grid .honor-card-image img {
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -1392,10 +1416,10 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height
   background: var(--white);
   transition: transform 0.6s var(--ease-out-expo);
 }
-.honor-card:hover .honor-card-image img {
+.honors-grid .honor-card:hover .honor-card-image img {
   transform: scale(1.03);
 }
-.honor-card-placeholder {
+.honors-grid .honor-card-placeholder {
   width: 100%;
   height: 100%;
   display: flex;
@@ -1403,35 +1427,44 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height
   justify-content: center;
   background: var(--surface);
 }
-.honor-card-placeholder span {
+.honors-grid .honor-card-placeholder span {
   font-family: var(--font-mono);
   font-size: 32px;
   color: var(--text-muted);
   letter-spacing: 0.04em;
 }
-.honor-card-info {
+.honors-grid .honor-card-info {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
-.honor-year {
+.honors-grid .honor-year {
   font-family: var(--font-mono);
   font-size: 12px;
   font-weight: 400;
   letter-spacing: 0.06em;
   color: var(--text-muted);
 }
-.honor-card-info h3 {
+.honors-grid .honor-meta {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0;
+}
+.honors-grid .honor-card-info h3 {
   font-family: var(--font-display);
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 500;
   line-height: 1.3;
   color: var(--text);
+  letter-spacing: -0.01em;
 }
-.honor-card-info p {
-  font-size: 13px;
+.honors-grid .honor-card-info p {
+  font-size: 14px;
   color: var(--text-soft);
-  line-height: 1.5;
+  line-height: 1.7;
   font-weight: 300;
 }
 @media (max-width: 1024px) {

@@ -23,6 +23,9 @@
           </div>
           <div class="honor-card-info">
             <span class="honor-year">{{ block.settings.year }}</span>
+            {% if block.settings.meta != blank %}
+              <p class="honor-meta">{{ block.settings.meta }}</p>
+            {% endif %}
             <h3>{{ block.settings.title }}</h3>
             {% if block.settings.description != blank %}
               <p>{{ block.settings.description }}</p>
@@ -75,6 +78,12 @@
         },
         {
           "type": "text",
+          "id": "meta",
+          "label": "Category Tag",
+          "default": "Certification"
+        },
+        {
+          "type": "text",
           "id": "title",
           "label": "Title",
           "default": "Test Report"
@@ -92,10 +101,10 @@
     {
       "name": "Honors Page",
       "blocks": [
-        { "type": "certificate", "settings": { "year": "2021", "title": "Test Report", "description": "Product quality inspection report" } },
-        { "type": "certificate", "settings": { "year": "2022", "title": "Quality Certificate", "description": "Product quality compliance certificate" } },
-        { "type": "certificate", "settings": { "year": "2022", "title": "Test Report", "description": "Building material quality inspection" } },
-        { "type": "certificate", "settings": { "year": "2022", "title": "Radioactive Inspection", "description": "Building material radioactive safety certificate" } }
+        { "type": "certificate", "settings": { "year": "2022", "meta": "Certification", "title": "ISO 9001", "description": "Quality management system certification" } },
+        { "type": "certificate", "settings": { "year": "2022", "meta": "Certification", "title": "ISO 14001", "description": "Environmental management system" } },
+        { "type": "certificate", "settings": { "year": "2023", "meta": "Certification", "title": "AAA Enterprise Credit", "description": "Enterprise credit rating certificate" } },
+        { "type": "certificate", "settings": { "year": "2023", "meta": "Certification", "title": "Integrity Unit", "description": "Integrity demonstration enterprise" } }
       ]
     }
   ]
