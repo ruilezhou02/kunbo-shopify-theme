@@ -796,46 +796,49 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height
 
 
 /* ============================================================
-   HONORS — Static grid, architectural
+   HONORS — Auto-scroll carousel, refined
    ============================================================ */
 .honors-strip, .honors-section {
   padding: var(--spacing-2xl) 0;
   text-align: center;
+  overflow: hidden;
 }
 .honors-strip .display-md, .honors-section .section-container .display-md {
   margin-bottom: var(--spacing-lg);
 }
 .honors-track {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 2px;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: honorsScroll 40s linear infinite;
+}
+.honors-track:hover {
+  animation-play-state: paused;
+}
+@keyframes honorsScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 .honors-track .honor-card {
+  flex: 0 0 auto;
+  width: 220px;
+  padding: 36px 28px;
   background: var(--white);
   border: 1px solid var(--border);
-  padding: 40px 24px 32px;
   transition: all 0.5s var(--ease-out-expo);
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 20px;
 }
 .honors-track .honor-card:hover {
   border-color: var(--accent);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.05);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.06);
 }
 .honors-track .honor-card img {
-  width: 100%;
-  max-width: 160px;
-  aspect-ratio: 4/3;
+  width: 80px;
+  height: 56px;
   object-fit: contain;
-  opacity: 0.7;
+  margin: 0 auto 20px;
+  opacity: 0.6;
   transition: opacity 0.4s;
 }
 .honors-track .honor-card:hover img {
@@ -843,11 +846,11 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height
 }
 .honors-track .honor-card h4 {
   font-family: var(--font-body);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.5;
 }
 .honors-strip-footer {
   text-align: center;
@@ -866,15 +869,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height
 .honors-strip-footer .link-underline:hover {
   color: var(--text);
   border-color: var(--text);
-}
-@media (max-width: 1200px) {
-  .honors-track { grid-template-columns: repeat(4, 1fr); }
-}
-@media (max-width: 900px) {
-  .honors-track { grid-template-columns: repeat(3, 1fr); }
-}
-@media (max-width: 600px) {
-  .honors-track { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ============================================================
