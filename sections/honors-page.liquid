@@ -1,4 +1,4 @@
-<!-- Honors & Credentials Page — Reference layout: left-aligned hero + 4-column certificate grid -->
+<!-- Honors & Credentials Page — All certificate images displayed as a large static grid -->
 <section class="page-hero honors-hero">
   <div class="container-wide">
     <p class="eyebrow">{{ section.settings.eyebrow }}</p>
@@ -10,29 +10,198 @@
 <section class="page-section honors-section">
   <div class="container-wide">
     <div class="honors-grid">
-      {% for block in section.blocks %}
-        <article class="honor-card" {{ block.shopify_attributes }}>
+      {% if section.blocks.size > 0 %}
+        {% for block in section.blocks %}
+          <article class="honor-card" {{ block.shopify_attributes }}>
+            <div class="honor-card-image">
+              {% if block.settings.image != blank %}
+                <img src="{{ block.settings.image | img_url: '800x' }}" alt="{{ block.settings.title }}" loading="lazy">
+              {% else %}
+                <div class="honor-card-placeholder">
+                  <span>{{ block.settings.year | default: '—' }}</span>
+                </div>
+              {% endif %}
+            </div>
+            <div class="honor-card-info">
+              <span class="honor-year">{{ block.settings.year }}</span>
+              {% if block.settings.meta != blank %}
+                <p class="honor-meta">{{ block.settings.meta }}</p>
+              {% endif %}
+              <h3>{{ block.settings.title }}</h3>
+              {% if block.settings.description != blank %}
+                <p>{{ block.settings.description }}</p>
+              {% endif %}
+            </div>
+          </article>
+        {% endfor %}
+      {% else %}
+        <!-- Fallback: auto-display all certificate images from assets -->
+        <article class="honor-card">
           <div class="honor-card-image">
-            {% if block.settings.image != blank %}
-              <img src="{{ block.settings.image | img_url: '600x' }}" alt="{{ block.settings.title }}" loading="lazy">
-            {% else %}
-              <div class="honor-card-placeholder">
-                <span>{{ block.settings.year | default: '2022' }}</span>
-              </div>
-            {% endif %}
+            <img src="{{ 'iso9001.jpg' | asset_url }}" alt="ISO 9001" loading="lazy">
           </div>
           <div class="honor-card-info">
-            <span class="honor-year">{{ block.settings.year }}</span>
-            {% if block.settings.meta != blank %}
-              <p class="honor-meta">{{ block.settings.meta }}</p>
-            {% endif %}
-            <h3>{{ block.settings.title }}</h3>
-            {% if block.settings.description != blank %}
-              <p>{{ block.settings.description }}</p>
-            {% endif %}
+            <span class="honor-year">2022</span>
+            <p class="honor-meta">Certification</p>
+            <h3>ISO 9001</h3>
+            <p>Quality Management System</p>
           </div>
         </article>
-      {% endfor %}
+        <article class="honor-card">
+          <div class="honor-card-image">
+            <img src="{{ 'env_cert_1.jpg' | asset_url }}" alt="ISO 14001" loading="lazy">
+          </div>
+          <div class="honor-card-info">
+            <span class="honor-year">2022</span>
+            <p class="honor-meta">Certification</p>
+            <h3>ISO 14001</h3>
+            <p>Environmental Management System</p>
+          </div>
+        </article>
+        <article class="honor-card">
+          <div class="honor-card-image">
+            <img src="{{ 'dm_cert_1.jpg' | asset_url }}" alt="AAA Enterprise Credit" loading="lazy">
+          </div>
+          <div class="honor-card-info">
+            <span class="honor-year">2023</span>
+            <p class="honor-meta">Qualification</p>
+            <h3>AAA Enterprise Credit Rating</h3>
+            <p>Enterprise credit evaluation certificate</p>
+          </div>
+        </article>
+        <article class="honor-card">
+          <div class="honor-card-image">
+            <img src="{{ 'dm_cert_2.jpg' | asset_url }}" alt="Integrity Demonstration" loading="lazy">
+          </div>
+          <div class="honor-card-info">
+            <span class="honor-year">2023</span>
+            <p class="honor-meta">Qualification</p>
+            <h3>Integrity Demonstration Unit</h3>
+            <p>Enterprise integrity recognition</p>
+          </div>
+        </article>
+        <article class="honor-card">
+          <div class="honor-card-image">
+            <img src="{{ 'dm_cert_3.jpg' | asset_url }}" alt="Quality Service" loading="lazy">
+          </div>
+          <div class="honor-card-info">
+            <span class="honor-year">2023</span>
+            <p class="honor-meta">Qualification</p>
+            <h3>Quality Service Integrity Enterprise</h3>
+            <p>Quality and integrity commitment</p>
+          </div>
+        </article>
+        <article class="honor-card">
+          <div class="honor-card-image">
+            <img src="{{ 'dm_cert_4.jpg' | asset_url }}" alt="Contract-Honoring" loading="lazy">
+          </div>
+          <div class="honor-card-info">
+            <span class="honor-year">2022</span>
+            <p class="honor-meta">Qualification</p>
+            <h3>Contract-Honoring & Promise-Keeping</h3>
+            <p>Business integrity recognition</p>
+          </div>
+        </article>
+        <article class="honor-card">
+          <div class="honor-card-image">
+            <img src="{{ 'dm_cert_5.jpg' | asset_url }}" alt="Product Quality" loading="lazy">
+          </div>
+          <div class="honor-card-info">
+            <span class="honor-year">2023</span>
+            <p class="honor-meta">Certification</p>
+            <h3>Product Quality Certification</h3>
+            <p>National quality standard compliance</p>
+          </div>
+        </article>
+        <article class="honor-card">
+          <div class="honor-card-image">
+            <img src="{{ 'dm_cert_6.jpg' | asset_url }}" alt="Quality Inspection" loading="lazy">
+          </div>
+          <div class="honor-card-info">
+            <span class="honor-year">2023</span>
+            <p class="honor-meta">Test Report</p>
+            <h3>Quality Inspection Test Report</h3>
+            <p>Independent laboratory verification</p>
+          </div>
+        </article>
+        <article class="honor-card">
+          <div class="honor-card-image">
+            <img src="{{ 'dm_cert_7.jpg' | asset_url }}" alt="Industry Recognition" loading="lazy">
+          </div>
+          <div class="honor-card-info">
+            <span class="honor-year">2023</span>
+            <p class="honor-meta">Qualification</p>
+            <h3>Industry Recognition Award</h3>
+            <p>Building materials sector achievement</p>
+          </div>
+        </article>
+        <article class="honor-card">
+          <div class="honor-card-image">
+            <img src="{{ 'dm_cert_8.jpg' | asset_url }}" alt="Safety Compliance" loading="lazy">
+          </div>
+          <div class="honor-card-info">
+            <span class="honor-year">2023</span>
+            <p class="honor-meta">Certification</p>
+            <h3>Safety Compliance Certificate</h3>
+            <p>Production safety standards met</p>
+          </div>
+        </article>
+        <article class="honor-card">
+          <div class="honor-card-image">
+            <img src="{{ 'dm_cert_9.jpg' | asset_url }}" alt="Material Testing" loading="lazy">
+          </div>
+          <div class="honor-card-info">
+            <span class="honor-year">2023</span>
+            <p class="honor-meta">Test Report</p>
+            <h3>Material Testing Qualification</h3>
+            <p>GB/T 4100-2015 compliance testing</p>
+          </div>
+        </article>
+        <article class="honor-card">
+          <div class="honor-card-image">
+            <img src="{{ 'dm_cert_10.jpg' | asset_url }}" alt="Green Building" loading="lazy">
+          </div>
+          <div class="honor-card-info">
+            <span class="honor-year">2023</span>
+            <p class="honor-meta">Certification</p>
+            <h3>Green Building Material Certification</h3>
+            <p>Environmental performance verified</p>
+          </div>
+        </article>
+        <article class="honor-card">
+          <div class="honor-card-image">
+            <img src="{{ 'dm_cert_11.jpg' | asset_url }}" alt="Export Qualification" loading="lazy">
+          </div>
+          <div class="honor-card-info">
+            <span class="honor-year">2023</span>
+            <p class="honor-meta">Certification</p>
+            <h3>Export Trade Qualification</h3>
+            <p>International trade compliance</p>
+          </div>
+        </article>
+        <article class="honor-card">
+          <div class="honor-card-image">
+            <img src="{{ 'dm_cert_12.jpg' | asset_url }}" alt="Production License" loading="lazy">
+          </div>
+          <div class="honor-card-info">
+            <span class="honor-year">2022</span>
+            <p class="honor-meta">License</p>
+            <h3>Production License</h3>
+            <p>Manufacturing operation authorization</p>
+          </div>
+        </article>
+        <article class="honor-card">
+          <div class="honor-card-image">
+            <img src="{{ 'dm_cert_13.jpg' | asset_url }}" alt="Association Member" loading="lazy">
+          </div>
+          <div class="honor-card-info">
+            <span class="honor-year">2023</span>
+            <p class="honor-meta">Qualification</p>
+            <h3>Industry Association Member</h3>
+            <p>Professional body membership certificate</p>
+          </div>
+        </article>
+      {% endif %}
     </div>
   </div>
 </section>
@@ -99,13 +268,7 @@
   ],
   "presets": [
     {
-      "name": "Honors Page",
-      "blocks": [
-        { "type": "certificate", "settings": { "year": "2022", "meta": "Certification", "title": "ISO 9001", "description": "Quality management system certification" } },
-        { "type": "certificate", "settings": { "year": "2022", "meta": "Certification", "title": "ISO 14001", "description": "Environmental management system" } },
-        { "type": "certificate", "settings": { "year": "2023", "meta": "Certification", "title": "AAA Enterprise Credit", "description": "Enterprise credit rating certificate" } },
-        { "type": "certificate", "settings": { "year": "2023", "meta": "Certification", "title": "Integrity Unit", "description": "Integrity demonstration enterprise" } }
-      ]
+      "name": "Honors Page"
     }
   ]
 }
