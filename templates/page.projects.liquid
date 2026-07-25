@@ -1,22 +1,76 @@
-<!-- Projects Page -->
+<!-- Projects Page — Matching kunbloom.com content, Shopify theme typography -->
 <section class="page-hero">
   <div class="container-narrow">
     <p class="eyebrow">Projects</p>
-    <h1 class="display-lg">Where our surfaces<br>meet architecture.</h1>
-    <p class="body-lg">A curated selection of landmark projects that showcase the versatility, durability, and aesthetic range of Kun Bloom quartz porcelain.</p>
+    <h1 class="display-lg">Classic projects,<br>proven quality.</h1>
+    <p class="body-lg">With over 1,000 completed projects nationwide, Kun Bloom quartz porcelain tiles have been specified for landmark commercial complexes, high-end residential developments, cultural tourism destinations, and municipal infrastructure across China.</p>
   </div>
 </section>
 
 {% section 'projects-showcase' %}
 
+<!-- Client Partnerships -->
+<section class="page-section">
+  <div class="container-narrow">
+    <p class="eyebrow">Trusted Partners</p>
+    <p class="body-lg" style="margin-bottom: 56px;">Our products have been successfully applied in projects developed by China's most respected real estate enterprises, earning multiple Gold Plate Awards for Best Exterior Wall Material and Best Landscape Material.</p>
+
+    <div class="client-grid">
+      {% for client in section.blocks %}
+        <div class="client-card">
+          <p class="client-name">{{ client.settings.name }}</p>
+          <p class="client-role">{{ client.settings.role }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Capabilities -->
 <section class="page-section">
   <div class="container-narrow">
     <p class="eyebrow">Project Capabilities</p>
     <p class="body-lg" style="margin-bottom: 28px;">From high-rise commercial facades to municipal infrastructure and luxury residences, our engineering team collaborates with architects and developers from specification through installation.</p>
     <p class="body-lg" style="margin-bottom: 28px;">Every project begins with material samples, climate analysis, and load calculations. We do not ship tiles and walk away — we stay involved until the last panel is fixed and the final inspection is signed off.</p>
-    <p class="body-lg">Interested in specifying Kun Bloom for your next project? Contact our engineering team for samples, data sheets, and project consultation.</p>
-    <div style="margin-top: 40px;">
-      <a href="/pages/contact" class="link-underline">Contact Us &rarr;</a>
-    </div>
+    <p class="body-lg" style="margin-bottom: 40px;">Kun Bloom also participated in drafting the industry standard for stone-look porcelain tiles, with technical capabilities recognized by authoritative institutions.</p>
+    <a href="/pages/contact" class="link-underline">Contact Our Engineering Team &rarr;</a>
   </div>
 </section>
+
+{% schema %}
+{
+  "name": "Projects Page — Clients",
+  "blocks": [
+    {
+      "type": "client",
+      "name": "Client Partner",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Client Name",
+          "default": "Longfor Properties"
+        },
+        {
+          "type": "text",
+          "id": "role",
+          "label": "Project Type",
+          "default": "High-End Commercial Complexes"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Projects Page — Clients",
+      "blocks": [
+        { "type": "client", "settings": { "name": "Longfor Properties", "role": "High-End Commercial Complexes" } },
+        { "type": "client", "settings": { "name": "China Resources Land", "role": "Commercial & Residential Developments" } },
+        { "type": "client", "settings": { "name": "Vanke", "role": "Residential & Mixed-Use Projects" } },
+        { "type": "client", "settings": { "name": "Poly Developments", "role": "Large-Scale Urban Projects" } },
+        { "type": "client", "settings": { "name": "COLI", "role": "Premium Residential Communities" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

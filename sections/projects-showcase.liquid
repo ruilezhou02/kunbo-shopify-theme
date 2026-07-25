@@ -1,4 +1,4 @@
-<!-- Projects Showcase — Consistent typography & layout matching Product Showcase -->
+<!-- Projects Showcase — Matching kunbloom.com content, Shopify theme typography -->
 <section class="projects-section" data-section-type="projects-showcase">
   <div class="projects-section-header">
     <div>
@@ -15,19 +15,23 @@
       {%- capture title_id -%}project_{{ i }}_title{%- endcapture -%}
       {%- capture location_id -%}project_{{ i }}_location{%- endcapture -%}
       {%- capture area_id -%}project_{{ i }}_area{%- endcapture -%}
+      {%- capture desc_id -%}project_{{ i }}_desc{%- endcapture -%}
 
       <article class="project-card reveal reveal-delay-{{ i }}">
         <span class="project-number">{{ i | prepend: '0' }}</span>
         <div class="project-card-image">
           {% if section.settings[image_id] != blank %}
-            <img src="{{ section.settings[image_id] | img_url: '800x' }}" alt="{{ section.settings[title_id] }}" class="placeholder-img">
+            <img src="{{ section.settings[image_id] | img_url: '800x' }}" alt="{{ section.settings[title_id] }}" class="placeholder-img" loading="lazy">
           {% else %}
-            <img src="{{ 'hero.jpeg' | asset_url }}" alt="Kun Bloom Project" class="placeholder-img">
+            <img src="{{ 'hero.jpeg' | asset_url }}" alt="Kun Bloom Project" class="placeholder-img" loading="lazy">
           {% endif %}
         </div>
         <p class="project-meta">{{ section.settings[meta_id] }}</p>
         <h3>{{ section.settings[title_id] }}</h3>
-        <p>{{ section.settings[location_id] }}&ensp;|&ensp;{{ section.settings[area_id] }}</p>
+        <p class="project-location">{{ section.settings[location_id] }}&ensp;|&ensp;{{ section.settings[area_id] }}</p>
+        {% if section.settings[desc_id] != blank %}
+          <p class="project-desc">{{ section.settings[desc_id] }}</p>
+        {% endif %}
       </article>
     {% endfor %}
   </div>
@@ -51,7 +55,7 @@
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "Landmark projects, proven quality"
+      "default": "Classic projects, proven quality"
     },
     {
       "type": "text",
@@ -71,14 +75,14 @@
     {
       "type": "text",
       "id": "project_1_meta",
-      "label": "Project 1 — Meta Tag",
+      "label": "Project 1 — Category",
       "default": "Commercial"
     },
     {
       "type": "text",
       "id": "project_1_title",
       "label": "Project 1 — Title",
-      "default": "Commercial Complex Project"
+      "default": "Commercial Complex"
     },
     {
       "type": "text",
@@ -90,7 +94,12 @@
       "type": "text",
       "id": "project_1_area",
       "label": "Project 1 — Area",
-      "default": "50,000㎡"
+      "default": "50,000 sqm"
+    },
+    {
+      "type": "textarea",
+      "id": "project_1_desc",
+      "label": "Project 1 — Description"
     },
     {
       "type": "header",
@@ -104,14 +113,14 @@
     {
       "type": "text",
       "id": "project_2_meta",
-      "label": "Project 2 — Meta Tag",
+      "label": "Project 2 — Category",
       "default": "Residential"
     },
     {
       "type": "text",
       "id": "project_2_title",
       "label": "Project 2 — Title",
-      "default": "High-End Residential Project"
+      "default": "High-End Residential"
     },
     {
       "type": "text",
@@ -123,7 +132,12 @@
       "type": "text",
       "id": "project_2_area",
       "label": "Project 2 — Area",
-      "default": "80,000㎡"
+      "default": "80,000 sqm"
+    },
+    {
+      "type": "textarea",
+      "id": "project_2_desc",
+      "label": "Project 2 — Description"
     },
     {
       "type": "header",
@@ -137,14 +151,14 @@
     {
       "type": "text",
       "id": "project_3_meta",
-      "label": "Project 3 — Meta Tag",
-      "default": "Public"
+      "label": "Project 3 — Category",
+      "default": "Commercial"
     },
     {
       "type": "text",
       "id": "project_3_title",
       "label": "Project 3 — Title",
-      "default": "Commercial Plaza Project"
+      "default": "Commercial Plaza"
     },
     {
       "type": "text",
@@ -156,7 +170,12 @@
       "type": "text",
       "id": "project_3_area",
       "label": "Project 3 — Area",
-      "default": "30,000㎡"
+      "default": "30,000 sqm"
+    },
+    {
+      "type": "textarea",
+      "id": "project_3_desc",
+      "label": "Project 3 — Description"
     }
   ],
   "presets": [{ "name": "Projects Showcase" }]
