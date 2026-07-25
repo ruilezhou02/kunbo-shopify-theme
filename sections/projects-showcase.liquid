@@ -1,0 +1,177 @@
+<!-- Projects Showcase — Architectural project portfolio grid -->
+<section class="projects-section" data-section-type="projects-showcase">
+  <div class="projects-section-header">
+    <div>
+      <p class="eyebrow reveal">{{ section.settings.eyebrow }}</p>
+      <h2 class="display-md reveal reveal-delay-1">{{ section.settings.heading_line1 }}<br>{{ section.settings.heading_line2 }}</h2>
+    </div>
+    <a href="/pages/projects" class="view-all reveal reveal-delay-2">{{ section.settings.view_all_text }} &rarr;</a>
+  </div>
+
+  <div class="projects-grid">
+    {% for i in (1..4) %}
+      {%- capture image_id -%}project_image_{{ i }}{%- endcapture -%}
+      {%- capture meta_id -%}project_{{ i }}_meta{%- endcapture -%}
+      {%- capture title_id -%}project_{{ i }}_title{%- endcapture -%}
+      {%- capture desc_id -%}project_{{ i }}_desc{%- endcapture -%}
+
+      <article class="project-card reveal reveal-delay-{{ i }}">
+        <div class="project-card-image">
+          {% if section.settings[image_id] != blank %}
+            <img src="{{ section.settings[image_id] | img_url: '800x' }}" alt="{{ section.settings[title_id] }}" class="placeholder-img">
+          {% else %}
+            <img src="{{ 'hero.jpeg' | asset_url }}" alt="Kun Bloom Project" class="placeholder-img">
+          {% endif %}
+        </div>
+        <p class="project-meta">{{ section.settings[meta_id] }}</p>
+        <h3>{{ section.settings[title_id] }}</h3>
+        <p>{{ section.settings[desc_id] }}</p>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Projects Showcase",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Header"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Featured Projects"
+    },
+    {
+      "type": "text",
+      "id": "heading_line1",
+      "label": "Heading — Line 1",
+      "default": "Where our surfaces"
+    },
+    {
+      "type": "text",
+      "id": "heading_line2",
+      "label": "Heading — Line 2",
+      "default": "meet architecture."
+    },
+    {
+      "type": "text",
+      "id": "view_all_text",
+      "label": "View All — Text",
+      "default": "View All Projects"
+    },
+    {
+      "type": "header",
+      "content": "Project 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "project_image_1",
+      "label": "Project 1 — Image"
+    },
+    {
+      "type": "text",
+      "id": "project_1_meta",
+      "label": "Project 1 — Meta Tag (e.g. Commercial)",
+      "default": "Commercial"
+    },
+    {
+      "type": "text",
+      "id": "project_1_title",
+      "label": "Project 1 — Title",
+      "default": "Riverside Civic Center"
+    },
+    {
+      "type": "textarea",
+      "id": "project_1_desc",
+      "label": "Project 1 — Description",
+      "default": "12,000 sqm of quartz porcelain facade panels. Ventilated dry-hang system engineered for monsoon climate conditions."
+    },
+    {
+      "type": "header",
+      "content": "Project 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "project_image_2",
+      "label": "Project 2 — Image"
+    },
+    {
+      "type": "text",
+      "id": "project_2_meta",
+      "label": "Project 2 — Meta Tag (e.g. Hospitality)",
+      "default": "Hospitality"
+    },
+    {
+      "type": "text",
+      "id": "project_2_title",
+      "label": "Project 2 — Title",
+      "default": "Lotus Hotel & Resort"
+    },
+    {
+      "type": "textarea",
+      "id": "project_2_desc",
+      "label": "Project 2 — Description",
+      "default": "Interior and exterior quartz tiles across lobby, corridors, and pool deck. Travertine series in warm sandstone finish."
+    },
+    {
+      "type": "header",
+      "content": "Project 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "project_image_3",
+      "label": "Project 3 — Image"
+    },
+    {
+      "type": "text",
+      "id": "project_3_meta",
+      "label": "Project 3 — Meta Tag (e.g. Residential)",
+      "default": "Residential"
+    },
+    {
+      "type": "text",
+      "id": "project_3_title",
+      "label": "Project 3 — Title",
+      "default": "Bayside Luxury Apartments"
+    },
+    {
+      "type": "textarea",
+      "id": "project_3_desc",
+      "label": "Project 3 — Description",
+      "default": "Marble series quartz flooring across 240 units. High slip resistance meets coastal aesthetic requirements."
+    },
+    {
+      "type": "header",
+      "content": "Project 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "project_image_4",
+      "label": "Project 4 — Image"
+    },
+    {
+      "type": "text",
+      "id": "project_4_meta",
+      "label": "Project 4 — Meta Tag (e.g. Infrastructure)",
+      "default": "Infrastructure"
+    },
+    {
+      "type": "text",
+      "id": "project_4_title",
+      "label": "Project 4 — Title",
+      "default": "Metro Line 5 Station Hall"
+    },
+    {
+      "type": "textarea",
+      "id": "project_4_desc",
+      "label": "Project 4 — Description",
+      "default": "Heavy-duty landscape pavers rated for 60,000+ daily footfall. 30mm thick, frost-proof to -30°C, fire-rated A1."
+    }
+  ],
+  "presets": [{ "name": "Projects Showcase" }]
+}
+{% endschema %}

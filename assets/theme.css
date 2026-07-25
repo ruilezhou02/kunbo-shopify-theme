@@ -524,6 +524,112 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height
 }
 
 /* ============================================================
+   PROJECT CARDS — Architectural portfolio grid
+   ============================================================ */
+.projects-section {
+  padding: 0 0 var(--spacing-xl);
+}
+.projects-section-header {
+  max-width: var(--content-width);
+  margin: 0 auto calc(var(--spacing-lg) + 20px);
+  padding: 0 var(--spacing-md);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+}
+.projects-section-header h2 {
+  max-width: 520px;
+  margin: 0;
+}
+.projects-section-header .view-all {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--text-soft);
+  padding-bottom: 4px;
+  color: var(--text-soft);
+  transition: all 0.3s;
+  flex-shrink: 0;
+}
+.projects-section-header .view-all:hover {
+  color: var(--text);
+  border-color: var(--text);
+}
+@media (max-width: 768px) {
+  .projects-section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: var(--spacing-lg);
+  }
+  .projects-section-header h2 { max-width: 100%; }
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+@media (max-width: 768px) {
+  .projects-grid { grid-template-columns: 1fr; gap: var(--spacing-xl); }
+}
+.project-card { position: relative; }
+.project-card-image {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--surface);
+  margin-bottom: 28px;
+}
+.project-card-image .placeholder-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease-out-expo);
+}
+.project-card:hover .project-card-image .placeholder-img {
+  transform: scale(1.06);
+}
+.project-card-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(20,20,20,0.2) 0%, transparent 35%);
+  transition: opacity 0.5s;
+}
+.project-card:hover .project-card-image::after {
+  opacity: 0.6;
+}
+.project-card h3 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+.project-card .project-meta {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.project-card p {
+  font-size: 14px;
+  color: var(--text-soft);
+  line-height: 1.7;
+  font-weight: 300;
+  max-width: 480px;
+}
+
+/* ============================================================
    ABOUT SPLIT — Full-bleed, architectural
    ============================================================ */
 .about-split {
