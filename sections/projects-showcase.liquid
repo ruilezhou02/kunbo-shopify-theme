@@ -1,21 +1,23 @@
-<!-- Projects Showcase — Reference layout: eyebrow + title, view-more button, 3-card grid -->
+<!-- Projects Showcase — Consistent typography & layout matching Product Showcase -->
 <section class="projects-section" data-section-type="projects-showcase">
   <div class="projects-section-header">
     <div>
       <p class="eyebrow reveal">{{ section.settings.eyebrow }}</p>
       <h2 class="display-md reveal reveal-delay-1">{{ section.settings.heading }}</h2>
     </div>
-    <a href="/pages/projects" class="view-more-btn reveal reveal-delay-2">{{ section.settings.view_all_text }}</a>
+    <a href="/pages/projects" class="view-all reveal reveal-delay-2">{{ section.settings.view_all_text }} &rarr;</a>
   </div>
 
   <div class="projects-grid">
     {% for i in (1..3) %}
       {%- capture image_id -%}project_image_{{ i }}{%- endcapture -%}
+      {%- capture meta_id -%}project_{{ i }}_meta{%- endcapture -%}
       {%- capture title_id -%}project_{{ i }}_title{%- endcapture -%}
       {%- capture location_id -%}project_{{ i }}_location{%- endcapture -%}
       {%- capture area_id -%}project_{{ i }}_area{%- endcapture -%}
 
       <article class="project-card reveal reveal-delay-{{ i }}">
+        <span class="project-number">{{ i | prepend: '0' }}</span>
         <div class="project-card-image">
           {% if section.settings[image_id] != blank %}
             <img src="{{ section.settings[image_id] | img_url: '800x' }}" alt="{{ section.settings[title_id] }}" class="placeholder-img">
@@ -23,14 +25,9 @@
             <img src="{{ 'hero.jpeg' | asset_url }}" alt="Kun Bloom Project" class="placeholder-img">
           {% endif %}
         </div>
-        <div class="project-card-info">
-          <h3>{{ section.settings[title_id] }}</h3>
-          <p class="project-meta">
-            <span>{{ section.settings[location_id] }}</span>
-            <span class="meta-divider">|</span>
-            <span>{{ section.settings[area_id] }}</span>
-          </p>
-        </div>
+        <p class="project-meta">{{ section.settings[meta_id] }}</p>
+        <h3>{{ section.settings[title_id] }}</h3>
+        <p>{{ section.settings[location_id] }}&ensp;|&ensp;{{ section.settings[area_id] }}</p>
       </article>
     {% endfor %}
   </div>
@@ -59,8 +56,8 @@
     {
       "type": "text",
       "id": "view_all_text",
-      "label": "View All Button Text",
-      "default": "View More Projects"
+      "label": "View All — Text",
+      "default": "View All Projects"
     },
     {
       "type": "header",
@@ -70,6 +67,12 @@
       "type": "image_picker",
       "id": "project_image_1",
       "label": "Project 1 — Image"
+    },
+    {
+      "type": "text",
+      "id": "project_1_meta",
+      "label": "Project 1 — Meta Tag",
+      "default": "Commercial"
     },
     {
       "type": "text",
@@ -87,7 +90,7 @@
       "type": "text",
       "id": "project_1_area",
       "label": "Project 1 — Area",
-      "default": "Area: 50,000㎡"
+      "default": "50,000㎡"
     },
     {
       "type": "header",
@@ -97,6 +100,12 @@
       "type": "image_picker",
       "id": "project_image_2",
       "label": "Project 2 — Image"
+    },
+    {
+      "type": "text",
+      "id": "project_2_meta",
+      "label": "Project 2 — Meta Tag",
+      "default": "Residential"
     },
     {
       "type": "text",
@@ -114,7 +123,7 @@
       "type": "text",
       "id": "project_2_area",
       "label": "Project 2 — Area",
-      "default": "Area: 80,000㎡"
+      "default": "80,000㎡"
     },
     {
       "type": "header",
@@ -124,6 +133,12 @@
       "type": "image_picker",
       "id": "project_image_3",
       "label": "Project 3 — Image"
+    },
+    {
+      "type": "text",
+      "id": "project_3_meta",
+      "label": "Project 3 — Meta Tag",
+      "default": "Public"
     },
     {
       "type": "text",
@@ -141,7 +156,7 @@
       "type": "text",
       "id": "project_3_area",
       "label": "Project 3 — Area",
-      "default": "Area: 30,000㎡"
+      "default": "30,000㎡"
     }
   ],
   "presets": [{ "name": "Projects Showcase" }]
