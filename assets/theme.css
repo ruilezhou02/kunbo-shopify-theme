@@ -1353,6 +1353,98 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height
 }
 
 /* ============================================================
+   HONORS / CREDENTIALS PAGE — Certificate grid
+   ============================================================ */
+.honors-hero {
+  text-align: left;
+  padding: 160px 0 var(--spacing-xl);
+}
+.honors-hero .display-lg {
+  margin-bottom: 24px;
+}
+.honors-hero .body-lg {
+  max-width: 720px;
+  margin: 0;
+}
+.honors-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px 32px;
+}
+.honor-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.honor-card-image {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+.honor-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  padding: 20px;
+  background: var(--white);
+  transition: transform 0.6s var(--ease-out-expo);
+}
+.honor-card:hover .honor-card-image img {
+  transform: scale(1.03);
+}
+.honor-card-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+}
+.honor-card-placeholder span {
+  font-family: var(--font-mono);
+  font-size: 32px;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+.honor-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.honor-year {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+.honor-card-info h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--text);
+}
+.honor-card-info p {
+  font-size: 13px;
+  color: var(--text-soft);
+  line-height: 1.5;
+  font-weight: 300;
+}
+@media (max-width: 1024px) {
+  .honors-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+  .honors-grid { grid-template-columns: repeat(2, 1fr); gap: 32px 24px; }
+}
+@media (max-width: 480px) {
+  .honors-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
    COLLECTION — Products listing
    ============================================================ */
 .collection-header-section {

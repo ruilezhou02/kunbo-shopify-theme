@@ -1,135 +1,35 @@
-<!-- Honors & Credentials Page -->
-<section class="page-hero">
-  <div class="container-narrow">
-    <p class="eyebrow">Credentials</p>
-    <h1 class="display-lg">Certified at every level.</h1>
-    <p class="body-lg">Industry recognition, national certifications, and independent quality audits &mdash; all publicly verifiable.</p>
+<!-- Honors & Credentials Page — Reference layout: left-aligned hero + 4-column certificate grid -->
+<section class="page-hero honors-hero">
+  <div class="container-wide">
+    <p class="eyebrow">{{ section.settings.eyebrow }}</p>
+    <h1 class="display-lg">{{ section.settings.title }}</h1>
+    <p class="body-lg">{{ section.settings.intro }}</p>
   </div>
 </section>
 
-<section class="page-section">
+<section class="page-section honors-section">
   <div class="container-wide">
-    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 24px;">
-      <div style="padding: 28px 20px; border: 1px solid var(--border); text-align: center; transition: all 0.3s ease; background: var(--white);">
-        {% if section.settings.cert_01_img != blank %}
-          <img src="{{ section.settings.cert_01_img | img_url: '400x' }}" alt="ISO 9001 Quality Management" style="width: 100%; height: 160px; object-fit: contain; margin-bottom: 16px; opacity: 0.85;">
-        {% else %}
-          <img src="{{ 'iso9001.jpg' | asset_url }}" alt="ISO 9001 Quality Management" style="width: 100%; height: 160px; object-fit: contain; margin-bottom: 16px; opacity: 0.85;">
-        {% endif %}
-        <h4 style="font-family: var(--font-body); font-size: 12px; font-weight: 500; line-height: 1.5; color: var(--text);">ISO 9001 Quality Management</h4>
-      </div>
-      <div style="padding: 28px 20px; border: 1px solid var(--border); text-align: center; transition: all 0.3s ease; background: var(--white);">
-        {% if section.settings.cert_02_img != blank %}
-          <img src="{{ section.settings.cert_02_img | img_url: '400x' }}" alt="ISO 14001 Environmental Management" style="width: 100%; height: 160px; object-fit: contain; margin-bottom: 16px; opacity: 0.85;">
-        {% else %}
-          <img src="{{ 'env_cert_1.jpg' | asset_url }}" alt="ISO 14001 Environmental Management" style="width: 100%; height: 160px; object-fit: contain; margin-bottom: 16px; opacity: 0.85;">
-        {% endif %}
-        <h4 style="font-family: var(--font-body); font-size: 12px; font-weight: 500; line-height: 1.5; color: var(--text);">ISO 14001 Environmental Management</h4>
-      </div>
-      <div style="padding: 28px 20px; border: 1px solid var(--border); text-align: center; transition: all 0.3s ease; background: var(--white);">
-        {% if section.settings.cert_03_img != blank %}
-          <img src="{{ section.settings.cert_03_img | img_url: '400x' }}" alt="AAA Enterprise Credit Rating" style="width: 100%; height: 160px; object-fit: contain; margin-bottom: 16px; opacity: 0.85;">
-        {% else %}
-          <img src="{{ 'dm_cert_1.jpg' | asset_url }}" alt="AAA Enterprise Credit Rating" style="width: 100%; height: 160px; object-fit: contain; margin-bottom: 16px; opacity: 0.85;">
-        {% endif %}
-        <h4 style="font-family: var(--font-body); font-size: 12px; font-weight: 500; line-height: 1.5; color: var(--text);">AAA Enterprise Credit Rating</h4>
-      </div>
-      <div style="padding: 28px 20px; border: 1px solid var(--border); text-align: center; transition: all 0.3s ease; background: var(--white);">
-        {% if section.settings.cert_04_img != blank %}
-          <img src="{{ section.settings.cert_04_img | img_url: '400x' }}" alt="Integrity Demonstration Unit" style="width: 100%; height: 160px; object-fit: contain; margin-bottom: 16px; opacity: 0.85;">
-        {% else %}
-          <img src="{{ 'dm_cert_2.jpg' | asset_url }}" alt="Integrity Demonstration Unit" style="width: 100%; height: 160px; object-fit: contain; margin-bottom: 16px; opacity: 0.85;">
-        {% endif %}
-        <h4 style="font-family: var(--font-body); font-size: 12px; font-weight: 500; line-height: 1.5; color: var(--text);">Integrity Demonstration Unit</h4>
-      </div>
-      <div style="padding: 28px 20px; border: 1px solid var(--border); text-align: center; transition: all 0.3s ease; background: var(--white);">
-        {% if section.settings.cert_05_img != blank %}
-          <img src="{{ section.settings.cert_05_img | img_url: '400x' }}" alt="Quality Service Integrity" style="width: 100%; height: 160px; object-fit: contain; margin-bottom: 16px; opacity: 0.85;">
-        {% else %}
-          <img src="{{ 'dm_cert_3.jpg' | asset_url }}" alt="Quality Service Integrity" style="width: 100%; height: 160px; object-fit: contain; margin-bottom: 16px; opacity: 0.85;">
-        {% endif %}
-        <h4 style="font-family: var(--font-body); font-size: 12px; font-weight: 500; line-height: 1.5; color: var(--text);">Quality Service Integrity</h4>
-      </div>
-      <div style="padding: 28px 20px; border: 1px solid var(--border); text-align: center; transition: all 0.3s ease; background: var(--white);">
-        {% if section.settings.cert_06_img != blank %}
-          <img src="{{ section.settings.cert_06_img | img_url: '400x' }}" alt="Contract-Honoring Enterprise" style="width: 100%; height: 160px; object-fit: contain; margin-bottom: 16px; opacity: 0.85;">
-        {% else %}
-          <img src="{{ 'dm_cert_4.jpg' | asset_url }}" alt="Contract-Honoring Enterprise" style="width: 100%; height: 160px; object-fit: contain; margin-bottom: 16px; opacity: 0.85;">
-        {% endif %}
-        <h4 style="font-family: var(--font-body); font-size: 12px; font-weight: 500; line-height: 1.5; color: var(--text);">Contract-Honoring Enterprise</h4>
-      </div>
-      <div style="padding: 28px 20px; border: 1px solid var(--border); text-align: center; transition: all 0.3s ease; background: var(--white);">
-        {% if section.settings.cert_07_img != blank %}
-          <img src="{{ section.settings.cert_07_img | img_url: '400x' }}" alt="Credit Rating Certificate" style="width: 100%; height: 160px; object-fit: contain; margin-bottom: 16px; opacity: 0.85;">
-        {% else %}
-          <img src="{{ 'dm_cert_5.jpg' | asset_url }}" alt="Credit Rating Certificate" style="width: 100%; height: 160px; object-fit: contain; margin-bottom: 16px; opacity: 0.85;">
-        {% endif %}
-        <h4 style="font-family: var(--font-body); font-size: 12px; font-weight: 500; line-height: 1.5; color: var(--text);">Credit Rating Certificate</h4>
-      </div>
-      <div style="padding: 28px 20px; border: 1px solid var(--border); text-align: center; transition: all 0.3s ease; background: var(--white);">
-        {% if section.settings.cert_08_img != blank %}
-          <img src="{{ section.settings.cert_08_img | img_url: '400x' }}" alt="Quality-Focused Enterprise" style="width: 100%; height: 160px; object-fit: contain; margin-bottom: 16px; opacity: 0.85;">
-        {% else %}
-          <img src="{{ 'dm_cert_6.jpg' | asset_url }}" alt="Quality-Focused Enterprise" style="width: 100%; height: 160px; object-fit: contain; margin-bottom: 16px; opacity: 0.85;">
-        {% endif %}
-        <h4 style="font-family: var(--font-body); font-size: 12px; font-weight: 500; line-height: 1.5; color: var(--text);">Quality-Focused Enterprise</h4>
-      </div>
-      <div style="padding: 28px 20px; border: 1px solid var(--border); text-align: center; transition: all 0.3s ease; background: var(--white);">
-        {% if section.settings.cert_09_img != blank %}
-          <img src="{{ section.settings.cert_09_img | img_url: '400x' }}" alt="Service-Focused Enterprise" style="width: 100%; height: 160px; object-fit: contain; margin-bottom: 16px; opacity: 0.85;">
-        {% else %}
-          <img src="{{ 'dm_cert_7.jpg' | asset_url }}" alt="Service-Focused Enterprise" style="width: 100%; height: 160px; object-fit: contain; margin-bottom: 16px; opacity: 0.85;">
-        {% endif %}
-        <h4 style="font-family: var(--font-body); font-size: 12px; font-weight: 500; line-height: 1.5; color: var(--text);">Service-Focused Enterprise</h4>
-      </div>
-      <div style="padding: 28px 20px; border: 1px solid var(--border); text-align: center; transition: all 0.3s ease; background: var(--white);">
-        {% if section.settings.cert_10_img != blank %}
-          <img src="{{ section.settings.cert_10_img | img_url: '400x' }}" alt="Integrity Entrepreneur" style="width: 100%; height: 160px; object-fit: contain; margin-bottom: 16px; opacity: 0.85;">
-        {% else %}
-          <img src="{{ 'dm_cert_8.jpg' | asset_url }}" alt="Integrity Entrepreneur" style="width: 100%; height: 160px; object-fit: contain; margin-bottom: 16px; opacity: 0.85;">
-        {% endif %}
-        <h4 style="font-family: var(--font-body); font-size: 12px; font-weight: 500; line-height: 1.5; color: var(--text);">Integrity Entrepreneur</h4>
-      </div>
-      <div style="padding: 28px 20px; border: 1px solid var(--border); text-align: center; transition: all 0.3s ease; background: var(--white);">
-        {% if section.settings.cert_11_img != blank %}
-          <img src="{{ section.settings.cert_11_img | img_url: '400x' }}" alt="Integrity Manager" style="width: 100%; height: 160px; object-fit: contain; margin-bottom: 16px; opacity: 0.85;">
-        {% else %}
-          <img src="{{ 'dm_cert_9.jpg' | asset_url }}" alt="Integrity Manager" style="width: 100%; height: 160px; object-fit: contain; margin-bottom: 16px; opacity: 0.85;">
-        {% endif %}
-        <h4 style="font-family: var(--font-body); font-size: 12px; font-weight: 500; line-height: 1.5; color: var(--text);">Integrity Manager</h4>
-      </div>
-      <div style="padding: 28px 20px; border: 1px solid var(--border); text-align: center; transition: all 0.3s ease; background: var(--white);">
-        {% if section.settings.cert_12_img != blank %}
-          <img src="{{ section.settings.cert_12_img | img_url: '400x' }}" alt="Trustworthy Enterprise" style="width: 100%; height: 160px; object-fit: contain; margin-bottom: 16px; opacity: 0.85;">
-        {% else %}
-          <img src="{{ 'dm_cert_10.jpg' | asset_url }}" alt="Trustworthy Enterprise" style="width: 100%; height: 160px; object-fit: contain; margin-bottom: 16px; opacity: 0.85;">
-        {% endif %}
-        <h4 style="font-family: var(--font-body); font-size: 12px; font-weight: 500; line-height: 1.5; color: var(--text);">Trustworthy Enterprise</h4>
-      </div>
-      <div style="padding: 28px 20px; border: 1px solid var(--border); text-align: center; transition: all 0.3s ease; background: var(--white);">
-        {% if section.settings.cert_13_img != blank %}
-          <img src="{{ section.settings.cert_13_img | img_url: '400x' }}" alt="Industry Standard Contributor" style="width: 100%; height: 160px; object-fit: contain; margin-bottom: 16px; opacity: 0.85;">
-        {% else %}
-          <img src="{{ 'dm_cert_11.jpg' | asset_url }}" alt="Industry Standard Contributor" style="width: 100%; height: 160px; object-fit: contain; margin-bottom: 16px; opacity: 0.85;">
-        {% endif %}
-        <h4 style="font-family: var(--font-body); font-size: 12px; font-weight: 500; line-height: 1.5; color: var(--text);">Industry Standard Contributor</h4>
-      </div>
-      <div style="padding: 28px 20px; border: 1px solid var(--border); text-align: center; transition: all 0.3s ease; background: var(--white);">
-        {% if section.settings.cert_14_img != blank %}
-          <img src="{{ section.settings.cert_14_img | img_url: '400x' }}" alt="China Green Product" style="width: 100%; height: 160px; object-fit: contain; margin-bottom: 16px; opacity: 0.85;">
-        {% else %}
-          <img src="{{ 'dm_cert_12.jpg' | asset_url }}" alt="China Green Product" style="width: 100%; height: 160px; object-fit: contain; margin-bottom: 16px; opacity: 0.85;">
-        {% endif %}
-        <h4 style="font-family: var(--font-body); font-size: 12px; font-weight: 500; line-height: 1.5; color: var(--text);">China Green Product</h4>
-      </div>
-      <div style="padding: 28px 20px; border: 1px solid var(--border); text-align: center; transition: all 0.3s ease; background: var(--white);">
-        {% if section.settings.cert_15_img != blank %}
-          <img src="{{ section.settings.cert_15_img | img_url: '400x' }}" alt="P.R.C. Enterprise Certificate" style="width: 100%; height: 160px; object-fit: contain; margin-bottom: 16px; opacity: 0.85;">
-        {% else %}
-          <img src="{{ 'dm_cert_13.jpg' | asset_url }}" alt="P.R.C. Enterprise Certificate" style="width: 100%; height: 160px; object-fit: contain; margin-bottom: 16px; opacity: 0.85;">
-        {% endif %}
-        <h4 style="font-family: var(--font-body); font-size: 12px; font-weight: 500; line-height: 1.5; color: var(--text);">P.R.C. Enterprise Certificate</h4>
-      </div>
+    <div class="honors-grid">
+      {% for block in section.blocks %}
+        <article class="honor-card" {{ block.shopify_attributes }}>
+          <div class="honor-card-image">
+            {% if block.settings.image != blank %}
+              <img src="{{ block.settings.image | img_url: '600x' }}" alt="{{ block.settings.title }}" loading="lazy">
+            {% else %}
+              <div class="honor-card-placeholder">
+                <span>{{ block.settings.year | default: '2022' }}</span>
+              </div>
+            {% endif %}
+          </div>
+          <div class="honor-card-info">
+            <span class="honor-year">{{ block.settings.year }}</span>
+            <h3>{{ block.settings.title }}</h3>
+            {% if block.settings.description != blank %}
+              <p>{{ block.settings.description }}</p>
+            {% endif %}
+          </div>
+        </article>
+      {% endfor %}
     </div>
   </div>
 </section>
@@ -138,21 +38,66 @@
 {
   "name": "Honors Page",
   "settings": [
-    { "type": "image_picker", "id": "cert_01_img", "label": "Cert 1 — ISO 9001" },
-    { "type": "image_picker", "id": "cert_02_img", "label": "Cert 2 — ISO 14001" },
-    { "type": "image_picker", "id": "cert_03_img", "label": "Cert 3 — AAA Enterprise Credit" },
-    { "type": "image_picker", "id": "cert_04_img", "label": "Cert 4 — Integrity Unit" },
-    { "type": "image_picker", "id": "cert_05_img", "label": "Cert 5 — Quality Service" },
-    { "type": "image_picker", "id": "cert_06_img", "label": "Cert 6 — Contract-Honoring" },
-    { "type": "image_picker", "id": "cert_07_img", "label": "Cert 7 — Credit Rating" },
-    { "type": "image_picker", "id": "cert_08_img", "label": "Cert 8 — Quality-Focused" },
-    { "type": "image_picker", "id": "cert_09_img", "label": "Cert 9 — Service-Focused" },
-    { "type": "image_picker", "id": "cert_10_img", "label": "Cert 10 — Integrity Entrepreneur" },
-    { "type": "image_picker", "id": "cert_11_img", "label": "Cert 11 — Integrity Manager" },
-    { "type": "image_picker", "id": "cert_12_img", "label": "Cert 12 — Trustworthy Enterprise" },
-    { "type": "image_picker", "id": "cert_13_img", "label": "Cert 13 — Industry Standard" },
-    { "type": "image_picker", "id": "cert_14_img", "label": "Cert 14 — China Green Product" },
-    { "type": "image_picker", "id": "cert_15_img", "label": "Cert 15 — Enterprise Certificate" }
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Credentials"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Honors & Qualifications"
+    },
+    {
+      "type": "textarea",
+      "id": "intro",
+      "label": "Intro",
+      "default": "Recognized by industry authorities and the market for product strength and consistent performance."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "certificate",
+      "name": "Certificate",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Certificate Image"
+        },
+        {
+          "type": "text",
+          "id": "year",
+          "label": "Year",
+          "default": "2022"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Test Report"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description",
+          "default": "Building material quality inspection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Honors Page",
+      "blocks": [
+        { "type": "certificate", "settings": { "year": "2021", "title": "Test Report", "description": "Product quality inspection report" } },
+        { "type": "certificate", "settings": { "year": "2022", "title": "Quality Certificate", "description": "Product quality compliance certificate" } },
+        { "type": "certificate", "settings": { "year": "2022", "title": "Test Report", "description": "Building material quality inspection" } },
+        { "type": "certificate", "settings": { "year": "2022", "title": "Radioactive Inspection", "description": "Building material radioactive safety certificate" } }
+      ]
+    }
   ]
 }
 {% endschema %}
