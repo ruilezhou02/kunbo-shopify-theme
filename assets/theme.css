@@ -524,7 +524,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height
 }
 
 /* ============================================================
-   PROJECT CARDS — Architectural portfolio grid
+   PROJECT CARDS — Reference layout: eyebrow + title, view-more button, 3-card grid
    ============================================================ */
 .projects-section {
   padding: 0 0 var(--spacing-xl);
@@ -534,29 +534,32 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height
   margin: 0 auto calc(var(--spacing-lg) + 20px);
   padding: 0 var(--spacing-md);
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
   gap: 40px;
 }
 .projects-section-header h2 {
-  max-width: 520px;
+  max-width: 680px;
   margin: 0;
+  font-style: normal;
+  letter-spacing: -0.02em;
 }
-.projects-section-header .view-all {
-  font-size: 12px;
+.projects-section-header .view-more-btn {
+  font-size: 13px;
   font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
   white-space: nowrap;
-  border-bottom: 1px solid var(--text-soft);
-  padding-bottom: 4px;
-  color: var(--text-soft);
+  border: 1px solid var(--text);
+  padding: 12px 24px;
+  color: var(--text);
+  background: transparent;
   transition: all 0.3s;
   flex-shrink: 0;
+  text-decoration: none;
 }
-.projects-section-header .view-all:hover {
-  color: var(--text);
-  border-color: var(--text);
+.projects-section-header .view-more-btn:hover {
+  color: var(--white);
+  background: var(--text);
 }
 @media (max-width: 768px) {
   .projects-section-header {
@@ -566,14 +569,18 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height
     margin-bottom: var(--spacing-lg);
   }
   .projects-section-header h2 { max-width: 100%; }
+  .projects-section-header .view-more-btn { width: 100%; text-align: center; }
 }
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 48px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 var(--spacing-md);
+}
+@media (max-width: 1024px) {
+  .projects-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
 }
 @media (max-width: 768px) {
   .projects-grid { grid-template-columns: 1fr; gap: var(--spacing-xl); }
@@ -584,7 +591,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height
   aspect-ratio: 4 / 3;
   overflow: hidden;
   background: var(--surface);
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 .project-card-image .placeholder-img {
   width: 100%;
@@ -593,40 +600,25 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height
   transition: transform 0.8s var(--ease-out-expo);
 }
 .project-card:hover .project-card-image .placeholder-img {
-  transform: scale(1.06);
+  transform: scale(1.04);
 }
-.project-card-image::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(20,20,20,0.2) 0%, transparent 35%);
-  transition: opacity 0.5s;
-}
-.project-card:hover .project-card-image::after {
-  opacity: 0.6;
-}
-.project-card h3 {
-  font-family: var(--font-display);
-  font-size: 24px;
-  font-weight: 500;
+.project-card-info h3 {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 600;
   color: var(--text);
   margin-bottom: 10px;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
 }
-.project-card .project-meta {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 10px;
-}
-.project-card p {
-  font-size: 14px;
+.project-card-info .project-meta {
+  font-size: 13px;
+  font-weight: 400;
   color: var(--text-soft);
-  line-height: 1.7;
-  font-weight: 300;
-  max-width: 480px;
+  line-height: 1.6;
+}
+.project-card-info .meta-divider {
+  margin: 0 10px;
+  color: var(--border);
 }
 
 /* ============================================================

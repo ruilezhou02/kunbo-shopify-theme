@@ -1,19 +1,19 @@
-<!-- Projects Showcase — Architectural project portfolio grid -->
+<!-- Projects Showcase — Reference layout: eyebrow + title, view-more button, 3-card grid -->
 <section class="projects-section" data-section-type="projects-showcase">
   <div class="projects-section-header">
     <div>
       <p class="eyebrow reveal">{{ section.settings.eyebrow }}</p>
-      <h2 class="display-md reveal reveal-delay-1">{{ section.settings.heading_line1 }}<br>{{ section.settings.heading_line2 }}</h2>
+      <h2 class="display-md reveal reveal-delay-1">{{ section.settings.heading }}</h2>
     </div>
-    <a href="/pages/projects" class="view-all reveal reveal-delay-2">{{ section.settings.view_all_text }} &rarr;</a>
+    <a href="/pages/projects" class="view-more-btn reveal reveal-delay-2">{{ section.settings.view_all_text }}</a>
   </div>
 
   <div class="projects-grid">
-    {% for i in (1..4) %}
+    {% for i in (1..3) %}
       {%- capture image_id -%}project_image_{{ i }}{%- endcapture -%}
-      {%- capture meta_id -%}project_{{ i }}_meta{%- endcapture -%}
       {%- capture title_id -%}project_{{ i }}_title{%- endcapture -%}
-      {%- capture desc_id -%}project_{{ i }}_desc{%- endcapture -%}
+      {%- capture location_id -%}project_{{ i }}_location{%- endcapture -%}
+      {%- capture area_id -%}project_{{ i }}_area{%- endcapture -%}
 
       <article class="project-card reveal reveal-delay-{{ i }}">
         <div class="project-card-image">
@@ -23,9 +23,14 @@
             <img src="{{ 'hero.jpeg' | asset_url }}" alt="Kun Bloom Project" class="placeholder-img">
           {% endif %}
         </div>
-        <p class="project-meta">{{ section.settings[meta_id] }}</p>
-        <h3>{{ section.settings[title_id] }}</h3>
-        <p>{{ section.settings[desc_id] }}</p>
+        <div class="project-card-info">
+          <h3>{{ section.settings[title_id] }}</h3>
+          <p class="project-meta">
+            <span>{{ section.settings[location_id] }}</span>
+            <span class="meta-divider">|</span>
+            <span>{{ section.settings[area_id] }}</span>
+          </p>
+        </div>
       </article>
     {% endfor %}
   </div>
@@ -43,25 +48,19 @@
       "type": "text",
       "id": "eyebrow",
       "label": "Eyebrow",
-      "default": "Featured Projects"
+      "default": "Project Showcase"
     },
     {
       "type": "text",
-      "id": "heading_line1",
-      "label": "Heading — Line 1",
-      "default": "Where our surfaces"
-    },
-    {
-      "type": "text",
-      "id": "heading_line2",
-      "label": "Heading — Line 2",
-      "default": "meet architecture."
+      "id": "heading",
+      "label": "Heading",
+      "default": "Landmark projects, proven quality"
     },
     {
       "type": "text",
       "id": "view_all_text",
-      "label": "View All — Text",
-      "default": "View All Projects"
+      "label": "View All Button Text",
+      "default": "View More Projects"
     },
     {
       "type": "header",
@@ -74,21 +73,21 @@
     },
     {
       "type": "text",
-      "id": "project_1_meta",
-      "label": "Project 1 — Meta Tag (e.g. Commercial)",
-      "default": "Commercial"
+      "id": "project_1_title",
+      "label": "Project 1 — Title",
+      "default": "Commercial Complex Project"
     },
     {
       "type": "text",
-      "id": "project_1_title",
-      "label": "Project 1 — Title",
-      "default": "Riverside Civic Center"
+      "id": "project_1_location",
+      "label": "Project 1 — Location",
+      "default": "Yubei District, Chongqing"
     },
     {
-      "type": "textarea",
-      "id": "project_1_desc",
-      "label": "Project 1 — Description",
-      "default": "12,000 sqm of quartz porcelain facade panels. Ventilated dry-hang system engineered for monsoon climate conditions."
+      "type": "text",
+      "id": "project_1_area",
+      "label": "Project 1 — Area",
+      "default": "Area: 50,000㎡"
     },
     {
       "type": "header",
@@ -101,21 +100,21 @@
     },
     {
       "type": "text",
-      "id": "project_2_meta",
-      "label": "Project 2 — Meta Tag (e.g. Hospitality)",
-      "default": "Hospitality"
+      "id": "project_2_title",
+      "label": "Project 2 — Title",
+      "default": "High-End Residential Project"
     },
     {
       "type": "text",
-      "id": "project_2_title",
-      "label": "Project 2 — Title",
-      "default": "Lotus Hotel & Resort"
+      "id": "project_2_location",
+      "label": "Project 2 — Location",
+      "default": "Jiangbei District, Chongqing"
     },
     {
-      "type": "textarea",
-      "id": "project_2_desc",
-      "label": "Project 2 — Description",
-      "default": "Interior and exterior quartz tiles across lobby, corridors, and pool deck. Travertine series in warm sandstone finish."
+      "type": "text",
+      "id": "project_2_area",
+      "label": "Project 2 — Area",
+      "default": "Area: 80,000㎡"
     },
     {
       "type": "header",
@@ -128,48 +127,21 @@
     },
     {
       "type": "text",
-      "id": "project_3_meta",
-      "label": "Project 3 — Meta Tag (e.g. Residential)",
-      "default": "Residential"
-    },
-    {
-      "type": "text",
       "id": "project_3_title",
       "label": "Project 3 — Title",
-      "default": "Bayside Luxury Apartments"
-    },
-    {
-      "type": "textarea",
-      "id": "project_3_desc",
-      "label": "Project 3 — Description",
-      "default": "Marble series quartz flooring across 240 units. High slip resistance meets coastal aesthetic requirements."
-    },
-    {
-      "type": "header",
-      "content": "Project 4"
-    },
-    {
-      "type": "image_picker",
-      "id": "project_image_4",
-      "label": "Project 4 — Image"
+      "default": "Commercial Plaza Project"
     },
     {
       "type": "text",
-      "id": "project_4_meta",
-      "label": "Project 4 — Meta Tag (e.g. Infrastructure)",
-      "default": "Infrastructure"
+      "id": "project_3_location",
+      "label": "Project 3 — Location",
+      "default": "Yuzhong District, Chongqing"
     },
     {
       "type": "text",
-      "id": "project_4_title",
-      "label": "Project 4 — Title",
-      "default": "Metro Line 5 Station Hall"
-    },
-    {
-      "type": "textarea",
-      "id": "project_4_desc",
-      "label": "Project 4 — Description",
-      "default": "Heavy-duty landscape pavers rated for 60,000+ daily footfall. 30mm thick, frost-proof to -30°C, fire-rated A1."
+      "id": "project_3_area",
+      "label": "Project 3 — Area",
+      "default": "Area: 30,000㎡"
     }
   ],
   "presets": [{ "name": "Projects Showcase" }]
