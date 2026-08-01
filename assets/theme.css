@@ -413,10 +413,15 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height
 .has-statement-bg .statement-section__overlay {
   display: block;
 }
-.statement-section .eyebrow,
 .statement-section .display-md,
 .statement-section .body-lg {
   color: #fff;
+}
+.statement-section .body-lg {
+  font-weight: 300;
+  font-size: clamp(15px, 1.5vw, 18px);
+  line-height: 1.8;
+  color: rgba(255,255,255,0.70);
 }
 .statement-section .container-narrow {
   position: relative;
