@@ -456,6 +456,11 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height
   margin-bottom: 32px;
 }
 
+/* Eyebrow overrides for brand statement */
+.statement-section .eyebrow {
+  font-size: 12px;
+}
+
 /* Heading */
 .statement-section__heading {
   font-family: var(--font-display);
