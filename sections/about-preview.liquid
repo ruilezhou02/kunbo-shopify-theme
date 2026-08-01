@@ -1,13 +1,16 @@
-<!-- Brand Statement — Editorial centerpiece -->
-<section class="statement-section{% if section.settings.bg_image != blank %} has-statement-bg{% endif %}" data-section-type="brand-statement"
+<!-- Brand Statement — Editorial centerpiece with gradient veil -->
+<section class="statement-section{% if section.settings.bg_image != blank %} has-statement-bg{% endif %}" data-section-type="brand-statement">
   {% if section.settings.bg_image != blank %}
-    style="background-image: url({{ section.settings.bg_image | img_url: '2000x' }})"
-  {% endif %}>
-  <div class="statement-section__overlay"></div>
-  <div class="container-narrow">
-    <p class="eyebrow reveal">{{ section.settings.eyebrow }}</p>
-    <h2 class="display-md reveal reveal-delay-1">{{ section.settings.heading }}</h2>
-    <p class="body-lg reveal reveal-delay-2">{{ section.settings.body_text }}</p>
+    <div class="statement-section__bg" style="background-image: url({{ section.settings.bg_image | img_url: '2000x' }})"></div>
+    <div class="statement-section__overlay"></div>
+  {% endif %}
+  <div class="statement-section__inner{% if section.settings.bg_image != blank %} statement-section__inner--editorial{% endif %}">
+    <div class="statement-section__content">
+      <span class="statement-section__line reveal"></span>
+      <p class="eyebrow reveal">{{ section.settings.eyebrow }}</p>
+      <h2 class="statement-section__heading reveal reveal-delay-1">{{ section.settings.heading | newline_to_br }}</h2>
+      <p class="statement-section__body reveal reveal-delay-2">{{ section.settings.body_text }}</p>
+    </div>
   </div>
 </section>
 
