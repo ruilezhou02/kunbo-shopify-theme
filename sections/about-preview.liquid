@@ -1,5 +1,9 @@
 <!-- Brand Statement — Editorial centerpiece -->
-<section class="statement-section" data-section-type="brand-statement">
+<section class="statement-section{% if section.settings.bg_image != blank %} has-statement-bg{% endif %}" data-section-type="brand-statement"
+  {% if section.settings.bg_image != blank %}
+    style="background-image: url({{ section.settings.bg_image | img_url: '2000x' }})"
+  {% endif %}>
+  <div class="statement-section__overlay"></div>
   <div class="container-narrow">
     <p class="eyebrow reveal">{{ section.settings.eyebrow }}</p>
     <h2 class="display-md reveal reveal-delay-1">{{ section.settings.heading }}</h2>
@@ -11,6 +15,11 @@
 {
   "name": "Brand Statement",
   "settings": [
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background Image"
+    },
     {
       "type": "text",
       "id": "eyebrow",

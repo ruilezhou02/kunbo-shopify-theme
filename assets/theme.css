@@ -398,6 +398,29 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height
 .statement-section {
   padding: var(--spacing-2xl) 0 calc(var(--spacing-2xl) - 40px);
   text-align: center;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.has-statement-bg .statement-section .eyebrow,
+.has-statement-bg .statement-section .display-md,
+.has-statement-bg .statement-section .body-lg {
+  color: #fff;
+}
+.statement-section__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+  display: none;
+}
+.has-statement-bg .statement-section__overlay {
+  display: block;
+}
+.statement-section .container-narrow {
+  position: relative;
+  z-index: 2;
 }
 .statement-section .display-md {
   max-width: 860px;
