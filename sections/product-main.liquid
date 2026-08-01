@@ -1,13 +1,23 @@
-<!-- Product Detail — Editorial -->
+<!-- Product Detail — Full-width editorial layout -->
 <section class="product-detail-new">
   <div class="product-detail__layout">
-    <!-- Image Gallery -->
+
+    <!-- Back nav -->
+    <div class="product-detail__nav">
+      <a href="javascript:history.back()" class="product-detail__back">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M7 2L3 6L7 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Back
+      </a>
+    </div>
+
+    <!-- Image Gallery — full width, natural aspect ratio -->
     <div class="product-detail__gallery">
       <div class="product-gallery-main">
         {% if product.featured_image %}
-          <img src="{{ product.featured_image | img_url: '1200x' }}"
+          <img src="{{ product.featured_image | img_url: 'master' }}"
                alt="{{ product.title | escape }}"
-               id="product-main-image">
+               id="product-main-image"
+               class="product-main-photo">
         {% else %}
           <div class="product-gallery-placeholder"></div>
         {% endif %}
@@ -17,7 +27,7 @@
         <div class="product-gallery-thumbs">
           {% for image in product.images %}
             <button class="product-thumb{% if forloop.first %} active{% endif %}"
-                    onclick="document.getElementById('product-main-image').src='{{ image | img_url: '1200x' }}'; document.querySelectorAll('.product-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
+                    onclick="var mainImg=document.getElementById('product-main-image'); mainImg.src='{{ image | img_url: 'master' }}'; document.querySelectorAll('.product-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
               <img src="{{ image | img_url: '200x' }}" alt="{{ image.alt | escape }}">
             </button>
           {% endfor %}
@@ -25,7 +35,7 @@
       {% endif %}
     </div>
 
-    <!-- Product Info -->
+    <!-- Product Info — centered editorial block below image -->
     <div class="product-detail__info">
       {% if product.type != blank %}
         <p class="product-detail__code">{{ product.type }}</p>
@@ -84,16 +94,13 @@
 
 <script>
 function handleVariantChange(btn, variantId, price, sku) {
-  // Update active state
   document.querySelectorAll('.variant-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  // Update inquiry link
   var inquiryLink = document.getElementById('inquiry-link');
   if (inquiryLink && sku) {
     var productName = encodeURIComponent(btn.closest('.product-detail__info').querySelector('.product-detail__title').textContent);
     inquiryLink.href = '/pages/contact?product=' + productName + '&sku=' + encodeURIComponent(sku);
   }
-  // Update SKU display
   var skuDisplay = document.getElementById('variant-sku-display');
   if (skuDisplay && sku) {
     skuDisplay.textContent = 'SKU: ' + sku;
