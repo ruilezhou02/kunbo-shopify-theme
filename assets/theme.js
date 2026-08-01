@@ -95,6 +95,19 @@
   var statNumbers = document.querySelectorAll('.stat-number[data-target]');
   statNumbers.forEach(function(el) { observer.observe(el); });
 
+  // — Brand Statement section-level animation trigger —
+  var statementSection = document.querySelector('.statement-section.has-statement-bg');
+  if (statementSection) {
+    var stmtObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          statementSection.classList.add('statement-active');
+        }
+      });
+    }, { threshold: 0.15 });
+    stmtObserver.observe(statementSection);
+  }
+
   // — Mobile menu —
   var menuBtn = document.querySelector('.mobile-menu-btn');
   var mobileNav = document.querySelector('.mobile-nav');
