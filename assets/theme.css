@@ -1641,14 +1641,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height
   font-weight: 300;
   line-height: 1.7;
 }
-.about-hero-divider {
-  width: 48px;
-  height: 2px;
-  background: var(--accent);
-  margin-top: 40px;
-  opacity: 0.6;
-}
-
 /* Tighten hero-to-profile gap */
 .page-section.company-profile {
   padding-top: 0;
