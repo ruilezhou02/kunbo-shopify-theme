@@ -1,27 +1,103 @@
-<!-- Product Detail -->
-<section class="product-detail">
-  <div class="product-layout">
-    <div class="product-image-main">
-      {% if product.featured_image %}
-        <img src="{{ product.featured_image | img_url: '1200x' }}" alt="{{ product.title }}">
-      {% else %}
-        <div style="width:100%;height:100%;background:var(--surface);"></div>
+<!-- Product Detail — Editorial -->
+<section class="product-detail-new">
+  <div class="product-detail__layout">
+    <!-- Image Gallery -->
+    <div class="product-detail__gallery">
+      <div class="product-gallery-main">
+        {% if product.featured_image %}
+          <img src="{{ product.featured_image | img_url: '1200x' }}"
+               alt="{{ product.title | escape }}"
+               id="product-main-image">
+        {% else %}
+          <div class="product-gallery-placeholder"></div>
+        {% endif %}
+      </div>
+
+      {% if product.images.size > 1 %}
+        <div class="product-gallery-thumbs">
+          {% for image in product.images %}
+            <button class="product-thumb{% if forloop.first %} active{% endif %}"
+                    onclick="document.getElementById('product-main-image').src='{{ image | img_url: '1200x' }}'; document.querySelectorAll('.product-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
+              <img src="{{ image | img_url: '200x' }}" alt="{{ image.alt | escape }}">
+            </button>
+          {% endfor %}
+        </div>
       {% endif %}
     </div>
-    <div class="product-info">
-      <h1>{{ product.title }}</h1>
-      <div class="product-price">{{ product.price | money }}</div>
-      <div class="product-description">{{ product.description }}</div>
 
+    <!-- Product Info -->
+    <div class="product-detail__info">
+      {% if product.type != blank %}
+        <p class="product-detail__code">{{ product.type }}</p>
+      {% endif %}
+
+      <h1 class="product-detail__title">{{ product.title }}</h1>
+
+      <!-- Variant Selector -->
+      {% if product.variants.size > 1 %}
+        <div class="product-variant-selector">
+          <h4 class="product-detail__label">Specification</h4>
+          <div class="variant-options">
+            {% for variant in product.variants %}
+              <button class="variant-btn{% if variant.id == product.selected_or_first_available_variant.id %} active{% endif %}"
+                      data-variant-id="{{ variant.id }}"
+                      data-variant-price="{{ variant.price | money }}"
+                      data-variant-sku="{{ variant.sku }}"
+                      onclick="handleVariantChange(this, '{{ variant.id }}', '{{ variant.price | money }}', '{{ variant.sku }}')"
+                      {% unless variant.available %}disabled{% endunless %}>
+                <span class="variant-btn__label">{{ variant.title }}</span>
+                {% if variant.sku != blank %}
+                  <span class="variant-btn__sku">{{ variant.sku }}</span>
+                {% endif %}
+              </button>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+
+      <!-- Description / Specs -->
+      <div class="product-detail__description">
+        {% if product.description != blank %}
+          {{ product.description }}
+        {% endif %}
+      </div>
+
+      <!-- Add to Inquiry -->
       {% form 'product', product %}
-        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-        <button type="submit" class="add-to-cart-btn" {% unless product.available %}disabled{% endunless %}>
-          {% if product.available %}Add to Inquiry{% else %}Sold Out{% endif %}
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" id="variant-id-input">
+        <button type="submit" class="inquiry-btn" {% unless product.available %}disabled{% endunless %}>
+          <span>{% if product.available %}Add to Inquiry{% else %}Sold Out{% endif %}</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8H13M10 5L13 8L10 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </button>
       {% endform %}
+
+      <!-- Variant SKU display -->
+      <p class="product-detail__variant-sku" id="variant-sku-display">
+        {% if product.selected_or_first_available_variant.sku != blank %}
+          SKU: {{ product.selected_or_first_available_variant.sku }}
+        {% endif %}
+      </p>
     </div>
   </div>
 </section>
+
+<script>
+function handleVariantChange(btn, variantId, price, sku) {
+  // Update active state
+  document.querySelectorAll('.variant-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  // Update hidden input
+  document.getElementById('variant-id-input').value = variantId;
+  // Update SKU display
+  var skuDisplay = document.getElementById('variant-sku-display');
+  if (skuDisplay && sku) {
+    skuDisplay.textContent = 'SKU: ' + sku;
+    skuDisplay.style.display = 'block';
+  }
+}
+</script>
 
 {% schema %}
 {

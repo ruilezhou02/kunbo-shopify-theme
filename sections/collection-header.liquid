@@ -1,30 +1,55 @@
-<!-- Collection Header -->
-<section class="collection-header-section">
-  <div class="container-narrow">
-    <p class="eyebrow">Products</p>
-    <h1 class="display-lg">{% if collection.title != blank %}{{ collection.title }}{% else %}All Products{% endif %}</h1>
-    {% if collection.description != blank %}
-      <p class="body-lg" style="margin-top: 16px;">{{ collection.description }}</p>
-    {% endif %}
+<!-- Collection Header -- Editorial -->
+<section class="collection-hero">
+  <div class="container">
+    <div class="collection-hero__inner">
+      <div class="collection-hero__text">
+        <p class="eyebrow reveal">{% if collection.title != blank %}{{ collection.title }}{% else %}Products{% endif %}</p>
+        <h1 class="display-lg reveal reveal-delay-1">{% if collection.title != blank %}{{ collection.title }}{% else %}All Products{% endif %}</h1>
+        {% if collection.description != blank %}
+          <p class="body-lg reveal reveal-delay-2" style="margin-top: 20px;">{{ collection.description }}</p>
+        {% endif %}
+        <p class="collection-hero__count reveal reveal-delay-2">{{ collection.products_count }} products</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<section>
-  <div class="collection-grid">
+<!-- Product Grid -->
+<section class="products-collection">
+  <div class="products-grid-new">
     {% for product in collection.products %}
-      <a href="{{ product.url }}" class="collection-item">
-        <div class="collection-item-image">
+      <a href="{{ product.url }}" class="product-tile reveal reveal-delay-{{ forloop.index | modulo: 3 | plus: 1 }}">
+        <div class="product-tile__image">
           {% if product.featured_image %}
-            <img src="{{ product.featured_image | img_url: '600x' }}" alt="{{ product.title }}">
+            <img src="{{ product.featured_image | img_url: '800x' }}"
+                 alt="{{ product.title | escape }}"
+                 loading="lazy"
+                 width="800"
+                 height="1000">
           {% else %}
-            <div style="width:100%;height:100%;background:var(--surface);"></div>
+            <div class="product-tile__placeholder"></div>
           {% endif %}
+          <div class="product-tile__overlay">
+            <span class="product-tile__cta">View Details</span>
+          </div>
         </div>
-        <h3>{{ product.title }}</h3>
-        <p>{{ product.price | money }}</p>
+        <div class="product-tile__info">
+          <h3 class="product-tile__title">{{ product.title }}</h3>
+          {% if product.type != blank %}
+            <span class="product-tile__type">{{ product.type }}</span>
+          {% endif %}
+          <div class="product-tile__divider"></div>
+          <p class="product-tile__snippet">
+            {% if product.description %}
+              {{ product.description | strip_html | truncate: 80 }}
+            {% endif %}
+          </p>
+        </div>
       </a>
     {% else %}
-      <p style="grid-column: 1/-1; text-align:center; color: var(--text-muted); padding: 80px 0;">No products yet. Check back soon.</p>
+      <div class="products-grid-empty reveal">
+        <p>No products yet. Check back soon.</p>
+      </div>
     {% endfor %}
   </div>
 </section>
