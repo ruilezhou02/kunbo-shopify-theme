@@ -116,11 +116,37 @@
           "paragraph_1": "Chongqing Kun Bloom Building Materials Co., Ltd. (\"Kun Bloom\") was founded by an industry veteran with over 15 years of experience. Since its establishment in 2010, the company has focused deeply on the building materials sector. Backed by deep industry expertise, strong R&D capabilities, and outstanding product quality, Kun Bloom has grown into a competitive brand recognized for both reputation and strength within the quartz tile industry, focusing on high-potential consumer and project markets while precisely meeting quality-driven demand.",
           "paragraph_2": "The company places strong emphasis on R&D investment, having built a professional design and R&D team and established rigorous process control and real-time monitoring systems, with craftsmanship standards benchmarked against industry-leading levels. Kun Bloom currently holds multiple utility model patents (Patent Nos. 2022221017708 and 2022230576778), and its products strictly comply with national standards including GB 6566-2010 and GB/T 4100-2015.",
           "paragraph_3": "Our partner production bases are located in China's Foshan and Quanzhou regions, benefiting from a complete industrial chain and efficient logistics network, with a focus on delivering high-quality wall and floor quartz tile products.",
-          "image_1": "shopify://shop_images/1631784802398_.pic_hd.jpg",
+          "image_1": "shopify://shop_images/WechatIMG33.jpg",
           "image_1_alt": "Kun Bloom Building",
-          "image_2": "shopify://shop_images/WechatIMG33.jpg",
+          "image_2": "shopify://shop_images/1631784802398_.pic_hd.jpg",
           "image_2_alt": "Kun Bloom Project"
         }
+      },
+      "projects-page": {
+        "type": "projects-page",
+        "settings": {
+          "eyebrow": "Projects",
+          "heading": "Project Showcase",
+          "intro": "Kun Bloom's founder has been rooted in the building materials industry for over 20 years, and the company has served more than 1,000 high-quality engineering projects. From commercial complexes to high-end residential developments, from municipal infrastructure to landscape paving, our products have won the trust of clients with outstanding quality, witnessing every remarkable moment of urban construction.",
+          "view_details_text": "View Details",
+          "products_label": "Case Products |"
+        }
+      },
+      "collection-header": {
+        "type": "collection-header",
+        "settings": {}
+      },
+      "honors-page": {
+        "type": "honors-page",
+        "settings": {
+          "eyebrow": "Credentials",
+          "title": "Honors & Qualifications",
+          "intro": "Recognized by industry authorities and the market for product strength and consistent performance."
+        }
+      },
+      "contact-page": {
+        "type": "contact-page",
+        "settings": {}
       }
     },
     "content_for_index": []
