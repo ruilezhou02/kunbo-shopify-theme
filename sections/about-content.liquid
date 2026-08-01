@@ -1,8 +1,9 @@
-<!-- About Page — Reference layout: title + intro, Company Profile with two images -->
+<!-- About Page — Editorial layout: title + intro, Company Profile with large images -->
 <section class="page-hero about-hero">
   <div class="container-wide">
     <h1 class="display-lg">{{ section.settings.title }}</h1>
     <p class="body-lg">{{ section.settings.intro }}</p>
+    <div class="about-hero-divider"></div>
   </div>
 </section>
 
@@ -16,14 +17,14 @@
         <p>{{ section.settings.paragraph_3 }}</p>
       </div>
       <div class="company-profile-images">
-        <figure class="company-profile-image">
+        <figure class="company-profile-image company-profile-image--tall">
           {% if section.settings.image_1 != blank %}
             <img src="{{ section.settings.image_1 | img_url: '800x' }}" alt="{{ section.settings.image_1_alt }}" loading="lazy">
           {% else %}
             <img src="{{ 'hero.jpeg' | asset_url }}" alt="Kun Bloom Building" loading="lazy">
           {% endif %}
         </figure>
-        <figure class="company-profile-image">
+        <figure class="company-profile-image company-profile-image--wide">
           {% if section.settings.image_2 != blank %}
             <img src="{{ section.settings.image_2 | img_url: '800x' }}" alt="{{ section.settings.image_2_alt }}" loading="lazy">
           {% else %}
