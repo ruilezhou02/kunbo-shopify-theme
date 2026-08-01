@@ -403,11 +403,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height
   background-position: center;
   background-repeat: no-repeat;
 }
-.has-statement-bg .statement-section .eyebrow,
-.has-statement-bg .statement-section .display-md,
-.has-statement-bg .statement-section .body-lg {
-  color: #fff;
-}
 .statement-section__overlay {
   position: absolute;
   inset: 0;
@@ -417,6 +412,11 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height
 }
 .has-statement-bg .statement-section__overlay {
   display: block;
+}
+.statement-section .eyebrow,
+.statement-section .display-md,
+.statement-section .body-lg {
+  color: #fff;
 }
 .statement-section .container-narrow {
   position: relative;
