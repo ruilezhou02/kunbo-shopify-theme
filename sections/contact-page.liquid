@@ -56,3 +56,24 @@
     </div>
   </div>
 </section>
+
+<script>
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var product = params.get('product');
+  var sku = params.get('sku');
+  if (product || sku) {
+    var textarea = document.getElementById('contact-message');
+    if (textarea) {
+      var lines = [];
+      lines.push('--- Product Inquiry ---');
+      if (product) lines.push('Product: ' + decodeURIComponent(product.replace(/\+/g, ' ')));
+      if (sku) lines.push('SKU: ' + decodeURIComponent(sku.replace(/\+/g, ' ')));
+      lines.push('');
+      lines.push('Please describe your project requirements:');
+      lines.push('');
+      textarea.value = lines.join('\n');
+    }
+  }
+})();
+</script>

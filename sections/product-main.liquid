@@ -63,15 +63,14 @@
       </div>
 
       <!-- Add to Inquiry -->
-      {% form 'product', product %}
-        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" id="variant-id-input">
-        <button type="submit" class="inquiry-btn" {% unless product.available %}disabled{% endunless %}>
-          <span>{% if product.available %}Add to Inquiry{% else %}Sold Out{% endif %}</span>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M3 8H13M10 5L13 8L10 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-      {% endform %}
+      <a href="/pages/contact{% if product.selected_or_first_available_variant.sku != blank %}?product={{ product.title | url_encode }}&sku={{ product.selected_or_first_available_variant.sku | url_encode }}{% endif %}"
+         class="inquiry-btn"
+         id="inquiry-link">
+        <span>{% if product.available %}Add to Inquiry{% else %}Sold Out{% endif %}</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M3 8H13M10 5L13 8L10 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
 
       <!-- Variant SKU display -->
       <p class="product-detail__variant-sku" id="variant-sku-display">
@@ -88,8 +87,12 @@ function handleVariantChange(btn, variantId, price, sku) {
   // Update active state
   document.querySelectorAll('.variant-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  // Update hidden input
-  document.getElementById('variant-id-input').value = variantId;
+  // Update inquiry link
+  var inquiryLink = document.getElementById('inquiry-link');
+  if (inquiryLink && sku) {
+    var productName = encodeURIComponent(btn.closest('.product-detail__info').querySelector('.product-detail__title').textContent);
+    inquiryLink.href = '/pages/contact?product=' + productName + '&sku=' + encodeURIComponent(sku);
+  }
   // Update SKU display
   var skuDisplay = document.getElementById('variant-sku-display');
   if (skuDisplay && sku) {
