@@ -81,7 +81,7 @@
         "type": "text",
         "id": "contact_phone",
         "label": "Phone",
-        "default": "023-67646148"
+        "default": "+86 023-67646148"
       },
       {
         "type": "text",
