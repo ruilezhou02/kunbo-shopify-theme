@@ -1787,6 +1787,13 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height
   color: var(--text-soft);
   font-weight: 300;
 }
+.wechat-qr {
+  display: block;
+  width: 180px;
+  height: auto;
+  margin-top: 14px;
+  border-radius: 4px;
+}
 .contact-form-group { margin-bottom: 24px; }
 .contact-form-group label {
   display: block;
