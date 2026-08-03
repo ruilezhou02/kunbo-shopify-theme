@@ -14,7 +14,6 @@
       {%- capture meta_id -%}project_{{ i }}_meta{%- endcapture -%}
       {%- capture title_id -%}project_{{ i }}_title{%- endcapture -%}
       {%- capture location_id -%}project_{{ i }}_location{%- endcapture -%}
-      {%- capture area_id -%}project_{{ i }}_area{%- endcapture -%}
       {%- capture desc_id -%}project_{{ i }}_desc{%- endcapture -%}
 
       <article class="project-card reveal reveal-delay-{{ i }}">
@@ -28,7 +27,7 @@
         </div>
         <p class="project-meta">{{ section.settings[meta_id] }}</p>
         <h3>{{ section.settings[title_id] }}</h3>
-        <p class="project-location">{{ section.settings[location_id] }}&ensp;|&ensp;{{ section.settings[area_id] }}</p>
+        <p class="project-location">{{ section.settings[location_id] }}</p>
         {% if section.settings[desc_id] != blank %}
           <p class="project-desc">{{ section.settings[desc_id] }}</p>
         {% endif %}
@@ -88,13 +87,7 @@
       "type": "text",
       "id": "project_1_location",
       "label": "Project 1 — Location",
-      "default": "Yubei District, Chongqing"
-    },
-    {
-      "type": "text",
-      "id": "project_1_area",
-      "label": "Project 1 — Area",
-      "default": "50,000 sqm"
+      "default": "Liangjiang New Area, Chongqin"
     },
     {
       "type": "textarea",
@@ -126,13 +119,7 @@
       "type": "text",
       "id": "project_2_location",
       "label": "Project 2 — Location",
-      "default": "Jiangbei District, Chongqing"
-    },
-    {
-      "type": "text",
-      "id": "project_2_area",
-      "label": "Project 2 — Area",
-      "default": "80,000 sqm"
+      "default": "Liangjiang New Area, Chongqin"
     },
     {
       "type": "textarea",
@@ -164,13 +151,7 @@
       "type": "text",
       "id": "project_3_location",
       "label": "Project 3 — Location",
-      "default": "Yuzhong District, Chongqing"
-    },
-    {
-      "type": "text",
-      "id": "project_3_area",
-      "label": "Project 3 — Area",
-      "default": "30,000 sqm"
+      "default": "Liangjiang New Area, Chongqin"
     },
     {
       "type": "textarea",
