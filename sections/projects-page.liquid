@@ -1,4 +1,4 @@
-<!-- Projects Page — Matching kunbloom.com/projects layout, Shopify theme typography -->
+<!-- Projects Page — PPT project cases with English text and image galleries -->
 <section class="page-hero projects-page-hero" data-section-type="projects-page">
   <div class="container-narrow">
     <p class="eyebrow">{{ section.settings.eyebrow }}</p>
@@ -7,36 +7,575 @@
   </div>
 </section>
 
-<section class="projects-page-grid" data-section-type="projects-page">
-  <div class="projects-page-container">
-    {% for block in section.blocks %}
-      <article class="project-page-card reveal" {{ block.shopify_attributes }}>
-        <div class="project-page-image">
-          {% if block.settings.image != blank %}
-            <img src="{{ block.settings.image | img_url: '800x' }}" alt="{{ block.settings.title }}" loading="lazy">
-          {% else %}
-            <img src="{{ 'facade.webp' | asset_url }}" alt="{{ block.settings.title }}" loading="lazy">
-          {% endif %}
-          <span class="project-year-badge">{{ block.settings.year }}</span>
-          <a href="{{ block.settings.link }}" class="project-view-btn">
-            {{ section.settings.view_details_text }}
-          </a>
-        </div>
-        <div class="project-page-info">
-          <h3>{{ block.settings.title }}</h3>
-          <p class="project-page-location">
+<section class="projects-gallery-section" data-section-type="projects-page">
+  <div class="projects-gallery-container">
+    <article class="project-entry reveal" data-project="2">
+      <div class="project-entry-header">
+        <div class="project-entry-info">
+          <span class="project-entry-year">2025</span>
+          <h3 class="project-entry-title">Chengdu Vanke Metropolis Jiadi</h3>
+          <p class="project-entry-materials">Wall Material: Wind Cloud</p>
+          <p class="project-entry-location">
             <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M6 0C2.96 0 .5 2.46.5 5.5c0 3.13 4.88 7.89 5.09 8.09.24.24.63.24.87 0C6.67 13.39 11.5 8.63 11.5 5.5 11.5 2.46 9.04 0 6 0z" fill="currentColor"/>
             </svg>
-            {{ block.settings.location }}
-          </p>
-          <p class="project-page-products">
-            <span>{{ section.settings.products_label }}</span>
-            {{ block.settings.products }}
+            Chengdu, China
           </p>
         </div>
-      </article>
-    {% endfor %}
+      </div>
+      <div class="project-gallery project-gallery-3">
+          <div class="project-gallery-item"><img src="{{ 'projects/p02_1.jpg' | asset_url }" alt="Chengdu Vanke Metropolis Jiadi" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p02_2.jpg' | asset_url }" alt="Chengdu Vanke Metropolis Jiadi" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p02_3.jpg' | asset_url }" alt="Chengdu Vanke Metropolis Jiadi" loading="lazy" /></div>
+      </div>
+    </article>
+    <article class="project-entry reveal" data-project="3">
+      <div class="project-entry-header">
+        <div class="project-entry-info">
+          <span class="project-entry-year">2025</span>
+          <h3 class="project-entry-title">Chengdu China Overseas Tianfu Li Lingfeng</h3>
+          <p class="project-entry-materials">Flooring Material: French Sandstone / Sandstone / Limestone</p>
+          <p class="project-entry-location">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6 0C2.96 0 .5 2.46.5 5.5c0 3.13 4.88 7.89 5.09 8.09.24.24.63.24.87 0C6.67 13.39 11.5 8.63 11.5 5.5 11.5 2.46 9.04 0 6 0z" fill="currentColor"/>
+            </svg>
+            Chengdu, China
+          </p>
+        </div>
+      </div>
+      <div class="project-gallery project-gallery-2">
+          <div class="project-gallery-item"><img src="{{ 'projects/p03_1.jpg' | asset_url }" alt="Chengdu China Overseas Tianfu Li Lingfeng" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p03_2.jpg' | asset_url }" alt="Chengdu China Overseas Tianfu Li Lingfeng" loading="lazy" /></div>
+      </div>
+    </article>
+    <article class="project-entry reveal" data-project="4">
+      <div class="project-entry-header">
+        <div class="project-entry-info">
+          <span class="project-entry-year">2025</span>
+          <h3 class="project-entry-title">Wenzhou Vanke Pushi Yunzhou</h3>
+          <p class="project-entry-materials">Flooring Material: French Sandstone / Sandstone / Limestone</p>
+          <p class="project-entry-location">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6 0C2.96 0 .5 2.46.5 5.5c0 3.13 4.88 7.89 5.09 8.09.24.24.63.24.87 0C6.67 13.39 11.5 8.63 11.5 5.5 11.5 2.46 9.04 0 6 0z" fill="currentColor"/>
+            </svg>
+            Wenzhou, China
+          </p>
+        </div>
+      </div>
+      <div class="project-gallery project-gallery-1">
+          <div class="project-gallery-item"><img src="{{ 'projects/p04_1.jpg' | asset_url }" alt="Wenzhou Vanke Pushi Yunzhou" loading="lazy" /></div>
+      </div>
+    </article>
+    <article class="project-entry reveal" data-project="5">
+      <div class="project-entry-header">
+        <div class="project-entry-info">
+          <span class="project-entry-year">2024</span>
+          <h3 class="project-entry-title">Sanya Aranya Villa Showroom</h3>
+          <p class="project-entry-materials">Flooring Material: Sandstone</p>
+          <p class="project-entry-location">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6 0C2.96 0 .5 2.46.5 5.5c0 3.13 4.88 7.89 5.09 8.09.24.24.63.24.87 0C6.67 13.39 11.5 8.63 11.5 5.5 11.5 2.46 9.04 0 6 0z" fill="currentColor"/>
+            </svg>
+            Sanya, China
+          </p>
+        </div>
+      </div>
+      <div class="project-gallery project-gallery-3">
+          <div class="project-gallery-item"><img src="{{ 'projects/p05_1.jpg' | asset_url }" alt="Sanya Aranya Villa Showroom" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p05_2.jpg' | asset_url }" alt="Sanya Aranya Villa Showroom" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p05_3.jpg' | asset_url }" alt="Sanya Aranya Villa Showroom" loading="lazy" /></div>
+      </div>
+    </article>
+    <article class="project-entry reveal" data-project="6">
+      <div class="project-entry-header">
+        <div class="project-entry-info">
+          <span class="project-entry-year">2025</span>
+          <h3 class="project-entry-title">Chengdu Xinyi Xinzhi Shore Dwelling</h3>
+          <p class="project-entry-materials">Flooring: New Zealand Gray, Night Snow, Wave White, Fuding Black | Wall: Hermes Gray</p>
+          <p class="project-entry-location">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6 0C2.96 0 .5 2.46.5 5.5c0 3.13 4.88 7.89 5.09 8.09.24.24.63.24.87 0C6.67 13.39 11.5 8.63 11.5 5.5 11.5 2.46 9.04 0 6 0z" fill="currentColor"/>
+            </svg>
+            Chengdu, China
+          </p>
+        </div>
+      </div>
+      <div class="project-gallery project-gallery-4">
+          <div class="project-gallery-item"><img src="{{ 'projects/p06_1.jpg' | asset_url }" alt="Chengdu Xinyi Xinzhi Shore Dwelling" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p06_2.jpg' | asset_url }" alt="Chengdu Xinyi Xinzhi Shore Dwelling" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p06_3.jpg' | asset_url }" alt="Chengdu Xinyi Xinzhi Shore Dwelling" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p06_4.jpg' | asset_url }" alt="Chengdu Xinyi Xinzhi Shore Dwelling" loading="lazy" /></div>
+      </div>
+    </article>
+    <article class="project-entry reveal" data-project="7">
+      <div class="project-entry-header">
+        <div class="project-entry-info">
+          <span class="project-entry-year">2025</span>
+          <h3 class="project-entry-title">Chongqing Haicheng Yunhu Jun</h3>
+          <p class="project-entry-materials">Wall Material: Cyprus</p>
+          <p class="project-entry-location">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6 0C2.96 0 .5 2.46.5 5.5c0 3.13 4.88 7.89 5.09 8.09.24.24.63.24.87 0C6.67 13.39 11.5 8.63 11.5 5.5 11.5 2.46 9.04 0 6 0z" fill="currentColor"/>
+            </svg>
+            Chongqing, China
+          </p>
+        </div>
+      </div>
+      <div class="project-gallery project-gallery-3">
+          <div class="project-gallery-item"><img src="{{ 'projects/p07_1.jpg' | asset_url }" alt="Chongqing Haicheng Yunhu Jun" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p07_2.jpg' | asset_url }" alt="Chongqing Haicheng Yunhu Jun" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p07_3.jpg' | asset_url }" alt="Chongqing Haicheng Yunhu Jun" loading="lazy" /></div>
+      </div>
+    </article>
+    <article class="project-entry reveal" data-project="8">
+      <div class="project-entry-header">
+        <div class="project-entry-info">
+          <span class="project-entry-year">2024</span>
+          <h3 class="project-entry-title">Chengdu CCCC Jinjiang Song</h3>
+          <p class="project-entry-materials">Wall: Huaying Mountain Dark Gray, Medium Gray | Flooring: Digital Marble</p>
+          <p class="project-entry-location">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6 0C2.96 0 .5 2.46.5 5.5c0 3.13 4.88 7.89 5.09 8.09.24.24.63.24.87 0C6.67 13.39 11.5 8.63 11.5 5.5 11.5 2.46 9.04 0 6 0z" fill="currentColor"/>
+            </svg>
+            Chengdu, China
+          </p>
+        </div>
+      </div>
+      <div class="project-gallery project-gallery-4">
+          <div class="project-gallery-item"><img src="{{ 'projects/p08_1.jpg' | asset_url }" alt="Chengdu CCCC Jinjiang Song" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p08_2.jpg' | asset_url }" alt="Chengdu CCCC Jinjiang Song" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p08_3.jpg' | asset_url }" alt="Chengdu CCCC Jinjiang Song" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p08_4.jpg' | asset_url }" alt="Chengdu CCCC Jinjiang Song" loading="lazy" /></div>
+      </div>
+    </article>
+    <article class="project-entry reveal" data-project="9">
+      <div class="project-entry-header">
+        <div class="project-entry-info">
+          <span class="project-entry-year">2025</span>
+          <h3 class="project-entry-title">Chongqing Longfor North City Paradise Walk</h3>
+          <p class="project-entry-materials">Flooring Material: Pure Through-Body Sesame Black</p>
+          <p class="project-entry-location">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6 0C2.96 0 .5 2.46.5 5.5c0 3.13 4.88 7.89 5.09 8.09.24.24.63.24.87 0C6.67 13.39 11.5 8.63 11.5 5.5 11.5 2.46 9.04 0 6 0z" fill="currentColor"/>
+            </svg>
+            Chongqing, China
+          </p>
+        </div>
+      </div>
+      <div class="project-gallery project-gallery-3">
+          <div class="project-gallery-item"><img src="{{ 'projects/p09_1.jpg' | asset_url }" alt="Chongqing Longfor North City Paradise Walk" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p09_2.jpg' | asset_url }" alt="Chongqing Longfor North City Paradise Walk" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p09_3.jpg' | asset_url }" alt="Chongqing Longfor North City Paradise Walk" loading="lazy" /></div>
+      </div>
+    </article>
+    <article class="project-entry reveal" data-project="10">
+      <div class="project-entry-header">
+        <div class="project-entry-info">
+          <span class="project-entry-year">2025</span>
+          <h3 class="project-entry-title">Chongqing MCC Tongluo Tai</h3>
+          <p class="project-entry-materials">Flooring Material: New Zealand Gray, Anti-Slip Wood Grain</p>
+          <p class="project-entry-location">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6 0C2.96 0 .5 2.46.5 5.5c0 3.13 4.88 7.89 5.09 8.09.24.24.63.24.87 0C6.67 13.39 11.5 8.63 11.5 5.5 11.5 2.46 9.04 0 6 0z" fill="currentColor"/>
+            </svg>
+            Chongqing, China
+          </p>
+        </div>
+      </div>
+      <div class="project-gallery project-gallery-3">
+          <div class="project-gallery-item"><img src="{{ 'projects/p10_1.jpg' | asset_url }" alt="Chongqing MCC Tongluo Tai" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p10_2.jpg' | asset_url }" alt="Chongqing MCC Tongluo Tai" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p10_3.jpg' | asset_url }" alt="Chongqing MCC Tongluo Tai" loading="lazy" /></div>
+      </div>
+    </article>
+    <article class="project-entry reveal" data-project="11">
+      <div class="project-entry-header">
+        <div class="project-entry-info">
+          <span class="project-entry-year">2025</span>
+          <h3 class="project-entry-title">Chongqing MCC Tongluo Tai (Interior)</h3>
+          <p class="project-entry-materials">Wall: Digital Marble | Flooring: Legacy, Flowing Shadow, Digital Marble</p>
+          <p class="project-entry-location">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6 0C2.96 0 .5 2.46.5 5.5c0 3.13 4.88 7.89 5.09 8.09.24.24.63.24.87 0C6.67 13.39 11.5 8.63 11.5 5.5 11.5 2.46 9.04 0 6 0z" fill="currentColor"/>
+            </svg>
+            Chongqing, China
+          </p>
+        </div>
+      </div>
+      <div class="project-gallery project-gallery-4">
+          <div class="project-gallery-item"><img src="{{ 'projects/p11_1.jpg' | asset_url }" alt="Chongqing MCC Tongluo Tai (Interior)" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p11_2.jpg' | asset_url }" alt="Chongqing MCC Tongluo Tai (Interior)" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p11_3.jpg' | asset_url }" alt="Chongqing MCC Tongluo Tai (Interior)" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p11_4.jpg' | asset_url }" alt="Chongqing MCC Tongluo Tai (Interior)" loading="lazy" /></div>
+      </div>
+    </article>
+    <article class="project-entry reveal" data-project="12">
+      <div class="project-entry-header">
+        <div class="project-entry-info">
+          <span class="project-entry-year">2025</span>
+          <h3 class="project-entry-title">Xiangyang Liantou Changhong Impression</h3>
+          <p class="project-entry-materials">Wall Material: Travertine</p>
+          <p class="project-entry-location">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6 0C2.96 0 .5 2.46.5 5.5c0 3.13 4.88 7.89 5.09 8.09.24.24.63.24.87 0C6.67 13.39 11.5 8.63 11.5 5.5 11.5 2.46 9.04 0 6 0z" fill="currentColor"/>
+            </svg>
+            Xiangyang, China
+          </p>
+        </div>
+      </div>
+      <div class="project-gallery project-gallery-3">
+          <div class="project-gallery-item"><img src="{{ 'projects/p12_1.jpg' | asset_url }" alt="Xiangyang Liantou Changhong Impression" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p12_2.jpg' | asset_url }" alt="Xiangyang Liantou Changhong Impression" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p12_3.jpg' | asset_url }" alt="Xiangyang Liantou Changhong Impression" loading="lazy" /></div>
+      </div>
+    </article>
+    <article class="project-entry reveal" data-project="13">
+      <div class="project-entry-header">
+        <div class="project-entry-info">
+          <span class="project-entry-year">2023</span>
+          <h3 class="project-entry-title">Zhengzhou China Resources MixC</h3>
+          <p class="project-entry-materials">Flooring Material: Huaying Mountain / Sesame Gray</p>
+          <p class="project-entry-location">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6 0C2.96 0 .5 2.46.5 5.5c0 3.13 4.88 7.89 5.09 8.09.24.24.63.24.87 0C6.67 13.39 11.5 8.63 11.5 5.5 11.5 2.46 9.04 0 6 0z" fill="currentColor"/>
+            </svg>
+            Zhengzhou, China
+          </p>
+        </div>
+      </div>
+      <div class="project-gallery project-gallery-3">
+          <div class="project-gallery-item"><img src="{{ 'projects/p13_1.jpg' | asset_url }" alt="Zhengzhou China Resources MixC" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p13_2.jpg' | asset_url }" alt="Zhengzhou China Resources MixC" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p13_3.jpg' | asset_url }" alt="Zhengzhou China Resources MixC" loading="lazy" /></div>
+      </div>
+    </article>
+    <article class="project-entry reveal" data-project="14">
+      <div class="project-entry-header">
+        <div class="project-entry-info">
+          <span class="project-entry-year">2025</span>
+          <h3 class="project-entry-title">Zhengzhou Zhongyu Lake City Impression</h3>
+          <p class="project-entry-materials">Wall: Digital Marble | Flooring: New Zealand Gray</p>
+          <p class="project-entry-location">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6 0C2.96 0 .5 2.46.5 5.5c0 3.13 4.88 7.89 5.09 8.09.24.24.63.24.87 0C6.67 13.39 11.5 8.63 11.5 5.5 11.5 2.46 9.04 0 6 0z" fill="currentColor"/>
+            </svg>
+            Zhengzhou, China
+          </p>
+        </div>
+      </div>
+      <div class="project-gallery project-gallery-3">
+          <div class="project-gallery-item"><img src="{{ 'projects/p14_1.jpg' | asset_url }" alt="Zhengzhou Zhongyu Lake City Impression" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p14_2.jpg' | asset_url }" alt="Zhengzhou Zhongyu Lake City Impression" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p14_3.jpg' | asset_url }" alt="Zhengzhou Zhongyu Lake City Impression" loading="lazy" /></div>
+      </div>
+    </article>
+    <article class="project-entry reveal" data-project="15">
+      <div class="project-entry-header">
+        <div class="project-entry-info">
+          <span class="project-entry-year">2025</span>
+          <h3 class="project-entry-title">Chengdu Longfor Tianxi</h3>
+          <p class="project-entry-materials">Flooring Material: Yunbei</p>
+          <p class="project-entry-location">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6 0C2.96 0 .5 2.46.5 5.5c0 3.13 4.88 7.89 5.09 8.09.24.24.63.24.87 0C6.67 13.39 11.5 8.63 11.5 5.5 11.5 2.46 9.04 0 6 0z" fill="currentColor"/>
+            </svg>
+            Chengdu, China
+          </p>
+        </div>
+      </div>
+      <div class="project-gallery project-gallery-2">
+          <div class="project-gallery-item"><img src="{{ 'projects/p15_1.jpg' | asset_url }" alt="Chengdu Longfor Tianxi" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p15_2.jpg' | asset_url }" alt="Chengdu Longfor Tianxi" loading="lazy" /></div>
+      </div>
+    </article>
+    <article class="project-entry reveal" data-project="16">
+      <div class="project-entry-header">
+        <div class="project-entry-info">
+          <span class="project-entry-year">2023</span>
+          <h3 class="project-entry-title">Sanya CTS Futrong Mansion</h3>
+          <p class="project-entry-materials">Flooring Material: Digital Marble</p>
+          <p class="project-entry-location">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6 0C2.96 0 .5 2.46.5 5.5c0 3.13 4.88 7.89 5.09 8.09.24.24.63.24.87 0C6.67 13.39 11.5 8.63 11.5 5.5 11.5 2.46 9.04 0 6 0z" fill="currentColor"/>
+            </svg>
+            Sanya, China
+          </p>
+        </div>
+      </div>
+      <div class="project-gallery project-gallery-2">
+          <div class="project-gallery-item"><img src="{{ 'projects/p16_1.jpg' | asset_url }" alt="Sanya CTS Futrong Mansion" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p16_2.jpg' | asset_url }" alt="Sanya CTS Futrong Mansion" loading="lazy" /></div>
+      </div>
+    </article>
+    <article class="project-entry reveal" data-project="17">
+      <div class="project-entry-header">
+        <div class="project-entry-info">
+          <span class="project-entry-year">2024</span>
+          <h3 class="project-entry-title">Chengdu CRCC Sinopoly Shanjing</h3>
+          <p class="project-entry-materials">Wall Material: Florence</p>
+          <p class="project-entry-location">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6 0C2.96 0 .5 2.46.5 5.5c0 3.13 4.88 7.89 5.09 8.09.24.24.63.24.87 0C6.67 13.39 11.5 8.63 11.5 5.5 11.5 2.46 9.04 0 6 0z" fill="currentColor"/>
+            </svg>
+            Chengdu, China
+          </p>
+        </div>
+      </div>
+      <div class="project-gallery project-gallery-4">
+          <div class="project-gallery-item"><img src="{{ 'projects/p17_1.jpg' | asset_url }" alt="Chengdu CRCC Sinopoly Shanjing" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p17_2.jpg' | asset_url }" alt="Chengdu CRCC Sinopoly Shanjing" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p17_3.jpg' | asset_url }" alt="Chengdu CRCC Sinopoly Shanjing" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p17_4.jpg' | asset_url }" alt="Chengdu CRCC Sinopoly Shanjing" loading="lazy" /></div>
+      </div>
+    </article>
+    <article class="project-entry reveal" data-project="18">
+      <div class="project-entry-header">
+        <div class="project-entry-info">
+          <span class="project-entry-year">2025</span>
+          <h3 class="project-entry-title">Hefei Weixing Vanke Xingyu Guangnian</h3>
+          <p class="project-entry-materials">Flooring: Terrazzo Gray White, Huaying Mountain Dark Gray, Medium Gray</p>
+          <p class="project-entry-location">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6 0C2.96 0 .5 2.46.5 5.5c0 3.13 4.88 7.89 5.09 8.09.24.24.63.24.87 0C6.67 13.39 11.5 8.63 11.5 5.5 11.5 2.46 9.04 0 6 0z" fill="currentColor"/>
+            </svg>
+            Hefei, China
+          </p>
+        </div>
+      </div>
+      <div class="project-gallery project-gallery-4">
+          <div class="project-gallery-item"><img src="{{ 'projects/p18_1.jpg' | asset_url }" alt="Hefei Weixing Vanke Xingyu Guangnian" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p18_2.jpg' | asset_url }" alt="Hefei Weixing Vanke Xingyu Guangnian" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p18_3.jpg' | asset_url }" alt="Hefei Weixing Vanke Xingyu Guangnian" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p18_4.jpg' | asset_url }" alt="Hefei Weixing Vanke Xingyu Guangnian" loading="lazy" /></div>
+      </div>
+    </article>
+    <article class="project-entry reveal" data-project="19">
+      <div class="project-entry-header">
+        <div class="project-entry-info">
+          <span class="project-entry-year">2024</span>
+          <h3 class="project-entry-title">Hefei China Resources MixC One</h3>
+          <p class="project-entry-materials">Flooring Material: Langtaosha</p>
+          <p class="project-entry-location">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6 0C2.96 0 .5 2.46.5 5.5c0 3.13 4.88 7.89 5.09 8.09.24.24.63.24.87 0C6.67 13.39 11.5 8.63 11.5 5.5 11.5 2.46 9.04 0 6 0z" fill="currentColor"/>
+            </svg>
+            Hefei, China
+          </p>
+        </div>
+      </div>
+      <div class="project-gallery project-gallery-3">
+          <div class="project-gallery-item"><img src="{{ 'projects/p19_1.jpg' | asset_url }" alt="Hefei China Resources MixC One" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p19_2.jpg' | asset_url }" alt="Hefei China Resources MixC One" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p19_3.jpg' | asset_url }" alt="Hefei China Resources MixC One" loading="lazy" /></div>
+      </div>
+    </article>
+    <article class="project-entry reveal" data-project="20">
+      <div class="project-entry-header">
+        <div class="project-entry-info">
+          <span class="project-entry-year">2025</span>
+          <h3 class="project-entry-title">Ningbo Vanke Guanlan Yingxiang Mansion</h3>
+          <p class="project-entry-materials">Wall: Cyprus Stone | Flooring: Digital Marble White, Dark Gray, Wind Flower Snow Moon</p>
+          <p class="project-entry-location">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6 0C2.96 0 .5 2.46.5 5.5c0 3.13 4.88 7.89 5.09 8.09.24.24.63.24.87 0C6.67 13.39 11.5 8.63 11.5 5.5 11.5 2.46 9.04 0 6 0z" fill="currentColor"/>
+            </svg>
+            Ningbo, China
+          </p>
+        </div>
+      </div>
+      <div class="project-gallery project-gallery-6">
+          <div class="project-gallery-item"><img src="{{ 'projects/p20_1.jpg' | asset_url }" alt="Ningbo Vanke Guanlan Yingxiang Mansion" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p20_2.jpg' | asset_url }" alt="Ningbo Vanke Guanlan Yingxiang Mansion" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p20_3.jpg' | asset_url }" alt="Ningbo Vanke Guanlan Yingxiang Mansion" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p20_4.jpg' | asset_url }" alt="Ningbo Vanke Guanlan Yingxiang Mansion" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p20_5.jpg' | asset_url }" alt="Ningbo Vanke Guanlan Yingxiang Mansion" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p20_6.jpg' | asset_url }" alt="Ningbo Vanke Guanlan Yingxiang Mansion" loading="lazy" /></div>
+      </div>
+    </article>
+    <article class="project-entry reveal" data-project="21">
+      <div class="project-entry-header">
+        <div class="project-entry-info">
+          <span class="project-entry-year">2023</span>
+          <h3 class="project-entry-title">Wuhan Vanke Optics Valley Jinyao</h3>
+          <p class="project-entry-materials">Wall: Quartz Carbon, Yunbei Medium Gray</p>
+          <p class="project-entry-location">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6 0C2.96 0 .5 2.46.5 5.5c0 3.13 4.88 7.89 5.09 8.09.24.24.63.24.87 0C6.67 13.39 11.5 8.63 11.5 5.5 11.5 2.46 9.04 0 6 0z" fill="currentColor"/>
+            </svg>
+            Wuhan, China
+          </p>
+        </div>
+      </div>
+      <div class="project-gallery project-gallery-4">
+          <div class="project-gallery-item"><img src="{{ 'projects/p21_1.jpg' | asset_url }" alt="Wuhan Vanke Optics Valley Jinyao" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p21_2.jpg' | asset_url }" alt="Wuhan Vanke Optics Valley Jinyao" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p21_3.jpg' | asset_url }" alt="Wuhan Vanke Optics Valley Jinyao" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p21_4.jpg' | asset_url }" alt="Wuhan Vanke Optics Valley Jinyao" loading="lazy" /></div>
+      </div>
+    </article>
+    <article class="project-entry reveal" data-project="22">
+      <div class="project-entry-header">
+        <div class="project-entry-info">
+          <span class="project-entry-year">2025</span>
+          <h3 class="project-entry-title">Wuhan China Resources Peninsula Lake Mirror</h3>
+          <p class="project-entry-materials">Wall: Colorado Dark Gray, Hermes Black, Mousse Gray | Flooring: Colorado Stone Dark Gray, Light Gray</p>
+          <p class="project-entry-location">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6 0C2.96 0 .5 2.46.5 5.5c0 3.13 4.88 7.89 5.09 8.09.24.24.63.24.87 0C6.67 13.39 11.5 8.63 11.5 5.5 11.5 2.46 9.04 0 6 0z" fill="currentColor"/>
+            </svg>
+            Wuhan, China
+          </p>
+        </div>
+      </div>
+      <div class="project-gallery project-gallery-4">
+          <div class="project-gallery-item"><img src="{{ 'projects/p22_1.jpg' | asset_url }" alt="Wuhan China Resources Peninsula Lake Mirror" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p22_2.jpg' | asset_url }" alt="Wuhan China Resources Peninsula Lake Mirror" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p22_3.jpg' | asset_url }" alt="Wuhan China Resources Peninsula Lake Mirror" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p22_4.jpg' | asset_url }" alt="Wuhan China Resources Peninsula Lake Mirror" loading="lazy" /></div>
+      </div>
+    </article>
+    <article class="project-entry reveal" data-project="23">
+      <div class="project-entry-header">
+        <div class="project-entry-info">
+          <span class="project-entry-year">2023</span>
+          <h3 class="project-entry-title">Shenzhen China Resources Ziyue Runfu</h3>
+          <p class="project-entry-materials">Wall: Moonlight Beige | Flooring: New Zealand Gray Medium Gray</p>
+          <p class="project-entry-location">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6 0C2.96 0 .5 2.46.5 5.5c0 3.13 4.88 7.89 5.09 8.09.24.24.63.24.87 0C6.67 13.39 11.5 8.63 11.5 5.5 11.5 2.46 9.04 0 6 0z" fill="currentColor"/>
+            </svg>
+            Shenzhen, China
+          </p>
+        </div>
+      </div>
+      <div class="project-gallery project-gallery-4">
+          <div class="project-gallery-item"><img src="{{ 'projects/p23_1.jpg' | asset_url }" alt="Shenzhen China Resources Ziyue Runfu" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p23_2.jpg' | asset_url }" alt="Shenzhen China Resources Ziyue Runfu" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p23_3.jpg' | asset_url }" alt="Shenzhen China Resources Ziyue Runfu" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p23_4.jpg' | asset_url }" alt="Shenzhen China Resources Ziyue Runfu" loading="lazy" /></div>
+      </div>
+    </article>
+    <article class="project-entry reveal" data-project="24">
+      <div class="project-entry-header">
+        <div class="project-entry-info">
+          <span class="project-entry-year">2025</span>
+          <h3 class="project-entry-title">Shenzhen China Resources Jing'an Mansion</h3>
+          <p class="project-entry-materials">Flooring Material: Sandy Shore</p>
+          <p class="project-entry-location">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6 0C2.96 0 .5 2.46.5 5.5c0 3.13 4.88 7.89 5.09 8.09.24.24.63.24.87 0C6.67 13.39 11.5 8.63 11.5 5.5 11.5 2.46 9.04 0 6 0z" fill="currentColor"/>
+            </svg>
+            Shenzhen, China
+          </p>
+        </div>
+      </div>
+      <div class="project-gallery project-gallery-3">
+          <div class="project-gallery-item"><img src="{{ 'projects/p24_1.jpg' | asset_url }" alt="Shenzhen China Resources Jing'an Mansion" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p24_2.jpg' | asset_url }" alt="Shenzhen China Resources Jing'an Mansion" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p24_3.jpg' | asset_url }" alt="Shenzhen China Resources Jing'an Mansion" loading="lazy" /></div>
+      </div>
+    </article>
+    <article class="project-entry reveal" data-project="25">
+      <div class="project-entry-header">
+        <div class="project-entry-info">
+          <span class="project-entry-year">2025</span>
+          <h3 class="project-entry-title">Hangzhou Vanke Fengyi Xiaolu</h3>
+          <p class="project-entry-materials">Flooring Material: Shizifeng Dark Gray, New Zealand Gray</p>
+          <p class="project-entry-location">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6 0C2.96 0 .5 2.46.5 5.5c0 3.13 4.88 7.89 5.09 8.09.24.24.63.24.87 0C6.67 13.39 11.5 8.63 11.5 5.5 11.5 2.46 9.04 0 6 0z" fill="currentColor"/>
+            </svg>
+            Hangzhou, China
+          </p>
+        </div>
+      </div>
+      <div class="project-gallery project-gallery-4">
+          <div class="project-gallery-item"><img src="{{ 'projects/p25_1.jpg' | asset_url }" alt="Hangzhou Vanke Fengyi Xiaolu" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p25_2.jpg' | asset_url }" alt="Hangzhou Vanke Fengyi Xiaolu" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p25_3.jpg' | asset_url }" alt="Hangzhou Vanke Fengyi Xiaolu" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p25_4.jpg' | asset_url }" alt="Hangzhou Vanke Fengyi Xiaolu" loading="lazy" /></div>
+      </div>
+    </article>
+    <article class="project-entry reveal" data-project="26">
+      <div class="project-entry-header">
+        <div class="project-entry-info">
+          <span class="project-entry-year">2023</span>
+          <h3 class="project-entry-title">Hangzhou Guotai Century Center</h3>
+          <p class="project-entry-materials">Flooring Material: Egyptian Stone, Xingyun</p>
+          <p class="project-entry-location">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6 0C2.96 0 .5 2.46.5 5.5c0 3.13 4.88 7.89 5.09 8.09.24.24.63.24.87 0C6.67 13.39 11.5 8.63 11.5 5.5 11.5 2.46 9.04 0 6 0z" fill="currentColor"/>
+            </svg>
+            Hangzhou, China
+          </p>
+        </div>
+      </div>
+      <div class="project-gallery project-gallery-3">
+          <div class="project-gallery-item"><img src="{{ 'projects/p26_1.jpg' | asset_url }" alt="Hangzhou Guotai Century Center" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p26_2.jpg' | asset_url }" alt="Hangzhou Guotai Century Center" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p26_3.jpg' | asset_url }" alt="Hangzhou Guotai Century Center" loading="lazy" /></div>
+      </div>
+    </article>
+    <article class="project-entry reveal" data-project="27">
+      <div class="project-entry-header">
+        <div class="project-entry-info">
+          <span class="project-entry-year">2023</span>
+          <h3 class="project-entry-title">Wuhan Urban Construction Central Yunjin</h3>
+          <p class="project-entry-materials">Flooring Material: Egyptian Stone</p>
+          <p class="project-entry-location">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6 0C2.96 0 .5 2.46.5 5.5c0 3.13 4.88 7.89 5.09 8.09.24.24.63.24.87 0C6.67 13.39 11.5 8.63 11.5 5.5 11.5 2.46 9.04 0 6 0z" fill="currentColor"/>
+            </svg>
+            Wuhan, China
+          </p>
+        </div>
+      </div>
+      <div class="project-gallery project-gallery-3">
+          <div class="project-gallery-item"><img src="{{ 'projects/p27_1.jpg' | asset_url }" alt="Wuhan Urban Construction Central Yunjin" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p27_2.jpg' | asset_url }" alt="Wuhan Urban Construction Central Yunjin" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p27_3.jpg' | asset_url }" alt="Wuhan Urban Construction Central Yunjin" loading="lazy" /></div>
+      </div>
+    </article>
+    <article class="project-entry reveal" data-project="28">
+      <div class="project-entry-header">
+        <div class="project-entry-info">
+          <span class="project-entry-year">2023</span>
+          <h3 class="project-entry-title">Hefei Vanke Langshi</h3>
+          <p class="project-entry-materials">Flooring Material: New Zealand Gray, Light Gray, Fuding Black</p>
+          <p class="project-entry-location">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6 0C2.96 0 .5 2.46.5 5.5c0 3.13 4.88 7.89 5.09 8.09.24.24.63.24.87 0C6.67 13.39 11.5 8.63 11.5 5.5 11.5 2.46 9.04 0 6 0z" fill="currentColor"/>
+            </svg>
+            Hefei, China
+          </p>
+        </div>
+      </div>
+      <div class="project-gallery project-gallery-3">
+          <div class="project-gallery-item"><img src="{{ 'projects/p28_1.jpg' | asset_url }" alt="Hefei Vanke Langshi" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p28_2.jpg' | asset_url }" alt="Hefei Vanke Langshi" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p28_3.jpg' | asset_url }" alt="Hefei Vanke Langshi" loading="lazy" /></div>
+      </div>
+    </article>
+    <article class="project-entry reveal" data-project="29">
+      <div class="project-entry-header">
+        <div class="project-entry-info">
+          <span class="project-entry-year">2022</span>
+          <h3 class="project-entry-title">Hefei China Resources Runcheng Center</h3>
+          <p class="project-entry-materials">Flooring Material: Yunbei, New Zealand Gray</p>
+          <p class="project-entry-location">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6 0C2.96 0 .5 2.46.5 5.5c0 3.13 4.88 7.89 5.09 8.09.24.24.63.24.87 0C6.67 13.39 11.5 8.63 11.5 5.5 11.5 2.46 9.04 0 6 0z" fill="currentColor"/>
+            </svg>
+            Hefei, China
+          </p>
+        </div>
+      </div>
+      <div class="project-gallery project-gallery-3">
+          <div class="project-gallery-item"><img src="{{ 'projects/p29_1.jpg' | asset_url }" alt="Hefei China Resources Runcheng Center" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p29_2.jpg' | asset_url }" alt="Hefei China Resources Runcheng Center" loading="lazy" /></div>
+          <div class="project-gallery-item"><img src="{{ 'projects/p29_3.jpg' | asset_url }" alt="Hefei China Resources Runcheng Center" loading="lazy" /></div>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -61,94 +600,11 @@
       "id": "intro",
       "label": "Intro Text",
       "default": "Kun Bloom's founder has been rooted in the building materials industry for over 20 years, and the company has served more than 1,000 high-quality engineering projects. From commercial complexes to high-end residential developments, from municipal infrastructure to landscape paving, our products have won the trust of clients with outstanding quality, witnessing every remarkable moment of urban construction."
-    },
-    {
-      "type": "text",
-      "id": "view_details_text",
-      "label": "Button Text",
-      "default": "View Details"
-    },
-    {
-      "type": "text",
-      "id": "products_label",
-      "label": "Products Label",
-      "default": "Case Products |"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "project",
-      "name": "Project",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Project Image"
-        },
-        {
-          "type": "text",
-          "id": "year",
-          "label": "Year",
-          "default": "2025"
-        },
-        {
-          "type": "url",
-          "id": "link",
-          "label": "Project Link"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Project Name",
-          "default": "Longfor Beicheng Paradise Walk, Chongqing"
-        },
-        {
-          "type": "text",
-          "id": "location",
-          "label": "Location",
-          "default": "Beicheng Paradise Walk, Guanyinqiao, Liangjiang New Area, Chongqing"
-        },
-        {
-          "type": "text",
-          "id": "products",
-          "label": "Products Used",
-          "default": "Floor: Pure-Body Silver Gray, Digital Marble"
-        }
-      ]
     }
   ],
   "presets": [
     {
-      "name": "Projects Page Grid",
-      "blocks": [
-        {
-          "type": "project",
-          "settings": {
-            "year": "2025",
-            "title": "Longfor Beicheng Paradise Walk, Chongqing",
-            "location": "Beicheng Paradise Walk, Guanyinqiao, Liangjiang New Area, Chongqing",
-            "products": "Floor: Pure-Body Silver Gray, Digital Marble"
-          }
-        },
-        {
-          "type": "project",
-          "settings": {
-            "year": "2025",
-            "title": "Vanke Pushi Yunzhou, Wenzhou",
-            "location": "Intersection of Dongyang Road and Jinshi Road, Ouhai District, Wenzhou, Zhejiang",
-            "products": "French Sandstone, Sandstone, Limestone"
-          }
-        },
-        {
-          "type": "project",
-          "settings": {
-            "year": "2025",
-            "title": "Xinyi Xinzhi Qian, Chengdu",
-            "location": "Shufang Community, Dong'an Street, Longquanyi District, Chengdu, Sichuan",
-            "products": "Wall: Hermes Gray; Floor: New Zealand Gray Light, Medium Gray, Dark Gray, Fuding Black, Night Snow, Spray White"
-          }
-        }
-      ]
+      "name": "Projects Page Grid"
     }
   ]
 }

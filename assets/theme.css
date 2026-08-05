@@ -968,6 +968,125 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height
 }
 
 /* ============================================================
+   PROJECTS GALLERY — PPT-style project entries with image galleries
+   ============================================================ */
+.projects-gallery-section {
+  padding: 0 var(--spacing-md) var(--spacing-2xl);
+}
+.projects-gallery-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.project-entry {
+  margin-bottom: 80px;
+  padding-bottom: 80px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.project-entry:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.project-entry-header {
+  margin-bottom: 32px;
+}
+.project-entry-year {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+.project-entry-title {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+.project-entry-materials {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.7;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.project-entry-location {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-soft);
+  line-height: 1.6;
+  font-weight: 300;
+}
+.project-entry-location svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: var(--accent);
+}
+
+/* Gallery grid layouts */
+.project-gallery {
+  display: grid;
+  gap: 12px;
+}
+.project-gallery-1 {
+  grid-template-columns: 1fr;
+}
+.project-gallery-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.project-gallery-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.project-gallery-4 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.project-gallery-5 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.project-gallery-6 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.project-gallery-item {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: var(--surface);
+}
+.project-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease-out-expo);
+}
+.project-gallery-item:hover img {
+  transform: scale(1.04);
+}
+
+@media (max-width: 768px) {
+  .project-gallery-2,
+  .project-gallery-3,
+  .project-gallery-4,
+  .project-gallery-5,
+  .project-gallery-6 {
+    grid-template-columns: 1fr;
+  }
+  .project-entry {
+    margin-bottom: 48px;
+    padding-bottom: 48px;
+  }
+  .project-entry-title {
+    font-size: 22px;
+  }
+}
+
+/* ============================================================
    ABOUT SPLIT — Full-bleed, architectural
    ============================================================ */
 .about-split {
