@@ -67,61 +67,7 @@
       },
       "stats-grid": {
         "type": "stats-grid",
-        "settings": {
-          "eyebrow": "The Studio",
-          "heading_line1": "Material intelligence,",
-          "heading_line2": "shaped by discipline.",
-          "body_text": "KunBloom — 16 Years Rooted in Tile, Built on Quality. From private homes to real estate developments, commercial spaces, landscapes, and courtyards, we deliver a full-space, all-scenario tile solution — with expert precision at every stage, from material sourcing to final delivery.",
-          "body_text_2": "We work with architects, not against their vision. Every surface we produce is a collaboration between material science and spatial intent.",
-          "link_text": "Learn About Us",
-          "link_url": "/pages/about",
-          "stat1_number": "16",
-          "stat1_suffix": "+",
-          "stat1_label": "Years of Craft",
-          "stat3_number": "1000",
-          "stat3_suffix": "+",
-          "stat3_label": "Projects Completed",
-          "stat4_text": "ISO",
-          "stat4_label": "Certified Quality",
-          "about_eyebrow": "About Us",
-          "about_heading_line1": "With over 16 years of expertise,",
-          "about_heading_line2": "dedicated to architectural excellence."
-        }
-      },
-      "honors-grid": {
-        "type": "honors-grid",
         "settings": {}
-      },
-      "cta-section": {
-        "type": "cta-section",
-        "settings": {}
-      },
-      "footer": {
-        "type": "footer",
-        "settings": {}
-      },
-      "projects-showcase": {
-        "type": "projects-showcase",
-        "settings": {
-          "eyebrow": "Project Showcase",
-          "heading": "Classic Project Cases, Quality That Speaks for Itself.",
-          "view_all_text": "View More Projects",
-          "project_image_1": "shopify://shop_images/20251231134051_93_403.jpg",
-          "project_1_meta": "Commercial",
-          "project_1_title": "Commercial Complex Project",
-          "project_1_location": "IFS, Chongqing",
-          "project_1_desc": "",
-          "project_image_2": "shopify://shop_images/IMG_8058.jpg",
-          "project_2_meta": "Residential",
-          "project_2_title": "High-End Residential Project",
-          "project_2_location": "Shapingba District, Chongqing",
-          "project_2_desc": "",
-          "project_image_3": "shopify://shop_images/401784865472_.pic_hd.png",
-          "project_3_meta": "Public",
-          "project_3_title": "Commercial Plaza Project",
-          "project_3_location": "Liangjiang New Area, Chongqing",
-          "project_3_desc": ""
-        }
       },
       "about-content": {
         "type": "about-content",
