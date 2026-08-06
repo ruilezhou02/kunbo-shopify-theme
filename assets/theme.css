@@ -1118,6 +1118,52 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height
   position: absolute;
   inset: 0;
   background: linear-gradient(to top, rgba(0,0,0,0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* — Carousel — */
+.about-split-carousel .carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.2s var(--ease-out-expo);
+  z-index: 0;
+}
+.about-split-carousel .carousel-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+.about-split-carousel .carousel-slide img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about-split-carousel .carousel-dots {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+}
+.about-split-carousel .carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+.about-split-carousel .carousel-dot.active {
+  background: #fff;
+  width: 24px;
+  border-radius: 4px;
 }
 .about-split-content {
   display: flex;

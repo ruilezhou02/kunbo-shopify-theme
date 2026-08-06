@@ -146,6 +146,62 @@
     honorsTrack.innerHTML = cards + cards;
   }
 
+  // — About Split carousel —
+  var carousels = document.querySelectorAll('[data-carousel]');
+  carousels.forEach(function(carousel) {
+    var slides = carousel.querySelectorAll('.carousel-slide');
+    if (slides.length <= 1) return;
+
+    var dotsContainer = carousel.querySelector('.carousel-dots');
+    var current = 0;
+    var autoPlayInterval = null;
+
+    // Create dots
+    slides.forEach(function(_, i) {
+      var dot = document.createElement('button');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      dot.addEventListener('click', function() {
+        goToSlide(i);
+        restartAutoPlay();
+      });
+      dotsContainer.appendChild(dot);
+    });
+
+    var dots = dotsContainer.querySelectorAll('.carousel-dot');
+
+    function goToSlide(index) {
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current = index;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+    }
+
+    function nextSlide() {
+      goToSlide((current + 1) % slides.length);
+    }
+
+    function startAutoPlay() {
+      autoPlayInterval = setInterval(nextSlide, 4000);
+    }
+
+    function restartAutoPlay() {
+      clearInterval(autoPlayInterval);
+      startAutoPlay();
+    }
+
+    // Pause on hover
+    carousel.addEventListener('mouseenter', function() {
+      clearInterval(autoPlayInterval);
+    });
+    carousel.addEventListener('mouseleave', function() {
+      startAutoPlay();
+    });
+
+    startAutoPlay();
+  });
+
   // — Smooth in-view reveal for any future dynamic content —
   window.refreshReveals = function() {
     var newReveals = document.querySelectorAll('.reveal:not(.observed), .reveal-img:not(.observed), .reveal-fade:not(.observed)');

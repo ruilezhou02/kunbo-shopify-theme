@@ -1,8 +1,37 @@
-<!-- About Split v3 — 16 years, 3 stats (no patents), ISO uppercase — synced via GitHub -->
-<section data-section-type="about-split" data-version="3">
+<!-- About Split v4 — carousel images + 3 stats + ISO uppercase -->
+<section data-section-type="about-split" data-version="4">
   <div class="about-split">
-    <div class="about-split-image">
-      <img src="{{ 'about-split-stairs.jpg' | asset_url }}" alt="Kun Bloom Architectural Stairs">
+    <div class="about-split-image about-split-carousel" data-carousel>
+      {% if section.settings.carousel_image_1 != blank %}
+        <div class="carousel-slide active" data-slide="0">
+          <img src="{{ section.settings.carousel_image_1 | image_url: width: 1200 }}" alt="{{ section.settings.carousel_image_1.alt | escape }}" loading="eager">
+        </div>
+      {% else %}
+        <div class="carousel-slide active" data-slide="0">
+          <img src="{{ 'about-split-stairs.jpg' | asset_url }}" alt="Kun Bloom Architectural Stairs" loading="eager">
+        </div>
+      {% endif %}
+      {% if section.settings.carousel_image_2 != blank %}
+        <div class="carousel-slide" data-slide="1">
+          <img src="{{ section.settings.carousel_image_2 | image_url: width: 1200 }}" alt="{{ section.settings.carousel_image_2.alt | escape }}" loading="lazy">
+        </div>
+      {% endif %}
+      {% if section.settings.carousel_image_3 != blank %}
+        <div class="carousel-slide" data-slide="2">
+          <img src="{{ section.settings.carousel_image_3 | image_url: width: 1200 }}" alt="{{ section.settings.carousel_image_3.alt | escape }}" loading="lazy">
+        </div>
+      {% endif %}
+      {% if section.settings.carousel_image_4 != blank %}
+        <div class="carousel-slide" data-slide="3">
+          <img src="{{ section.settings.carousel_image_4 | image_url: width: 1200 }}" alt="{{ section.settings.carousel_image_4.alt | escape }}" loading="lazy">
+        </div>
+      {% endif %}
+      {% if section.settings.carousel_image_5 != blank %}
+        <div class="carousel-slide" data-slide="4">
+          <img src="{{ section.settings.carousel_image_5 | image_url: width: 1200 }}" alt="{{ section.settings.carousel_image_5.alt | escape }}" loading="lazy">
+        </div>
+      {% endif %}
+      <div class="carousel-dots"></div>
     </div>
     <div class="about-split-content">
       <p class="eyebrow reveal">{{ section.settings.eyebrow }}</p>
@@ -86,6 +115,35 @@
       "id": "link_url",
       "label": "Link URL",
       "default": "/pages/about"
+    },
+    {
+      "type": "header",
+      "content": "Carousel Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "carousel_image_1",
+      "label": "Carousel Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "carousel_image_2",
+      "label": "Carousel Image 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "carousel_image_3",
+      "label": "Carousel Image 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "carousel_image_4",
+      "label": "Carousel Image 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "carousel_image_5",
+      "label": "Carousel Image 5"
     },
     {
       "type": "header",
