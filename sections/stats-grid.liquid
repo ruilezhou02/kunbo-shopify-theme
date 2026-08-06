@@ -5,31 +5,38 @@
       <img src="{{ 'about-split-stairs.jpg' | asset_url }}" alt="Kun Bloom Architectural Stairs">
     </div>
     <div class="about-split-content">
-      <p class="eyebrow reveal">The Studio</p>
-      <h2 class="display-md reveal reveal-delay-1">KunBloom<br>— 16 Years Rooted in Tile, Built on Quality.</h2>
-      <p class="reveal reveal-delay-2">Founded in 2010 with a singular obsession: From private homes to real estate developments, commercial spaces, landscapes, and courtyards, we deliver a full-space, all-scenario tile solution — with expert precision at every stage, from material sourcing to final delivery.</p>
-      <p class="reveal reveal-delay-3">We work with architects, not against their vision. Every surface we produce is a collaboration between material science and spatial intent.</p>
-      <a href="/pages/about" class="link-underline reveal reveal-delay-4">Learn About Us</a>
+      <p class="eyebrow reveal">{{ section.settings.eyebrow }}</p>
+      <h2 class="display-md reveal reveal-delay-1">{{ section.settings.heading_line1 }}<br>{{ section.settings.heading_line2 }}</h2>
+      <div class="reveal reveal-delay-2">{{ section.settings.body_text | newline_to_br }}</div>
+      <div class="reveal reveal-delay-3">{{ section.settings.body_text_2 | newline_to_br }}</div>
+      <a href="{{ section.settings.link_url }}" class="link-underline reveal reveal-delay-4">{{ section.settings.link_text }}</a>
     </div>
   </div>
 
   <!-- Stats Strip with count-up -->
   <div class="stats-strip">
     <div class="stat-item reveal">
-      <div class="stat-number" data-target="15"><span class="stat-suffix">+</span></div>
-      <div class="stat-label">Years of Craft</div>
-    </div>
-    <div class="stat-item reveal reveal-delay-1">
-      <div class="stat-number" data-target="14"></div>
-      <div class="stat-label">National Patents</div>
+      <div class="stat-number" data-target="{{ section.settings.stat1_number }}"><span class="stat-suffix">{{ section.settings.stat1_suffix }}</span></div>
+      <div class="stat-label">{{ section.settings.stat1_label }}</div>
     </div>
     <div class="stat-item reveal reveal-delay-2">
-      <div class="stat-number" data-target="1000"><span class="stat-suffix">+</span></div>
-      <div class="stat-label">Projects Completed</div>
+      <div class="stat-number" data-target="{{ section.settings.stat3_number }}"><span class="stat-suffix">{{ section.settings.stat3_suffix }}</span></div>
+      <div class="stat-label">{{ section.settings.stat3_label }}</div>
     </div>
     <div class="stat-item reveal reveal-delay-3">
-      <div class="stat-number" data-target="iso">ISO</div>
-      <div class="stat-label">Certified Quality</div>
+      <div class="stat-number" data-target="{{ section.settings.stat4_text }}">{{ section.settings.stat4_text }}</div>
+      <div class="stat-label">{{ section.settings.stat4_label }}</div>
+    </div>
+  </div>
+
+  <!-- About Us — editable via section settings -->
+  <div class="about-us-block">
+    <div class="container-narrow">
+      <p class="eyebrow">{{ section.settings.about_eyebrow }}</p>
+      <h2 class="display-md">{{ section.settings.about_heading_line1 }}<br>{{ section.settings.about_heading_line2 }}</h2>
+      <div class="about-us-desc">
+        {{ section.settings.about_body }}
+      </div>
     </div>
   </div>
 </section>
@@ -37,7 +44,138 @@
 {% schema %}
 {
   "name": "About Split + Stats",
-  "settings": [],
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The Studio"
+    },
+    {
+      "type": "text",
+      "id": "heading_line1",
+      "label": "Heading — Line 1",
+      "default": "Material intelligence,"
+    },
+    {
+      "type": "text",
+      "id": "heading_line2",
+      "label": "Heading — Line 2",
+      "default": "shaped by discipline."
+    },
+    {
+      "type": "textarea",
+      "id": "body_text",
+      "label": "Body Text — Paragraph 1",
+      "default": "KunBloom — 16 Years Rooted in Tile, Built on Quality. From private homes to real estate developments, commercial spaces, landscapes, and courtyards, we deliver a full-space, all-scenario tile solution — with expert precision at every stage, from material sourcing to final delivery."
+    },
+    {
+      "type": "textarea",
+      "id": "body_text_2",
+      "label": "Body Text — Paragraph 2",
+      "default": "We work with architects, not against their vision. Every surface we produce is a collaboration between material science and spatial intent."
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link Text",
+      "default": "Learn About Us"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link URL",
+      "default": "/pages/about"
+    },
+    {
+      "type": "header",
+      "content": "Stat 1"
+    },
+    {
+      "type": "text",
+      "id": "stat1_number",
+      "label": "Number",
+      "default": "16"
+    },
+    {
+      "type": "text",
+      "id": "stat1_suffix",
+      "label": "Suffix (e.g. +)",
+      "default": "+"
+    },
+    {
+      "type": "text",
+      "id": "stat1_label",
+      "label": "Label",
+      "default": "Years of Craft"
+    },
+    {
+      "type": "header",
+      "content": "Stat 3"
+    },
+    {
+      "type": "text",
+      "id": "stat3_number",
+      "label": "Number",
+      "default": "1000"
+    },
+    {
+      "type": "text",
+      "id": "stat3_suffix",
+      "label": "Suffix (e.g. +)",
+      "default": "+"
+    },
+    {
+      "type": "text",
+      "id": "stat3_label",
+      "label": "Label",
+      "default": "Projects Completed"
+    },
+    {
+      "type": "header",
+      "content": "Stat 4"
+    },
+    {
+      "type": "text",
+      "id": "stat4_text",
+      "label": "Text (non-numeric)",
+      "default": "ISO"
+    },
+    {
+      "type": "text",
+      "id": "stat4_label",
+      "label": "Label",
+      "default": "Certified Quality"
+    },
+    {
+      "type": "header",
+      "content": "About Us Block"
+    },
+    {
+      "type": "text",
+      "id": "about_eyebrow",
+      "label": "About Us Eyebrow",
+      "default": "About Us"
+    },
+    {
+      "type": "text",
+      "id": "about_heading_line1",
+      "label": "About Us Heading — Line 1",
+      "default": "With over 16 years of expertise,"
+    },
+    {
+      "type": "text",
+      "id": "about_heading_line2",
+      "label": "About Us Heading — Line 2",
+      "default": "dedicated to architectural excellence."
+    },
+    {
+      "type": "richtext",
+      "id": "about_body",
+      "label": "About Us Body Text",
+      "default": "<p>Chongqing Kun Bloom Building Materials Co., Ltd. was founded in 2010 by an industry veteran with over 15 years of experience. Since its establishment, the company has focused deeply on the building materials sector. Backed by strong R&amp;D capabilities and outstanding product quality, Kun Bloom has grown into a competitive brand recognized for both reputation and strength within the quartz tile industry.</p><p>Kun Bloom holds multiple utility model patents (Nos. 2022221017708 and 2022230576778), and all products strictly comply with national standards GB 6566-2010 and GB/T 4100-2015. Our partner production bases, located in China's Foshan and Quanzhou regions, benefit from a complete industrial chain and efficient logistics network — all focused on delivering high-quality wall and floor quartz tile products.</p>"
+    }
+  ],
   "presets": [{ "name": "About Split + Stats" }]
 }
 {% endschema %}

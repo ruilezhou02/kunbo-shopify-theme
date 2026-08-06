@@ -67,7 +67,26 @@
       },
       "stats-grid": {
         "type": "stats-grid",
-        "settings": {}
+        "settings": {
+          "eyebrow": "The Studio",
+          "heading_line1": "Material intelligence,",
+          "heading_line2": "shaped by discipline.",
+          "body_text": "KunBloom — 16 Years Rooted in Tile, Built on Quality. From private homes to real estate developments, commercial spaces, landscapes, and courtyards, we deliver a full-space, all-scenario tile solution — with expert precision at every stage, from material sourcing to final delivery.",
+          "body_text_2": "We work with architects, not against their vision. Every surface we produce is a collaboration between material science and spatial intent.",
+          "link_text": "Learn About Us",
+          "link_url": "/pages/about",
+          "stat1_number": "16",
+          "stat1_suffix": "+",
+          "stat1_label": "Years of Craft",
+          "stat3_number": "1000",
+          "stat3_suffix": "+",
+          "stat3_label": "Projects Completed",
+          "stat4_text": "ISO",
+          "stat4_label": "Certified Quality",
+          "about_eyebrow": "About Us",
+          "about_heading_line1": "With over 16 years of expertise,",
+          "about_heading_line2": "dedicated to architectural excellence."
+        }
       },
       "honors-grid": {
         "type": "honors-grid",
