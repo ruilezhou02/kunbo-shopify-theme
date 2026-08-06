@@ -90,17 +90,17 @@
           "project_image_1": "shopify://shop_images/20251231134051_93_403.jpg",
           "project_1_meta": "Commercial",
           "project_1_title": "Commercial Complex Project",
-          "project_1_location": "Liangjiang New Area, Chongqin",
+          "project_1_location": "IFS, Chongqing",
           "project_1_desc": "",
           "project_image_2": "shopify://shop_images/411784877237_.pic_hd.jpg",
           "project_2_meta": "Residential",
           "project_2_title": "High-End Residential Project",
-          "project_2_location": "Liangjiang New Area, Chongqin",
+          "project_2_location": "Liangjiang New Area, Chongqing",
           "project_2_desc": "",
           "project_image_3": "shopify://shop_images/401784865472_.pic_hd.png",
           "project_3_meta": "Public",
           "project_3_title": "Commercial Plaza Project",
-          "project_3_location": "Liangjiang New Area, Chongqin",
+          "project_3_location": "Liangjiang New Area, Chongqing",
           "project_3_desc": ""
         }
       },
@@ -124,9 +124,7 @@
         "settings": {
           "eyebrow": "Projects",
           "heading": "Project Showcase",
-          "intro": "Kun Bloom's founder has been rooted in the building materials industry for over 20 years, and the company has served more than 1,000 high-quality engineering projects. From commercial complexes to high-end residential developments, from municipal infrastructure to landscape paving, our products have won the trust of clients with outstanding quality, witnessing every remarkable moment of urban construction.",
-          "view_details_text": "View Details",
-          "products_label": "Case Products |"
+          "intro": "Kun Bloom's founder has been rooted in the building materials industry for over 20 years, and the company has served more than 1,000 high-quality engineering projects. From commercial complexes to high-end residential developments, from municipal infrastructure to landscape paving, our products have won the trust of clients with outstanding quality, witnessing every remarkable moment of urban construction."
         }
       },
       "collection-header": {
