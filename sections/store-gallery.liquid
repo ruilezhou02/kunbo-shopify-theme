@@ -1,0 +1,71 @@
+<!-- Store Gallery — Cinematic horizontal infinite scroll marquee -->
+<section class="store-gallery" data-section-type="store-gallery">
+  <div class="store-gallery-header">
+    <div class="store-gallery-header__text">
+      <p class="eyebrow reveal">{{ section.settings.eyebrow }}</p>
+      <h2 class="display-md reveal reveal-delay-1">{{ section.settings.heading }}</h2>
+    </div>
+    {% if section.settings.subtitle != blank %}
+      <p class="store-gallery-header__subtitle reveal reveal-delay-2">{{ section.settings.subtitle }}</p>
+    {% endif %}
+  </div>
+
+  {%- assign store_images = "store-1.jpg,store-2.jpg,store-3.jpg,store-4.jpg,store-5.jpg" | split: "," -%}
+
+  <div class="store-gallery-marquee" aria-hidden="true">
+    <div class="store-gallery-track">
+      {%- for image in store_images -%}
+        <div class="store-gallery-slide">
+          <img src="{{ image | asset_url }}" alt="Kun Bloom Showroom" loading="lazy">
+        </div>
+      {%- endfor -%}
+      {%- for image in store_images -%}
+        <div class="store-gallery-slide">
+          <img src="{{ image | asset_url }}" alt="Kun Bloom Showroom" loading="lazy">
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+
+  <div class="store-gallery-marquee store-gallery-marquee--reverse" aria-hidden="true">
+    <div class="store-gallery-track store-gallery-track--reverse">
+      {%- for image in store_images reversed -%}
+        <div class="store-gallery-slide">
+          <img src="{{ image | asset_url }}" alt="Kun Bloom Showroom" loading="lazy">
+        </div>
+      {%- endfor -%}
+      {%- for image in store_images reversed -%}
+        <div class="store-gallery-slide">
+          <img src="{{ image | asset_url }}" alt="Kun Bloom Showroom" loading="lazy">
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Store Gallery",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Showroom"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Step inside our world"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "A curated environment where material, light and proportion meet — our flagship showroom in Chongqing."
+    }
+  ],
+  "presets": [{ "name": "Store Gallery" }]
+}
+{% endschema %}
