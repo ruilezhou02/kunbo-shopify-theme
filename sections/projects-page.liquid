@@ -9,6 +9,10 @@
 
 <section class="projects-gallery-section" data-section-type="projects-page">
   <div class="projects-gallery-container">
+    <div class="projects-section-header">
+      <p class="eyebrow">Part 01</p>
+      <h2 class="projects-section-title">{{ section.settings.engineering_title }}</h2>
+    </div>
     <article class="project-entry reveal" data-project="2">
       <div class="project-entry-header">
         <div class="project-entry-info">
@@ -576,6 +580,15 @@
           <div class="project-gallery-item"><img src="{{ 'proj_p29_3.jpg' | asset_url }}" alt="Hefei China Resources Runcheng Center" loading="lazy" /></div>
       </div>
     </article>
+  </div>
+</section>
+
+<section class="projects-gallery-section" data-section-type="projects-page">
+  <div class="projects-gallery-container">
+    <div class="projects-section-header">
+      <p class="eyebrow">Part 02</p>
+      <h2 class="projects-section-title">{{ section.settings.retail_title }}</h2>
+    </div>
     <article class="project-entry reveal" data-project="30">
       <div class="project-entry-header">
         <div class="project-entry-info">
@@ -718,6 +731,22 @@
       "id": "intro",
       "label": "Intro Text",
       "default": "Kun Bloom's founder has been rooted in the building materials industry for over 20 years, and the company has served more than 1,000 high-quality engineering projects. From commercial complexes to high-end residential developments, from municipal infrastructure to landscape paving, our products have won the trust of clients with outstanding quality, witnessing every remarkable moment of urban construction."
+    },
+    {
+      "type": "header",
+      "content": "Section Titles"
+    },
+    {
+      "type": "text",
+      "id": "engineering_title",
+      "label": "Engineering Projects Title",
+      "default": "Engineering Projects"
+    },
+    {
+      "type": "text",
+      "id": "retail_title",
+      "label": "Retail Projects Title",
+      "default": "Retail Projects"
     }
   ],
   "presets": [
