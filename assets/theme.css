@@ -1005,10 +1005,11 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height
   margin-bottom: 12px;
 }
 .projects-section-title {
-  font-family: var(--font-heading);
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3.5vw, 48px);
   font-weight: 400;
-  letter-spacing: -0.01em;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
   margin: 0;
 }
 .projects-gallery-section + .projects-gallery-section {
