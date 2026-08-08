@@ -876,7 +876,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height
   margin-bottom: 24px;
 }
 .projects-page-hero .body-lg {
-  max-width: 840px;
+  max-width: 1200px;
   margin: 0;
 }
 .projects-page-container {
